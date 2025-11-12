@@ -568,3 +568,39 @@ class DisputeRecord(SQLModel, table=True):
         Index('ix_dispute_records_charge_id', 'stripe_charge_id'),
         Index('ix_dispute_records_evidence_due', 'evidence_due_by'),
     )
+
+class WebhookEvent(SQLModel, table=True):
+    """
+    Model for tracking webhook events to ensure idempotency.
+    
+    Prevents duplicate webhook processing by storing event IDs with atomic
+    INSERT ... ON CONFLICT operations.
+    """
+    __tablename__ = "webhook_events"
+    
+    # Primary identification
+    id: Optional[int] = Field(default=None, primary_key=True)
+    event_id: str = Field(unique=True, index=True, max_length=255, description="Stripe event ID (must be unique)")
+    
+    # Event metadata
+    event_type: str = Field(max_length=100, description="Type of webhook event")
+    processed_at: datetime = Field(
+        default_factory=lambda: datetime.now(timezone.utc),
+        sa_column=Column(DateTime(timezone=True), server_default=func.now()),
+        description="When the event was processed"
+    )
+    
+    # Optional payload storage for debugging
+    payload: Optional[Dict[str, Any]] = Field(
+        default=None,
+        sa_column=Column(JSON),
+        description="Raw event payload for debugging"
+    )
+    
+    class Config:
+        arbitrary_types_allowed = True
+    
+    __table_args__ = (
+        Index('ix_webhook_events_event_type', 'event_type'),
+        Index('ix_webhook_events_processed_at', 'processed_at'),
+    )

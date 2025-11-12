@@ -153,6 +153,19 @@ async def lifespan(app: FastAPI):
     if is_production:
         log.info("Production environment detected - validating required secrets")
         try:
+            # CRITICAL: Validate JWT secret is not default value
+            jwt_secret_value = settings.jwt_secret.get_secret_value() if settings.jwt_secret else ""
+            if jwt_secret_value == "CHANGE_THIS_IN_PRODUCTION":
+                log.error("=" * 60)
+                log.error("FATAL: Default JWT Secret Detected in Production")
+                log.error("=" * 60)
+                log.error("JWT secret is set to 'CHANGE_THIS_IN_PRODUCTION'")
+                log.error("This allows complete authentication bypass!")
+                log.error("Action Required: Set APP_JWT_SECRET to a secure random value")
+                log.error("  Generate with: openssl rand -hex 32")
+                log.error("=" * 60)
+                raise RuntimeError("Production startup aborted: JWT secret not changed from default")
+
             # SecurityManager validates environment secrets (JWT, database, etc.)
             SecurityManager.validate_env_secrets(require_all_in_production=True)
 
@@ -165,7 +178,7 @@ async def lifespan(app: FastAPI):
                     startup_errors.append({"service": "production_secret_validation", "error": issue, "type": "secret"})
                 raise RuntimeError(f"Production configuration incomplete: {'; '.join(secret_issues)}")
 
-            log.info("✓ Production secrets validated successfully (continuing to validate database configuration...)")
+            log.info("✓ Production secrets validated successfully (JWT secret secure, continuing to validate database configuration...)")
 
             # Validate subscription fail-open mode in production
             if settings.subscription_fail_open:

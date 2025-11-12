@@ -20,7 +20,7 @@ except ImportError:
 
 from app.config.settings import get_settings
 from app.core.logger import log
-from app.core.db_models import Subscription, PaymentRecord, SubscriptionTier, SubscriptionStatus
+from app.core.db_models import Subscription, PaymentRecord, SubscriptionTier, SubscriptionStatus, WebhookEvent
 from app.core.user_models import User
 
 if TYPE_CHECKING:
@@ -1046,3 +1046,81 @@ class PaymentService:
         except StripeError as e:
             log.error(f"Failed to list disputes for customer {customer_id}: {e}")
             raise PaymentException(f"Failed to list disputes: {str(e)}")
+
+    async def check_webhook_processed(self, event_id: str, event_type: str, payload: Optional[Dict[str, Any]] = None) -> bool:
+        """
+        Atomically check if a webhook event has been processed using INSERT ... ON CONFLICT.
+
+        This method uses a database-level atomic operation to ensure that duplicate
+        webhook events are never processed twice, even under concurrent requests.
+
+        Args:
+            event_id: Stripe event ID (must be unique)
+            event_type: Type of webhook event
+            payload: Optional raw event payload for debugging
+
+        Returns:
+            True if this is the first time processing this event (event was inserted)
+            False if the event was already processed (conflict detected)
+
+        Raises:
+            PaymentException: If database operation fails
+        """
+        from app.core.database import get_async_session
+        from sqlalchemy import text
+        import json
+
+        try:
+            async for session in get_async_session():
+                # Use PostgreSQL INSERT ... ON CONFLICT DO NOTHING for atomic idempotency
+                # This ensures that only ONE process can successfully insert a given event_id
+                query = text("""
+                    INSERT INTO webhook_events (event_id, event_type, payload, processed_at)
+                    VALUES (:event_id, :event_type, :payload, NOW())
+                    ON CONFLICT (event_id) DO NOTHING
+                    RETURNING id
+                """)
+
+                result = await session.execute(
+                    query,
+                    {
+                        "event_id": event_id,
+                        "event_type": event_type,
+                        "payload": json.dumps(payload) if payload else None
+                    }
+                )
+                await session.commit()
+
+                # If a row was returned, the insert succeeded (first time processing)
+                # If no row was returned, there was a conflict (already processed)
+                row = result.fetchone()
+                was_inserted = row is not None
+
+                if was_inserted:
+                    log.info(f"Webhook event {event_id} ({event_type}) marked for processing (first time)")
+                else:
+                    log.warning(f"Webhook event {event_id} ({event_type}) already processed - skipping duplicate")
+
+                return was_inserted
+
+        except Exception as e:
+            log.error(f"Failed to check webhook idempotency for event {event_id}: {e}")
+            raise PaymentException(f"Webhook idempotency check failed: {str(e)}")
+
+    async def mark_webhook_processed(self, event_id: str, event_type: str) -> None:
+        """
+        Legacy method for marking webhook as processed.
+
+        NOTE: This method is kept for backwards compatibility but is NO LONGER NEEDED
+        when using check_webhook_processed(), which atomically checks and marks in one operation.
+
+        For new code, use check_webhook_processed() instead, which provides atomic
+        idempotency checking with INSERT ... ON CONFLICT.
+
+        Args:
+            event_id: Stripe event ID
+            event_type: Type of webhook event
+        """
+        log.debug(f"mark_webhook_processed called for {event_id} - this is a no-op when using check_webhook_processed()")
+        # No-op: check_webhook_processed already marked the event
+        pass

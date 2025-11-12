@@ -1255,6 +1255,7 @@ async def ask_a_philosophy_question_stream(
             yield f"data: {error_data}\n\n"
             return
 
+        try:
             # Gather philosopher collection nodes
             philosopher_nodes = await qdrant_manager.gather_points_and_sort(
                 body, refeed=refeed

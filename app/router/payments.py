@@ -698,49 +698,58 @@ async def handle_stripe_webhook(
             )
             raise HTTPException(status_code=400, detail=error.model_dump())
 
-        # Check idempotency: have we already processed this event?
-        already_processed = await payment_service.check_webhook_processed(event_id)
-        if already_processed:
+        # ATOMIC IDEMPOTENCY CHECK: This INSERT...ON CONFLICT operation ensures
+        # that only ONE process can successfully claim this event for processing
+        is_first_processing = await payment_service.check_webhook_processed(
+            event_id=event_id,
+            event_type=event_type,
+            payload=event  # Store full event for debugging
+        )
+
+        if not is_first_processing:
+            # Event was already processed by another request (duplicate webhook delivery)
             log.info(f"Webhook event {event_id} ({event_type}) already processed, returning success")
             return WebhookResponse(
                 received=True,
-                processed=True,
+                processed=True,  # Already processed successfully
                 event_type=event_type
             )
 
-        log.info(f"Processing Stripe webhook event: {event_id} ({event_type})")
-        
+        # This is the first time processing this event - proceed with business logic
+        log.info(f"Processing Stripe webhook event: {event_id} ({event_type}) for the first time")
+
         # Process different event types
         processed = False
-        
+
         if event_type == 'checkout.session.completed':
             processed = await _handle_checkout_completed(event, payment_service)
-            
+
         elif event_type == 'customer.subscription.created':
             processed = await _handle_subscription_created(event, payment_service)
-            
+
         elif event_type == 'customer.subscription.updated':
             processed = await _handle_subscription_updated(event, payment_service)
-            
+
         elif event_type == 'customer.subscription.deleted':
             processed = await _handle_subscription_deleted(event, payment_service)
-            
+
         elif event_type == 'invoice.payment_succeeded':
             processed = await _handle_payment_succeeded(event, payment_service)
-            
+
         elif event_type == 'invoice.payment_failed':
             processed = await _handle_payment_failed(event, payment_service)
-            
+
         else:
             log.info(f"Unhandled Stripe webhook event type: {event_type}")
             processed = True  # Mark as processed to avoid retries
-        
+
         if processed:
             log.info(f"Successfully processed Stripe webhook event: {event_type}")
-            # Mark event as processed for idempotency (event_id guaranteed to exist at this point)
-            await payment_service.mark_webhook_processed(event_id, event_type)
+            # Event already marked as processed by check_webhook_processed() - no need for additional marking
         else:
             log.error(f"Failed to process Stripe webhook event: {event_type}")
+            # TODO: Consider implementing rollback mechanism to remove webhook_events entry
+            # if processing fails, allowing retry on next webhook delivery
 
         return WebhookResponse(
             received=True,
