@@ -622,15 +622,12 @@ async def get_conversations(
         # Convert to response format with message counts
         conversation_responses = []
         for conv in conversations:
-            # Count messages in this conversation
-            message_count = len(conv.messages) if hasattr(conv, 'messages') and conv.messages else 0
-            
-            # If messages weren't loaded, get count separately
-            if message_count == 0:
-                message_count = await chat_history_service.get_message_count(
-                    session_id=session_id,
-                    conversation_id=conv.conversation_id
-                )
+            # Get message count via efficient COUNT query
+            # (messages are no longer eagerly loaded to save memory)
+            message_count = await chat_history_service.get_message_count(
+                session_id=session_id,
+                conversation_id=conv.conversation_id
+            )
             
             conversation_response = ChatConversationResponse(
                 conversation_id=conv.conversation_id,

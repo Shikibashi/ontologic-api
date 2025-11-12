@@ -6,6 +6,7 @@ from sqlmodel import SQLModel, create_engine
 from sqlalchemy.ext.asyncio import AsyncEngine, AsyncSession, create_async_engine
 from sqlalchemy.orm import sessionmaker
 from app.core.logger import log
+from app.core.constants import DATABASE_POOL_SIZE, DATABASE_MAX_OVERFLOW
 
 # Database URL configuration
 DATABASE_URL = os.environ.get("ONTOLOGIC_DB_URL", "sqlite:///./ontologic.db")
@@ -21,11 +22,15 @@ else:
 log.info(f"Database URL configured: {DATABASE_URL}")
 log.info(f"Async Database URL: {ASYNC_DATABASE_URL}")
 
-# Create async engine
+# Create async engine with optimized connection pooling
 engine = create_async_engine(
     ASYNC_DATABASE_URL,
     echo=False,  # Set to True for SQL logging during development
     future=True,
+    pool_size=DATABASE_POOL_SIZE,  # Base connection pool size (10)
+    max_overflow=DATABASE_MAX_OVERFLOW,  # Additional connections when pool exhausted (20)
+    pool_pre_ping=True,  # Verify connections before use (prevents stale connections)
+    pool_recycle=3600,  # Recycle connections after 1 hour (prevents long-lived stale connections)
 )
 
 # Create async session maker

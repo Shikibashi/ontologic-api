@@ -10,6 +10,7 @@ import uuid
 from datetime import datetime
 from typing import Optional, List, Dict, Any
 from sqlmodel import select, func, and_, or_
+from sqlalchemy import delete as sql_delete
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.orm import selectinload
 from sqlalchemy.exc import SQLAlchemyError, IntegrityError, OperationalError
@@ -428,11 +429,11 @@ class ChatHistoryService:
 
         async def _get_conversations(db_session: AsyncSession) -> List[ChatConversation]:
             try:
-                # Optimized query with proper indexing
+                # Optimized query - removed selectinload(messages) since endpoint only needs count
+                # Message counts are fetched separately via get_message_count() in the router
                 statement = (
                     select(ChatConversation)
                     .where(ChatConversation.session_id == session_id)
-                    .options(selectinload(ChatConversation.messages))
                     .order_by(ChatConversation.updated_at.desc())
                     .offset(offset)
                     .limit(limit)
@@ -630,19 +631,15 @@ class ChatHistoryService:
                         )
                     
                     # Delete specific conversation and its messages
-                    # First delete messages
-                    message_statement = select(ChatMessage).where(
+                    # BULK DELETE: Delete all messages in one query (10-100x faster than N+1 loop)
+                    message_delete_stmt = sql_delete(ChatMessage).where(
                         and_(
                             ChatMessage.session_id == session_id,
                             ChatMessage.conversation_id == conversation_id
                         )
                     )
-                    message_result = await db_session.execute(message_statement)
-                    messages = message_result.scalars().all()
-                    
-                    for message in messages:
-                        await db_session.delete(message)
-                        deleted_messages += 1
+                    message_result = await db_session.execute(message_delete_stmt)
+                    deleted_messages = message_result.rowcount
 
                     # Then delete conversation
                     await db_session.delete(conversation)
@@ -658,25 +655,19 @@ class ChatHistoryService:
                             f"({deleted_messages} messages, {deleted_conversations} conversations)")
                 else:
                     # Delete all history for the session
-                    # First delete all messages
-                    message_statement = select(ChatMessage).where(ChatMessage.session_id == session_id)
-                    message_result = await db_session.execute(message_statement)
-                    messages = message_result.scalars().all()
-                    
-                    for message in messages:
-                        await db_session.delete(message)
-                        deleted_messages += 1
+                    # BULK DELETE: Delete all messages in one query (10-100x faster than N+1 loop)
+                    message_delete_stmt = sql_delete(ChatMessage).where(
+                        ChatMessage.session_id == session_id
+                    )
+                    message_result = await db_session.execute(message_delete_stmt)
+                    deleted_messages = message_result.rowcount
 
-                    # Then delete all conversations
-                    conversation_statement = select(ChatConversation).where(
+                    # BULK DELETE: Delete all conversations in one query
+                    conversation_delete_stmt = sql_delete(ChatConversation).where(
                         ChatConversation.session_id == session_id
                     )
-                    conversation_result = await db_session.execute(conversation_statement)
-                    conversations = conversation_result.scalars().all()
-                    
-                    for conversation in conversations:
-                        await db_session.delete(conversation)
-                        deleted_conversations += 1
+                    conversation_result = await db_session.execute(conversation_delete_stmt)
+                    deleted_conversations = conversation_result.rowcount
 
                     await db_session.commit()
                     
