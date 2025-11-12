@@ -1,0 +1,39 @@
+# Test environment configuration
+# This file provides test-specific overrides for the base configuration
+
+[compression]
+# Use the standard 1KB threshold for tests to match expectations
+enabled = true
+minimum_size = 1000
+
+[models]
+# Use test model names for testing
+llm = "test-llm-model"
+embed_model = "test-embed-model"
+splade_model = "test-splade-model"
+
+[llm]
+# Shorter timeouts for tests
+request_timeout_seconds = 10
+generation_timeout_seconds = 10
+chat_timeout_seconds = 10
+vet_timeout_seconds = 10
+
+[qdrant]
+# Local test instance
+url = "http://localhost:6333"
+timeout = 5
+retry_attempts = 1
+
+[oauth]
+# OAuth disabled for tests
+enabled = false
+
+[features]
+# Features enabled for comprehensive test coverage
+chat_history = true
+document_uploads = true
+
+[security]
+# Test security configuration
+session_secret = "test-session-secret-not-for-production-use-only"

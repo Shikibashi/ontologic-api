@@ -1,0 +1,52 @@
+{#
+Template: workflows/reviewer/user
+Purpose: User prompt for academic peer review
+Variables: manuscript, questions (optional), rubric (optional)
+#}
+
+## Content to Review
+
+{{ manuscript }}
+
+## Review Task
+
+Please provide a comprehensive review of this philosophical writing focusing on the following criteria:
+
+{% if rubric %}
+### Evaluation Rubric:
+{% for criterion in rubric %}
+- **{{ criterion }}**: Assess quality and provide specific feedback
+{% endfor %}
+{% endif %}
+
+## Required Output
+
+Provide your review in the following structured format:
+
+### 1. Verification Plan
+Identify all factual claims that require verification and generate 1-3 specific search questions for each claim to validate against authoritative sources.
+
+### 2. Evidence Assessment
+Evaluate the quality and appropriateness of citations and evidence presented.
+
+### 3. Argument Analysis
+Assess the logical structure, validity of premises, and strength of conclusions.
+
+### 4. Specific Suggestions
+Provide concrete, actionable suggestions for improvement. For each suggestion, include:
+- **Section**: Which part needs revision
+- **Issue**: What specific problem was identified
+- **Suggestion**: Concrete recommendation for improvement
+- **Rationale**: Why this change would enhance the work
+- **Blocking**: Whether this is a critical issue that blocks publication (yes/no)
+
+### 5. Overall Assessment
+Summarize the strength of the work and key areas for development.
+
+{% if questions %}
+### Author Questions
+{% for q in questions %}- {{ q }}
+{% endfor %}
+{% endif %}
+
+Focus on constructive feedback that will enhance the philosophical rigor and scholarly merit of this work.

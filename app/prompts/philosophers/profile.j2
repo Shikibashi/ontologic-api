@@ -1,0 +1,9 @@
+{#
+Template: philosophers/profile
+Purpose: Assembled philosopher profile via includes
+Variables: philosopher_name
+#}
+
+{% include 'philosophers/' + philosopher_name + '/personality.j2' %}
+{% include 'philosophers/' + philosopher_name + '/cognitive_tone.j2' %}
+{% include 'philosophers/' + philosopher_name + '/axioms.j2' %}

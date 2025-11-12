@@ -1,0 +1,13 @@
+{% if section_type == "abstract" %}
+This {{ section_type }} section could not be generated due to service limitations. Please try again later or contact support. Error: {{ error_reason }}
+{% elif section_type == "introduction" %}
+The introduction to this topic is currently unavailable due to technical difficulties. Error: {{ error_reason }}
+{% elif section_type == "argument" %}
+The main arguments for this position could not be retrieved at this time. Error: {{ error_reason }}
+{% elif section_type == "counterarguments" %}
+Counterarguments and objections are currently unavailable. Error: {{ error_reason }}
+{% elif section_type == "conclusion" %}
+The conclusion section could not be generated. Please try again later. Error: {{ error_reason }}
+{% else %}
+Content for {{ section_type }} section is currently unavailable. Error: {{ error_reason }}
+{% endif %}

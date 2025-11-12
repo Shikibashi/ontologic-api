@@ -1,0 +1,261 @@
+{
+  "prompt_001_trolley_problem": {
+    "min_words": 350,
+    "max_words": 500,
+    "required_keywords": ["utilitarian", "deontological", "virtue ethics", "care ethics"],
+    "requires_persona": false,
+    "conclusion_type": "balanced"
+  },
+  "prompt_002_ai_job_automation": {
+    "min_words": 400,
+    "max_words": 550,
+    "required_keywords": ["economic", "dignity", "social", "transition"],
+    "requires_persona": false,
+    "conclusion_type": "balanced"
+  },
+  "prompt_003_universal_basic_income": {
+    "min_words": 400,
+    "max_words": 550,
+    "required_keywords": ["freedom", "dignity", "work ethic", "feasibility"],
+    "requires_persona": false,
+    "conclusion_type": "balanced"
+  },
+  "prompt_004_gene_editing": {
+    "min_words": 400,
+    "max_words": 550,
+    "required_keywords": ["enhancement", "therapy", "consent", "inequality"],
+    "requires_persona": false,
+    "conclusion_type": "balanced"
+  },
+  "prompt_005_privacy_security": {
+    "min_words": 400,
+    "max_words": 550,
+    "required_keywords": ["autonomy", "harm prevention", "transparency", "oversight"],
+    "requires_persona": false,
+    "conclusion_type": "balanced"
+  },
+  "prompt_006_climate_duty": {
+    "min_words": 400,
+    "max_words": 550,
+    "required_keywords": ["intergenerational", "justice", "responsibility", "collective action"],
+    "requires_persona": false,
+    "conclusion_type": "verdict"
+  },
+  "prompt_007_free_speech_harm": {
+    "min_words": 400,
+    "max_words": 550,
+    "required_keywords": ["marketplace of ideas", "harm principle", "dignity", "consequences"],
+    "requires_persona": false,
+    "conclusion_type": "balanced"
+  },
+  "prompt_008_animal_rights": {
+    "min_words": 400,
+    "max_words": 550,
+    "required_keywords": ["sentience", "interests", "speciesism", "capabilities"],
+    "requires_persona": false,
+    "conclusion_type": "balanced"
+  },
+  "prompt_009_immigration": {
+    "min_words": 400,
+    "max_words": 550,
+    "required_keywords": ["cosmopolitan", "sovereignty", "humanitarian", "integration"],
+    "requires_persona": false,
+    "conclusion_type": "balanced"
+  },
+  "prompt_010_death_penalty": {
+    "min_words": 400,
+    "max_words": 550,
+    "required_keywords": ["retribution", "deterrence", "dignity", "error"],
+    "requires_persona": false,
+    "conclusion_type": "balanced"
+  },
+  "prompt_011_kant_lying": {
+    "min_words": 300,
+    "max_words": 450,
+    "required_keywords": ["categorical imperative", "universal law", "autonomy", "maxim"],
+    "requires_persona": true,
+    "conclusion_type": "verdict"
+  },
+  "prompt_012_mill_higher_pleasures": {
+    "min_words": 300,
+    "max_words": 450,
+    "required_keywords": ["quality", "quantity", "competent judges", "human faculties"],
+    "requires_persona": true,
+    "conclusion_type": "verdict"
+  },
+  "prompt_013_rawls_justice": {
+    "min_words": 300,
+    "max_words": 450,
+    "required_keywords": ["original position", "veil of ignorance", "difference principle", "fair equality"],
+    "requires_persona": true,
+    "conclusion_type": "verdict"
+  },
+  "prompt_014_scientific_realism": {
+    "min_words": 400,
+    "max_words": 550,
+    "required_keywords": ["unobservables", "empirically adequate", "no-miracles", "underdetermination"],
+    "requires_persona": false,
+    "conclusion_type": "balanced"
+  },
+  "prompt_015_gettier": {
+    "min_words": 350,
+    "max_words": 500,
+    "required_keywords": ["justified", "true", "belief", "luck"],
+    "requires_persona": false,
+    "conclusion_type": "balanced"
+  },
+  "prompt_016_mind_body": {
+    "min_words": 400,
+    "max_words": 550,
+    "required_keywords": ["dualism", "physicalism", "qualia", "consciousness"],
+    "requires_persona": false,
+    "conclusion_type": "balanced"
+  },
+  "prompt_017_free_will_determinism": {
+    "min_words": 400,
+    "max_words": 550,
+    "required_keywords": ["compatibilism", "libertarian", "moral responsibility", "causation"],
+    "requires_persona": false,
+    "conclusion_type": "balanced"
+  },
+  "prompt_018_meaning_of_life": {
+    "min_words": 400,
+    "max_words": 550,
+    "required_keywords": ["absurd", "purpose", "subjective", "objective"],
+    "requires_persona": false,
+    "conclusion_type": "balanced"
+  },
+  "prompt_019_aristotle_eudaimonia": {
+    "min_words": 300,
+    "max_words": 450,
+    "required_keywords": ["virtue", "flourishing", "function", "reason"],
+    "requires_persona": true,
+    "conclusion_type": "verdict"
+  },
+  "prompt_020_nozick_experience_machine": {
+    "min_words": 300,
+    "max_words": 450,
+    "required_keywords": ["authenticity", "connection", "reality", "hedonism"],
+    "requires_persona": true,
+    "conclusion_type": "verdict"
+  },
+  "prompt_021_singer_poverty": {
+    "min_words": 300,
+    "max_words": 450,
+    "required_keywords": ["suffering", "comparable moral significance", "obligated", "sacrifice"],
+    "requires_persona": true,
+    "conclusion_type": "verdict"
+  },
+  "prompt_022_abortion": {
+    "min_words": 400,
+    "max_words": 550,
+    "required_keywords": ["personhood", "bodily autonomy", "potentiality", "viability"],
+    "requires_persona": false,
+    "conclusion_type": "balanced"
+  },
+  "prompt_023_euthanasia": {
+    "min_words": 400,
+    "max_words": 550,
+    "required_keywords": ["autonomy", "suffering", "sanctity", "slippery slope"],
+    "requires_persona": false,
+    "conclusion_type": "balanced"
+  },
+  "prompt_024_affirmative_action": {
+    "min_words": 400,
+    "max_words": 550,
+    "required_keywords": ["corrective justice", "merit", "diversity", "stigma"],
+    "requires_persona": false,
+    "conclusion_type": "balanced"
+  },
+  "prompt_025_environmental_justice": {
+    "min_words": 400,
+    "max_words": 550,
+    "required_keywords": ["distributive justice", "environmental racism", "sustainability", "vulnerable"],
+    "requires_persona": false,
+    "conclusion_type": "verdict"
+  },
+  "prompt_026_medical_autonomy": {
+    "min_words": 400,
+    "max_words": 550,
+    "required_keywords": ["informed consent", "competence", "paternalism", "best interests"],
+    "requires_persona": false,
+    "conclusion_type": "balanced"
+  },
+  "prompt_027_surveillance_privacy": {
+    "min_words": 400,
+    "max_words": 550,
+    "required_keywords": ["autonomy", "security", "chilling effect", "transparency"],
+    "requires_persona": false,
+    "conclusion_type": "balanced"
+  },
+  "prompt_028_virtue_ai_design": {
+    "min_words": 400,
+    "max_words": 550,
+    "required_keywords": ["character", "practical wisdom", "human flourishing", "virtuous design"],
+    "requires_persona": false,
+    "conclusion_type": "verdict"
+  },
+  "prompt_029_autonomous_weapons": {
+    "min_words": 400,
+    "max_words": 550,
+    "required_keywords": ["accountability", "discrimination", "proportionality", "human control"],
+    "requires_persona": false,
+    "conclusion_type": "verdict"
+  },
+  "prompt_030_problem_of_induction": {
+    "min_words": 350,
+    "max_words": 500,
+    "required_keywords": ["uniformity", "past", "future", "justification"],
+    "requires_persona": false,
+    "conclusion_type": "balanced"
+  },
+  "prompt_031_feminist_epistemology": {
+    "min_words": 400,
+    "max_words": 550,
+    "required_keywords": ["standpoint", "situated knowledge", "objectivity", "power"],
+    "requires_persona": false,
+    "conclusion_type": "balanced"
+  },
+  "prompt_032_personal_identity_teleportation": {
+    "min_words": 350,
+    "max_words": 500,
+    "required_keywords": ["continuity", "psychological", "physical", "survival"],
+    "requires_persona": false,
+    "conclusion_type": "balanced"
+  },
+  "prompt_033_civil_disobedience": {
+    "min_words": 400,
+    "max_words": 550,
+    "required_keywords": ["obligation", "conscience", "democratic", "nonviolent"],
+    "requires_persona": false,
+    "conclusion_type": "balanced"
+  },
+  "prompt_034_error_theory": {
+    "min_words": 350,
+    "max_words": 500,
+    "required_keywords": ["objective", "false", "projectivism", "realism"],
+    "requires_persona": false,
+    "conclusion_type": "balanced"
+  },
+  "prompt_035_virtue_vs_care": {
+    "min_words": 400,
+    "max_words": 550,
+    "required_keywords": ["relationships", "character", "context", "universal"],
+    "requires_persona": false,
+    "conclusion_type": "balanced"
+  },
+  "prompt_036_philosophy_methodology": {
+    "min_words": 400,
+    "max_words": 550,
+    "required_keywords": ["conceptual analysis", "intuitions", "experimental", "progress"],
+    "requires_persona": false,
+    "conclusion_type": "balanced"
+  },
+  "prompt_037_sartre_authenticity": {
+    "min_words": 300,
+    "max_words": 450,
+    "required_keywords": ["existence", "essence", "bad faith", "freedom"],
+    "requires_persona": true,
+    "conclusion_type": "verdict"
+  }
+}

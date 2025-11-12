@@ -1,0 +1,150 @@
+# Production Configuration for Ontologic API
+# ⚠️  SECURITY WARNING: This file contains production settings.
+# - Only production domains are allowed in CORS and trusted hosts
+# - Sensitive values MUST be set via environment variables
+# - Never commit secrets to this file
+
+[models]
+embed_model = "avr/sfr-embedding-mistral"
+splade_model = "naver/splade-cocondenser-ensembledistil"
+#llm = "Granite3.3_CtxAdjust:latest"
+#llm = "Qwen7b_CtxAdjust:latest"
+llm = "qwen3:8b"
+
+[context_window]
+default=8192
+max_context=32000
+
+[llm]
+request_timeout_seconds = 300
+generation_timeout_seconds = 300
+chat_timeout_seconds = 300
+vet_timeout_seconds = 300
+
+[qdrant]
+url = "https://qdrant.ontologicai.com"
+api_key_env = "QDRANT_API_KEY"
+timeout = 60
+retry_attempts = 3
+collections_cache_ttl = 300
+
+# Local Qdrant not typically used in production
+# But configuration available for emergency backup operations
+[qdrant.local]
+url = "http://localhost:6333"
+api_key_env = "LOCAL_QDRANT_API_KEY"
+timeout = 10
+retry_attempts = 1
+
+# OAuth Configuration (optional)
+# All endpoints remain publicly accessible regardless of OAuth settings
+[oauth]
+enabled = false  # Set to true to enable OAuth features
+
+[oauth.providers.google]
+enabled = false
+client_id = ""  # Or set via GOOGLE_CLIENT_ID environment variable
+client_secret = ""  # Or set via GOOGLE_CLIENT_SECRET environment variable
+
+[oauth.providers.discord]
+enabled = false
+client_id = ""  # Or set via DISCORD_CLIENT_ID environment variable
+client_secret = ""  # Or set via DISCORD_CLIENT_SECRET environment variable
+
+[oauth.providers.apple]
+enabled = false
+client_id = ""  # Or set via APPLE_CLIENT_ID environment variable
+client_secret = ""  # Or set via APPLE_CLIENT_SECRET environment variable
+
+# Optional Features
+# These features work with or without OAuth authentication
+[features]
+chat_history = true       # Enable chat history storage
+document_uploads = true   # Enable document upload functionality
+
+# Chat History Configuration - Production
+[chat_history]
+retention_days = 90              # Keep chat history for 90 days in production
+cleanup_batch_size = 1000        # Process 1000 records at a time for cleanup
+vector_upload_batch_size = 50    # Upload 50 vectors at a time to Qdrant
+enable_vector_search = true      # Enable semantic search for chat history
+max_message_length = 10000       # Maximum message length (10KB)
+pagination_default_limit = 50    # Default messages per page
+pagination_max_limit = 200       # Maximum messages per page
+
+# Security Configuration
+# ⚠️  PRODUCTION WARNING: Do NOT use example secrets in production!
+# Set SESSION_SECRET via environment variable with a cryptographically secure value.
+# Generate: python -c "import secrets; print(secrets.token_urlsafe(32))"
+#
+# In production (APP_ENV=prod), SESSION_SECRET MUST be set or startup will fail.
+[security]
+session_secret = ""  # MUST be set via SESSION_SECRET environment variable
+session_timeout_hours = 24
+# CRITICAL: SESSION_SECRET must be set via environment variable in production
+
+# Middleware Configuration - Production
+# ⚠️  PRODUCTION: Only production domains allowed - no localhost
+[middleware.trusted_hosts]
+hosts = ["api.ontologicai.com", "www.ontologicai.com"]
+# Trusted hosts - ONLY production domains (no localhost)
+# Override via TRUSTED_HOSTS environment variable if needed
+
+[middleware.cors]
+origins = ["https://www.ontologicai.com", "https://ontologicai.com"]
+# CORS origins - ONLY HTTPS production domains (no HTTP, no localhost)
+# Override via CORS_ORIGINS environment variable if needed
+methods = ["GET", "POST", "PUT", "DELETE"]
+# Allowed HTTP methods
+headers = ["Content-Type", "Authorization"]
+# Allowed request headers
+credentials = true
+# Allow credentials for authenticated requests
+
+# Logging Configuration - Production
+# For containerized deployments, override via environment variable:
+#   docker run -e APP_LOG_DIR=/var/log/ontologic-api ...
+#   kubernetes: env: - name: APP_LOG_DIR value: /mnt/logs
+# For persistent logging across container restarts, mount a volume:
+#   docker run -v /host/logs:/var/log/ontologic-api -e APP_LOG_DIR=/var/log/ontologic-api ...
+[logging]
+log_dir = "logs"  # Default fallback; override via APP_LOG_DIR in production
+
+# Workflow Configuration
+[workflows]
+section_order = ["abstract", "introduction", "argument", "counterarguments", "conclusion"]
+# Default section order for philosophical papers
+# Override via SECTION_ORDER environment variable if needed
+
+# Payment Configuration (Production)
+# ⚠️  PRODUCTION: Requires live Stripe configuration
+# Set Stripe keys via environment variables:
+#   APP_STRIPE_PUBLISHABLE_KEY=pk_live_...
+#   APP_STRIPE_SECRET_KEY=sk_live_...
+#   APP_STRIPE_WEBHOOK_SECRET=whsec_...
+#   APP_STRIPE_PRICE_BASIC_MONTHLY=price_...
+#   APP_STRIPE_PRICE_PREMIUM_MONTHLY=price_...
+#   APP_STRIPE_PRICE_ACADEMIC_MONTHLY=price_...
+[payments]
+enabled = false  # Set to true via APP_PAYMENTS_ENABLED when ready for production
+grace_period_days = 3  # Standard grace period for production
+
+# Production subscription tier limits (enforced strictly)
+[subscription_tiers.free]
+requests_per_month = 1000  # Standard free tier limit
+
+[subscription_tiers.basic]
+requests_per_month = 10000  # Standard basic tier limit
+
+[subscription_tiers.premium]
+requests_per_month = 100000  # Standard premium tier limit
+
+[subscription_tiers.academic]
+requests_per_month = 50000  # Standard academic tier limit
+
+# Production rate limits (strict enforcement)
+[rate_limits]
+free_requests_per_minute = 10
+basic_requests_per_minute = 60
+premium_requests_per_minute = 300
+academic_requests_per_minute = 180

@@ -1,0 +1,97 @@
+# Production Environment Configuration
+# =====================================
+#
+# This file contains production-specific overrides for the base configuration.
+# Values are automatically flattened when loaded into the Settings class.
+#
+# ⚠️  SECURITY WARNING: This file contains production settings.
+# - Only production domains are allowed in CORS and trusted hosts
+# - Sensitive values MUST be set via environment variables
+# - Never commit secrets to this file
+#
+# Configuration Priority (highest to lowest):
+#   1. Environment variables (APP_* prefix)
+#   2. This file (prod.toml)
+#   3. Base configuration (base.toml)
+#   4. Settings class defaults
+
+# Chat configuration for production
+[chat]
+# Enable PDF context integration in production
+chat_use_pdf_context = true
+# Conservative limit for production to manage token usage
+pdf_context_limit = 3
+
+# Qdrant configuration for production
+[qdrant]
+# Production Qdrant endpoint - MUST be set via APP_QDRANT_URL
+qdrant_url = "https://qdrant.ontologicai.com"
+# API key required in production - MUST be set via APP_QDRANT_API_KEY
+require_api_key = true
+qdrant_api_key = ""  # Set via environment variable
+
+# Document upload configuration for production
+[documents]
+# Enable document uploads in production (requires authentication)
+document_uploads_enabled = true
+# Conservative file size limit for production
+max_upload_size_mb = 25
+
+# JWT configuration for production
+[jwt]
+# Shorter token lifetime for production security
+jwt_lifetime_seconds = 1800  # 30 minutes
+
+[oauth]
+enabled = false
+
+[oauth.providers]
+google = { enabled = false, client_id = "", client_secret = "" }
+discord = { enabled = false, client_id = "", client_secret = "" }
+apple = { enabled = false, client_id = "", client_secret = "" }
+
+[security]
+# MUST be set via APP_SESSION_SECRET environment variable
+session_secret = ""
+
+[logging]
+level = "INFO"
+
+# Response Compression Configuration - Production
+[compression]
+enabled = true
+minimum_size = 1000  # Standard 1KB threshold for production
+
+# Payment Configuration (Production)
+# ⚠️  PRODUCTION: Requires live Stripe configuration
+# Set Stripe keys via environment variables:
+#   APP_STRIPE_PUBLISHABLE_KEY=pk_live_...
+#   APP_STRIPE_SECRET_KEY=sk_live_...
+#   APP_STRIPE_WEBHOOK_SECRET=whsec_...
+#   APP_STRIPE_PRICE_BASIC_MONTHLY=price_...
+#   APP_STRIPE_PRICE_PREMIUM_MONTHLY=price_...
+#   APP_STRIPE_PRICE_ACADEMIC_MONTHLY=price_...
+[payments]
+enabled = false  # Set to true via APP_PAYMENTS_ENABLED when ready for production
+grace_period_days = 3  # Standard grace period for production
+
+# Production subscription tier limits (enforced strictly)
+[subscription_tiers]
+[subscription_tiers.free]
+requests_per_month = 1000  # Standard free tier limit
+
+[subscription_tiers.basic]
+requests_per_month = 10000  # Standard basic tier limit
+
+[subscription_tiers.premium]
+requests_per_month = 100000  # Standard premium tier limit
+
+[subscription_tiers.academic]
+requests_per_month = 50000  # Standard academic tier limit
+
+# Production rate limits (strict enforcement)
+[rate_limits]
+free_requests_per_minute = 10
+basic_requests_per_minute = 60
+premium_requests_per_minute = 300
+academic_requests_per_minute = 180

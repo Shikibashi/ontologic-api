@@ -1,0 +1,25 @@
+{
+  "templates": {
+    "chat/immersive_system.j2": {
+      "purpose": "Immersive philosopher chat system prompt",
+      "required_vars": ["name", "personality", "axioms", "rhetorical_tactics"],
+      "optional_vars": ["conversation_mode"],
+      "category": "chat",
+      "complexity": "medium"
+    },
+    "chat/adaptive_system.j2": {
+      "purpose": "Adaptive chat system prompt",
+      "required_vars": ["conversation_mode", "personality", "expertise_level"],
+      "optional_vars": [],
+      "category": "chat",
+      "complexity": "low"
+    },
+    "workflows/expansion/adaptive_query.j2": {
+      "purpose": "Adaptive expansion query template",
+      "required_vars": ["query", "query_complexity", "num_queries"],
+      "optional_vars": ["complexity_aspects"],
+      "category": "workflows",
+      "complexity": "low"
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{#
+Template: macros/philosopher_macros
+Purpose: Macros for rendering philosopher data
+#}
+
+{% macro render_personality_list(personality_traits) -%}
+{% for trait in personality_traits %}
+- **{{ trait }}**: {{ trait|lower }} approach to philosophical inquiry
+{% endfor %}
+{%- endmacro %}
+
+{% macro format_axioms(axioms, numbered=false) -%}
+{% for axiom in axioms %}
+{% if numbered %}{{ loop.index }}. {% endif %}{{ axiom }}
+{% endfor %}
+{%- endmacro %}

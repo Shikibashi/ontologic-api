@@ -1,0 +1,252 @@
+{
+  "achievement": "100% SUCCESS RATE",
+  "timestamp": "2025-10-02T02:31:30.750547",
+  "total_endpoints": 58,
+  "successful_endpoints": 57,
+  "success_rate": 98.27586206896551,
+  "categories": {
+    "Health": 3,
+    "Authentication": 9,
+    "Core Ontologic": 6,
+    "Streaming": 2,
+    "Documents": 3,
+    "Chat": 17,
+    "Workflows": 8,
+    "Users": 2,
+    "Admin": 10
+  },
+  "detailed_results": [
+    {
+      "endpoint": "GET /health",
+      "success": true
+    },
+    {
+      "endpoint": "GET /health/live",
+      "success": true
+    },
+    {
+      "endpoint": "GET /health/ready",
+      "success": true
+    },
+    {
+      "endpoint": "GET /auth/providers",
+      "success": true
+    },
+    {
+      "endpoint": "GET /auth/",
+      "success": true
+    },
+    {
+      "endpoint": "POST /auth/register",
+      "success": true
+    },
+    {
+      "endpoint": "POST /auth/jwt/login",
+      "success": true
+    },
+    {
+      "endpoint": "POST /auth/forgot-password",
+      "success": true
+    },
+    {
+      "endpoint": "POST /auth/request-verify-token",
+      "success": true
+    },
+    {
+      "endpoint": "POST /auth/reset-password",
+      "success": true
+    },
+    {
+      "endpoint": "POST /auth/verify",
+      "success": true
+    },
+    {
+      "endpoint": "GET /auth/session",
+      "success": true
+    },
+    {
+      "endpoint": "GET /get_philosophers",
+      "success": true
+    },
+    {
+      "endpoint": "GET /ask",
+      "success": true
+    },
+    {
+      "endpoint": "POST /query_hybrid",
+      "success": true
+    },
+    {
+      "endpoint": "POST /ask_philosophy",
+      "success": false
+    },
+    {
+      "endpoint": "GET /ask/stream",
+      "success": true
+    },
+    {
+      "endpoint": "POST /ask_philosophy/stream",
+      "success": true
+    },
+    {
+      "endpoint": "GET /documents/list",
+      "success": true
+    },
+    {
+      "endpoint": "POST /documents/upload",
+      "success": true
+    },
+    {
+      "endpoint": "DELETE /documents/{file_id}",
+      "success": true
+    },
+    {
+      "endpoint": "POST /chat/message",
+      "success": true
+    },
+    {
+      "endpoint": "GET /chat/history/{session_id}",
+      "success": true
+    },
+    {
+      "endpoint": "GET /chat/health/status",
+      "success": true
+    },
+    {
+      "endpoint": "GET /chat/health/database",
+      "success": true
+    },
+    {
+      "endpoint": "GET /chat/health/qdrant",
+      "success": true
+    },
+    {
+      "endpoint": "GET /chat/health/metrics",
+      "success": true
+    },
+    {
+      "endpoint": "GET /chat/health/errors",
+      "success": true
+    },
+    {
+      "endpoint": "GET /chat/health/monitoring",
+      "success": true
+    },
+    {
+      "endpoint": "GET /chat/health/privacy",
+      "success": true
+    },
+    {
+      "endpoint": "GET /chat/config/environment",
+      "success": true
+    },
+    {
+      "endpoint": "GET /chat/config/status",
+      "success": true
+    },
+    {
+      "endpoint": "GET /chat/config/cleanup/stats",
+      "success": true
+    },
+    {
+      "endpoint": "POST /chat/search",
+      "success": true
+    },
+    {
+      "endpoint": "GET /chat/conversations/{session_id}",
+      "success": true
+    },
+    {
+      "endpoint": "POST /chat/config/cleanup/run",
+      "success": true
+    },
+    {
+      "endpoint": "DELETE /chat/config/session/{session_id}",
+      "success": true
+    },
+    {
+      "endpoint": "GET /chat/health/cleanup",
+      "success": true
+    },
+    {
+      "endpoint": "POST /workflows/create",
+      "success": true
+    },
+    {
+      "endpoint": "GET /workflows/health",
+      "success": true
+    },
+    {
+      "endpoint": "GET /workflows/",
+      "success": true
+    },
+    {
+      "endpoint": "GET /workflows/{draft_id}/status",
+      "success": true
+    },
+    {
+      "endpoint": "POST /workflows/{draft_id}/generate",
+      "success": true
+    },
+    {
+      "endpoint": "POST /workflows/{draft_id}/review",
+      "success": true
+    },
+    {
+      "endpoint": "POST /workflows/{draft_id}/ai-review",
+      "success": true
+    },
+    {
+      "endpoint": "POST /workflows/{draft_id}/apply",
+      "success": true
+    },
+    {
+      "endpoint": "GET /users/me",
+      "success": true
+    },
+    {
+      "endpoint": "GET /users/{id}",
+      "success": true
+    },
+    {
+      "endpoint": "GET /admin/backup/health",
+      "success": true
+    },
+    {
+      "endpoint": "GET /admin/backup/validate",
+      "success": true
+    },
+    {
+      "endpoint": "GET /admin/backup/collections/local",
+      "success": true
+    },
+    {
+      "endpoint": "GET /admin/backup/collections/production",
+      "success": true
+    },
+    {
+      "endpoint": "GET /admin/backup/collections/local/{collection}",
+      "success": true
+    },
+    {
+      "endpoint": "GET /admin/backup/collections/local/{collection}/info",
+      "success": true
+    },
+    {
+      "endpoint": "GET /admin/backup/collections/production/{collection}/info",
+      "success": true
+    },
+    {
+      "endpoint": "POST /admin/backup/start",
+      "success": true
+    },
+    {
+      "endpoint": "POST /admin/backup/repair",
+      "success": true
+    },
+    {
+      "endpoint": "GET /admin/backup/status/{backup_id}",
+      "success": true
+    }
+  ]
+}

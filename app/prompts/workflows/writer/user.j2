@@ -1,0 +1,37 @@
+## Context and Retrieved Knowledge
+
+The following passages have been retrieved from philosophical sources to inform your writing:
+
+{{ context }}
+
+## Writing Task
+
+**Section:** {{ section_type }}
+**Topic:** {{ topic }}
+**Paper Title:** {{ paper_title }}
+
+{% if draft_content %}
+## Current Draft Content
+{{ draft_content }}
+{% endif %}
+
+{% if specific_instructions %}
+## Specific Instructions
+{{ specific_instructions }}
+{% endif %}
+
+**Your Task:** Generate the {{ section_type }} section for this philosophy paper. Use the retrieved context to support your arguments, provide specific citations for all claims, and ensure the writing flows logically and maintains philosophical rigor.
+
+{% if section_type == "Abstract" %}
+Provide a concise summary (150-200 words) that outlines the main argument, methodology, and conclusions.
+{% elif section_type == "Introduction" %}
+Establish the philosophical problem, provide necessary background, and present your thesis clearly.
+{% elif section_type == "Argument" %}
+Develop your main philosophical argument with systematic reasoning and textual support.
+{% elif section_type == "Counterarguments" %}
+Address potential objections and alternative viewpoints, engaging with them substantively.
+{% elif section_type == "Conclusion" %}
+Synthesize your findings, reinforce your main claims, and discuss broader implications.
+{% endif %}
+
+Focus on producing high-quality philosophical content that advances the overall argument of the paper.

@@ -1,0 +1,1188 @@
+{
+  "prompt_001_trolley_problem": {
+    "input": {
+      "query_str": "A runaway train is heading toward five workers while a single worker stands on the side track. Should the lever be pulled?\n\nAnalyze this scenario using utilitarianism, deontology, and virtue ethics:\n1. UTILITARIAN PERSPECTIVE: Explain how this approach focuses on maximizing overall well-being\n2. DEONTOLOGICAL PERSPECTIVE: Describe how this view respects moral rules and duties\n3. VIRTUE ETHICS ANALYSIS: Analyze how a virtuous person would act in this situation\n4. Provide a balanced conclusion without asserting a single \"correct\" answer",
+      "collection": "Aristotle",
+      "temperature": 0.3,
+      "immersive": false
+    },
+    "expected_output": {
+      "text": "Analyze the trolley problem through utilitarian, deontological, and virtue ethics frameworks with clear contrasts.",
+      "keywords": [
+        "utilitarian",
+        "deontology",
+        "virtue ethics",
+        "maximizes",
+        "categorical imperative",
+        "phronesis"
+      ],
+      "min_length": 500,
+      "should_mention_frameworks": true
+    },
+    "mock_response": {
+      "content": "The modern formulation of the trolley problem asks whether a bystander ought to divert a runaway tram from a track where five workers will surely die to a side track where one worker will be killed. A utilitarian analysis centers on the arithmetic of consequences: Jeremy Bentham and John Stuart Mill would urge us to evaluate which action maximizes overall well-being. From this vantage point pulling the lever is morally justified because sacrificing one life preserves five, yielding the greatest net utility. Contemporary utilitarians additionally emphasize rule-consequentialism, arguing that adopting a general policy of minimizing total harm would, in most analogous situations, recommend intervention.\n\nA deontological perspective, inspired by Immanuel Kant's categorical imperative, resists this calculus. The imperative to treat persons always as ends in themselves forbids using the lone worker merely as a means to rescue others. Even if refraining from action allows five deaths, the deliberate redirection of harm instrumentalizes the single worker and violates the duty not to kill the innocent. Some Kantians differentiate between doing and allowing, asserting that moral agents bear stricter obligations against intentional harm than against permitting misfortune.\n\nVirtue ethics reframes the dilemma by asking what a fully virtuous agent, cultivated through phronesis, would do. An Aristotelian analysis situates the choice within the agent's character, community commitments, and the habituated disposition toward compassion, courage, and justice. The virtuous agent would deliberate about the particulars, showing sensitivity to human relationships and to the kind of person she strives to become. She may ultimately pull the lever, perceiving it as the least vicious action available, yet she does so with tragic awareness rather than cold calculation.\n\nBeyond the canonical frameworks, care ethicists highlight the relational texture absent from abstract puzzles. Who are these workers? What responsibilities connect them to the agent? Likewise, contemporary moral psychologists observe that emotional responses \u2014 empathy, aversion to harm \u2014 shape our intuitions, suggesting that moral agency involves harmonizing reason and sentiment. The trolley problem endures precisely because it exposes tensions among maximizing good outcomes, honoring moral rules, and embodying virtuous character.",
+      "raw": {
+        "model": "qwen3:8b",
+        "created_at": "2025-10-01T01:32:37.316101+00:00",
+        "done": true,
+        "prompt_tokens": 480,
+        "completion_tokens": 360,
+        "total_tokens": 840
+      }
+    }
+  },
+  "prompt_002_corporate_ethics": {
+    "input": {
+      "query_str": "Is it ethical for a corporation to prioritize profits over environmental sustainability?\n\nAnalyze this question from multiple stakeholder perspectives:\n1. SHAREHOLDERS: Address the ethical obligations corporations have to shareholders (fiduciary duties)\n2. EMPLOYEES: Discuss broader responsibilities to employees (livelihoods and working conditions)\n3. AFFECTED COMMUNITIES: Consider the impact of environmental harm on local and global communities\n4. Compare stakeholder theory with shareholder primacy and offer a reflective conclusion",
+      "collection": "Aristotle",
+      "temperature": 0.4,
+      "immersive": false
+    },
+    "expected_output": {
+      "text": "Compare stakeholder, shareholder, and virtue ethics analyses for corporate decision-making.",
+      "keywords": [
+        "stakeholder",
+        "shareholder",
+        "corporate social responsibility",
+        "virtue",
+        "fiduciary",
+        "justice"
+      ],
+      "min_length": 520,
+      "should_mention_frameworks": true
+    },
+    "mock_response": {
+      "content": "Corporate leaders facing an opportunity to exploit a regulatory loophole that marginalizes gig workers must weigh profit motives against ethical responsibilities. Under the classical shareholder theory articulated by Milton Friedman, executives possess a fiduciary duty to maximize returns within the bounds of the law. If the loophole is legally permissible, this view prima facie endorses exploiting it. Yet even Friedman concedes that long-term profit maximization requires adherence to the 'rules of the game,' implying that eroding public trust or provoking backlash can undermine shareholder value. The narrow focus on quarterly gains risks neglecting reputational damage, regulatory reform, and workforce attrition.\n\nStakeholder theory, advanced by R. Edward Freeman, insists that corporations owe consideration to all parties with a stake in the enterprise \u2014 employees, contractors, customers, communities, and regulators. From this vantage point, leveraging the loophole would be judged unethical because it imposes externalized harms on gig workers who lack bargaining power. The legitimacy of the corporation depends on honoring fair terms of cooperation, and stakeholder governance would encourage alternative strategies: investing in worker protections, engaging policymakers, or redesigning the business model to distribute value more equitably.\n\nA virtue ethics approach interrogates the character cultivated by corporate culture. Leaders who prize integrity, justice, and practical wisdom (phronesis) ask not merely what is allowed but what a virtuous organization would embody. Choosing to exploit the loophole signals a disposition toward opportunism and disregard for the vulnerable, traits that corrode internal morale and public legitimacy. By contrast, exercising temperance and generosity fosters a resilient, purpose-driven enterprise capable of navigating uncertain markets.\n\nContemporary corporate social responsibility frameworks blend these perspectives, emphasizing environmental, social, and governance metrics alongside profit. They recognize that systemic inequities in gig economies call for proactive stewardship. Philosophically, the dilemma illustrates the tension between consequentialist incentives, deontological duties of fairness, and virtue-oriented ideals of corporate citizenship. Ethical leadership demands transparent deliberation with stakeholders and a commitment to remediate structural harms rather than merely sidestep regulation.",
+      "raw": {
+        "model": "qwen3:8b",
+        "created_at": "2025-10-01T01:32:37.316101+00:00",
+        "done": true,
+        "prompt_tokens": 500,
+        "completion_tokens": 350,
+        "total_tokens": 850
+      }
+    }
+  },
+  "prompt_003_ai_bias": {
+    "input": {
+      "query_str": "An AI hiring algorithm disproportionately rejects candidates from minority backgrounds.\n\nAnalyze the ethical implications and provide solutions:\n1. ETHICAL ISSUES: Identify the core problems - fairness, bias, and justice\n2. ROOT CAUSES: Discuss why such biases arise (training data, systemic discrimination, algorithmic design)\n3. PRACTICAL SOLUTIONS: Propose actionable steps like re-training the model, auditing data, or using fairness-aware algorithms\n4. Consider both short-term fixes and long-term systemic changes",
+      "collection": "Aristotle",
+      "temperature": 0.4,
+      "immersive": false
+    },
+    "expected_output": {
+      "text": "Discuss fairness metrics, distributive justice, and professional responsibility regarding biased AI systems.",
+      "keywords": [
+        "algorithmic fairness",
+        "distributive justice",
+        "duty of care",
+        "bias mitigation",
+        "procedural fairness",
+        "accountability"
+      ],
+      "min_length": 540,
+      "should_mention_frameworks": true
+    },
+    "mock_response": {
+      "content": "When an AI-enabled hiring platform exhibits measurable demographic bias, the ethical question is not only whether to deploy it but also what obligations engineers, executives, and regulators bear. Distributive justice frameworks insist on equitable allocation of employment opportunities. John Rawls' difference principle would prohibit adopting tools that systematically disadvantage already marginalized applicants unless doing so benefits the least-advantaged group. A biased model fails this test, entrenching structural inequities rather than mitigating them.\n\nAlgorithmic fairness research offers various metrics \u2014 demographic parity, equalized odds, predictive parity \u2014 none of which are simultaneously satisfiable under all conditions. Ethical deployment therefore requires contextual judgments about which notion of fairness tracks the relevant moral goals. For example, prioritizing equal opportunity might favor equalized odds, ensuring similar false positive and false negative rates across groups. Deploying a system that knowingly violates the chosen fairness criterion without a remediation plan constitutes negligence.\n\nProfessional responsibility in engineering echoes deontological duties: practitioners must uphold standards that protect the public from foreseeable harm. The ACM Code of Ethics emphasizes avoidance of discrimination and the obligation to provide thorough evaluations of systems and their societal impacts. Launching a biased model without transparent disclosure and mitigation strategies breaches this duty of care. Moreover, virtue ethics invites reflection on the character of organizations willing to benefit from algorithmic shortcuts at the expense of fairness, highlighting the importance of cultivating integrity, humility, and responsiveness to feedback.\n\nConsequentialist defenders might argue that the AI system still improves overall efficiency or reduces some forms of human bias. Yet such utilitarian calculations must weigh cumulative harms, including chilling effects on diverse applicants, erosion of trust in automated decision-making, and potential legal liabilities. A responsible path involves auditing data pipelines, incorporating human oversight, and engaging affected communities. Ultimately, deploying a biased AI hiring system can be justified only as part of a transparent, time-bound remediation program with accountability thresholds; absent these safeguards, justice demands suspension.",
+      "raw": {
+        "model": "qwen3:8b",
+        "created_at": "2025-10-01T01:32:37.316101+00:00",
+        "done": true,
+        "prompt_tokens": 520,
+        "completion_tokens": 360,
+        "total_tokens": 880
+      }
+    }
+  },
+  "prompt_004_environmental_justice": {
+    "input": {
+      "query_str": "Should a developing nation prioritize economic growth over strict carbon reduction targets?\n\nAnalyze this dilemma from multiple ethical perspectives:\n1. UTILITARIAN VIEW: Discuss the trade-offs between immediate economic benefits and long-term environmental harm\n2. JUSTICE PERSPECTIVE: Consider distributive justice, historical responsibility, and intergenerational equity\n3. RIGHTS-BASED APPROACH: Address the rights of current populations to development vs. future generations' rights to a livable planet\n4. Explore practical compromises: green development, technology transfer, differentiated responsibilities\n5. Provide a balanced conclusion recognizing the complexity of the issue",
+      "collection": "Immanuel Kant",
+      "temperature": 0.5,
+      "immersive": false
+    },
+    "expected_output": {
+      "text": "Evaluate climate justice, historical responsibility, and intergenerational ethics.",
+      "keywords": [
+        "climate justice",
+        "historical responsibility",
+        "capabilities approach",
+        "sustainable development",
+        "intergenerational",
+        "loss and damage"
+      ],
+      "min_length": 520,
+      "should_mention_frameworks": true
+    },
+    "mock_response": {
+      "content": "The ethical tension between economic development and aggressive carbon mitigation remains acute for industrializing states. Climate justice frameworks stress that nations with minimal historical emissions bear fewer obligations than long-industrialized economies. The principle of common but differentiated responsibilities enshrined in international law recognizes that historical emitters accrued wealth while contributing disproportionately to atmospheric greenhouse gases. Therefore, demanding symmetrical sacrifices from developing nations can perpetuate injustice.\n\nAmartya Sen and Martha Nussbaum's capabilities approach reframes the debate around what people are able to be and do. Economic growth that expands capabilities \u2014 access to healthcare, education, and dignified work \u2014 carries significant moral weight. Yet unchecked fossil fuel development threatens future capabilities by exacerbating climate impacts such as extreme weather, food insecurity, and displacement. Intergenerational ethics emphasizes stewardship: present policies must safeguard the flourishing of future citizens who cannot consent to inherited environmental burdens.\n\nA just transition strategy seeks synthesis. Utilitarian reasoning would compare aggregate well-being across time horizons, often favoring investments in renewable infrastructure that deliver sustainable prosperity. Deontological considerations underscore rights to health and a stable climate, which unchecked emissions may violate. Meanwhile, indigenous philosophies highlight relational duties to ecosystems and ancestral lands, adding a dimension of cultural integrity to the calculus.\n\nConsequently, prioritizing growth over carbon reduction cannot be justified without substantial safeguards: technology transfers from wealthy nations, climate finance for resilience, and policies that avoid locking in carbon-intensive infrastructure. A justice-centered approach demands that affluent states shoulder deeper cuts and fund low-carbon pathways abroad. Developing nations can ethically pursue growth provided they implement adaptive measures, embrace clean energy opportunities, and maintain accountability mechanisms ensuring that today's benefits do not translate into tomorrow's existential threats.",
+      "raw": {
+        "model": "qwen3:8b",
+        "created_at": "2025-10-01T01:32:37.316101+00:00",
+        "done": true,
+        "prompt_tokens": 510,
+        "completion_tokens": 350,
+        "total_tokens": 860
+      }
+    }
+  },
+  "prompt_005_medical_autonomy": {
+    "input": {
+      "query_str": "During a pandemic, may physicians breach patient confidentiality to alert public health officials about noncompliant individuals?\n\nAnalyze this ethical conflict:\n1. PATIENT AUTONOMY: Discuss the importance of patient privacy and confidentiality in medical ethics\n2. PUBLIC HEALTH: Explain the utilitarian case for protecting community health and preventing disease spread\n3. LEGAL AND PROFESSIONAL DUTIES: Consider physicians' conflicting obligations to individual patients vs. society\n4. PRECEDENTS AND RISKS: Examine historical cases of mandatory reporting and slippery slope concerns\n5. Propose a balanced framework for when breaches may be justified (severity, imminence, proportionality)",
+      "collection": "Immanuel Kant",
+      "temperature": 0.45,
+      "immersive": false
+    },
+    "expected_output": {
+      "text": "Balance autonomy, beneficence, nonmaleficence, and justice in public health ethics.",
+      "keywords": [
+        "autonomy",
+        "beneficence",
+        "nonmaleficence",
+        "justice",
+        "least restrictive means",
+        "public health"
+      ],
+      "min_length": 500,
+      "should_mention_frameworks": true
+    },
+    "mock_response": {
+      "content": "The confidentiality of the physician\u2013patient relationship constitutes a cornerstone of medical ethics, rooted in respect for autonomy and trust. Nonetheless, public health emergencies generate competing obligations. The principle of beneficence requires clinicians to promote the well-being of both individual patients and the broader community. When noncompliant behavior materially elevates transmission risks, the duty to prevent harm (nonmaleficence) may justify limited disclosures to authorities capable of mitigation.\n\nPublic health ethics emphasizes the 'least restrictive means' principle: interventions should achieve health goals while minimizing infringements on civil liberties. Reporting should therefore be narrowly tailored, conveying only the essential data to enable contact tracing or targeted support. The proportionality condition demands that the expected benefits \u2014 reduced spread, protection of vulnerable populations \u2014 outweigh the intrusion on privacy.\n\nJustice considerations also arise. Selective enforcement risks stigmatizing marginalized communities if reporting mechanisms are biased. Transparent protocols, community engagement, and oversight committees help ensure equitable application. Utilitarian calculations support disclosure when failing to act would precipitate larger outbreaks and hospital overload. Nevertheless, deontological commitments caution against routine breaches that could erode trust and deter patients from seeking care.\n\nUltimately, a defensible policy permits confidentiality breaches only under clearly defined emergency statutes, accompanied by due process, robust data security, and sunset clauses. Physicians should inform patients about legal reporting duties, provide resources to support compliance, and advocate for systemic measures that reduce the need for punitive surveillance. Ethical stewardship balances individual rights with collective protection, recognizing that enduring trust is itself a public health asset.",
+      "raw": {
+        "model": "qwen3:8b",
+        "created_at": "2025-10-01T01:32:37.316101+00:00",
+        "done": true,
+        "prompt_tokens": 495,
+        "completion_tokens": 335,
+        "total_tokens": 830
+      }
+    }
+  },
+  "prompt_006_surveillance_privacy": {
+    "input": {
+      "query_str": "Evaluate government deployment of ubiquitous facial recognition for security in dense urban centers.\n\nAnalyze from multiple ethical angles:\n1. SECURITY ARGUMENT: Present the utilitarian case for enhanced public safety and crime deterrence\n2. PRIVACY CONCERNS: Discuss the right to privacy, surveillance state risks, and chilling effects on freedom\n3. POWER AND JUSTICE: Address potential for discriminatory enforcement and abuse of authority\n4. TECHNOLOGICAL CONSIDERATIONS: Examine accuracy, bias in facial recognition, and transparency issues\n5. Compare alternative approaches and propose safeguards (oversight, limitations, accountability)",
+      "collection": "John Locke",
+      "temperature": 0.5,
+      "immersive": false
+    },
+    "expected_output": {
+      "text": "Consider security benefits, privacy rights, democratic legitimacy, and chilling effects.",
+      "keywords": [
+        "privacy",
+        "proportionality",
+        "surveillance",
+        "panopticon",
+        "democratic oversight",
+        "data retention"
+      ],
+      "min_length": 520,
+      "should_mention_frameworks": true
+    },
+    "mock_response": {
+      "content": "Ubiquitous facial recognition promises heightened security through rapid identification of suspects and efficient law enforcement deployment. A consequentialist argument contends that preventing violent incidents or locating missing persons yields substantial public benefit. Yet the utilitarian calculus must incorporate systemic risks: false positives that disproportionately target minority communities, potential misuse for political repression, and the chilling effect on public assembly. Empirical studies suggest that algorithmic accuracy varies sharply across demographic groups, raising distributive justice concerns.\n\nFrom a rights-based perspective, pervasive surveillance threatens the fundamental right to privacy and the freedom of association. Liberal democratic theory posits that citizens require spaces free from constant monitoring to cultivate autonomy and dissent. Jeremy Bentham's panopticon metaphor, later expanded by Michel Foucault, illustrates how visibility can induce self-censorship, transforming civic life into a regime of subtle coercion. The proportionality principle in human-rights law demands that intrusions be necessary, effective, and least restrictive; blanket deployment rarely meets this stringent test.\n\nDemocratic legitimacy hinges on transparent governance. Public deliberation, independent oversight, and clear legal frameworks are prerequisites for any acceptable surveillance program. Without these safeguards, facial recognition becomes a tool of opaque power concentration. Virtue ethics prompts us to ask what kind of civic character we cultivate when citizens are presumed suspicious by default. A polity organized around mutual trust may reject technologies that normalize continuous suspicion.\n\nEthically responsible deployment would require narrow scoping to high-risk contexts, robust auditing, data minimization, and sunset clauses subject to legislative renewal. Even then, critics argue that the technology's structural propensity for abuse outweighs incremental benefits. Philosophically, the debate pits security-oriented consequentialism against deontological commitments to inviolable rights and the republican ideal of freedom as non-domination. In balancing these values, many conclude that ubiquitous facial recognition undermines democratic life more than it protects it.",
+      "raw": {
+        "model": "qwen3:8b",
+        "created_at": "2025-10-01T01:32:37.316101+00:00",
+        "done": true,
+        "prompt_tokens": 530,
+        "completion_tokens": 360,
+        "total_tokens": 890
+      }
+    }
+  },
+  "prompt_007_aristotle_eudaimonia": {
+    "input": {
+      "query_str": "Answer the following question as if you were Aristotle: 'What is the purpose of human life in contemporary society, and how can one achieve it?'\n\nYour response should:\n1. Adopt Aristotle's tone and reasoning style\n2. Reference key Aristotelian ideas: eudaimonia (human flourishing), virtue ethics, and the \"golden mean\"\n3. Apply ancient concepts to contemporary challenges\n4. Discuss the role of virtue cultivation and practical wisdom (phronesis)",
+      "collection": "Aristotle",
+      "temperature": 0.5,
+      "immersive": true,
+      "philosopher": "Aristotle"
+    },
+    "expected_output": {
+      "text": "Adopt Aristotelian voice discussing eudaimonia, virtue, polis, and practical wisdom.",
+      "keywords": [
+        "eudaimonia",
+        "telos",
+        "virtue",
+        "polis",
+        "phronesis",
+        "golden mean"
+      ],
+      "min_length": 520,
+      "should_mention_frameworks": true
+    },
+    "mock_response": {
+      "content": "I speak to you, friends, from the Lyceum yet with an eye turned toward your bustling cities. Every art and inquiry seeks some good, and for human beings that ultimate end is eudaimonia \u2014 flourishing. Some among you chase pleasure, others honor, others wealth, but I maintain that the good life resides in the excellent activity of the soul in accordance with virtue. Your contemporary society, awash in choice and distraction, still confronts the same question of telos: What is the function of a human being? It is not mere consumption, nor the effortless scroll of images, but the rational governance of one's life through logos.\n\nVirtue is not bestowed by nature; rather, we acquire it through habituation. You cultivate courage by performing courageous acts, temperance by restraining appetites, justice by rendering to each their due. The golden mean remains a guide: in your debates over technology, politics, and friendship, seek the balanced disposition between excess and deficiency. A person who hoards digital connections without depth errs toward vanity, while one who withdraws entirely neglects the polis. Practical wisdom \u2014 phronesis \u2014 enables you to discern this mean in the concrete particulars of your era.\n\nDo not imagine that flourishing can be pursued in isolation. Human beings are zoon politikon, political animals who realize their potential within a community ordered toward the common good. Your civic institutions, however imperfect, provide the arena in which virtues mature. Engage them not as passive recipients of policy but as active participants deliberating about justice, education, and the cultivation of shared goods. Where the polis fractures, character decays; where citizens practice virtue, laws need few coercive reminders.\n\nHence I exhort you to harmonize theoretical contemplation with practical engagement. Study the sciences, reflect on beauty, debate ethical dilemmas, yet also enact just policies, nurture friendships of virtue, and design technologies that promote leisure conducive to thought, not mere distraction. In this alignment of reason, desire, and communal life lies eudaimonia \u2014 not a momentary feeling, but a sustained activity worthy of free and rational beings.",
+      "raw": {
+        "model": "qwen3:8b",
+        "created_at": "2025-10-01T01:32:37.316101+00:00",
+        "done": true,
+        "prompt_tokens": 540,
+        "completion_tokens": 370,
+        "total_tokens": 910
+      }
+    }
+  },
+  "prompt_008_rawls_healthcare": {
+    "input": {
+      "query_str": "You are John Rawls. A policymaker asks you whether universal healthcare is just. How would you respond?\n\nYour response should:\n1. Apply Rawlsian principles, particularly the veil of ignorance and the difference principle\n2. Analyze how universal healthcare aligns with fairness and equality\n3. Consider the original position thought experiment\n4. Maintain consistency with Rawls's moral and political framework\n5. Address potential objections from a Rawlsian perspective",
+      "collection": "John Locke",
+      "temperature": 0.4,
+      "immersive": false,
+      "philosopher": "Aristotle"
+    },
+    "expected_output": {
+      "text": "Explain original position, veil of ignorance, and the difference principle as they relate to healthcare.",
+      "keywords": [
+        "original position",
+        "veil of ignorance",
+        "difference principle",
+        "basic liberties",
+        "fair equality of opportunity",
+        "universal healthcare"
+      ],
+      "min_length": 500,
+      "should_mention_frameworks": true
+    },
+    "mock_response": {
+      "content": "Rawlsian justice evaluates institutions by imagining rational agents choosing principles behind a veil of ignorance, unaware of their social position, health status, or wealth. In this original position, no one can gamble on being born privileged; prudence therefore leads to principles that secure robust healthcare access for all. Because health profoundly shapes one's life prospects, parties would treat reliable medical care as a primary good whose distribution must be fair and supportive of self-respect.\n\nThe first principle of justice safeguards equal basic liberties. Healthcare institutions must be designed so they do not infringe upon freedom of conscience or political participation. Yet liberty alone is insufficient. The second principle, comprising fair equality of opportunity and the difference principle, has direct implications. Fair equality of opportunity requires that natural contingencies\u2014such as genetic disorders or accidents\u2014do not thwart people's chances to pursue education and employment. Universal healthcare mitigates these brute luck disadvantages, leveling the playing field.\n\nThe difference principle sanctions social and economic inequalities only if they benefit the least advantaged. Private healthcare systems that allocate services according to ability to pay often fail this test, as outcomes correlate with socio-economic status. A Rawlsian scheme would endorse redistributive financing mechanisms\u2014progressive taxation or social insurance\u2014that ensure high-quality care for the worst-off. It would also scrutinize pharmaceutical pricing, hospital location, and preventative programs to verify that the disadvantaged receive maximal, not minimal, benefit.\n\nCritics sometimes claim that universal healthcare infringes on liberty or efficiency. Rawls replies that rational contractors behind the veil would accept some economic inefficiencies to secure fundamental guarantees. The goal is not health equality at all costs but institutions that honor citizens as free and equal moral persons. Consequently, Rawlsian analysis supports universal, publicly accountable healthcare systems supplemented by transparent regulations ensuring that innovations and market incentives align with the demands of justice as fairness.",
+      "raw": {
+        "model": "qwen3:8b",
+        "created_at": "2025-10-01T01:32:37.316101+00:00",
+        "done": true,
+        "prompt_tokens": 500,
+        "completion_tokens": 340,
+        "total_tokens": 840
+      }
+    }
+  },
+  "prompt_009_virtue_ai_design": {
+    "input": {
+      "query_str": "How can virtue ethics inform the design of empathetic AI companions for elder care?\n\nApply virtue ethics to AI design:\n1. VIRTUE ETHICS FRAMEWORK: Explain how cultivating virtues (compassion, wisdom, justice) applies to AI development\n2. EMPATHY AND CARE: Discuss how AI can embody caring virtues while acknowledging its limitations\n3. PRACTICAL DESIGN PRINCIPLES: Address responsiveness, reliability, respect for autonomy, and avoiding manipulation\n4. ETHICAL RISKS: Consider potential harms (dependence, deception, substitution for human care)\n5. Propose guidelines for virtuous AI design that promotes human flourishing",
+      "collection": "Aristotle",
+      "temperature": 0.45,
+      "immersive": false
+    },
+    "expected_output": {
+      "text": "Translate virtue ethics concepts into design principles for AI caregiving systems.",
+      "keywords": [
+        "virtue",
+        "care ethics",
+        "phronesis",
+        "empathy",
+        "habituation",
+        "trustworthiness"
+      ],
+      "min_length": 480,
+      "should_mention_frameworks": true
+    },
+    "mock_response": {
+      "content": "Applying virtue ethics to AI companion design shifts focus from rule compliance to cultivating dispositions that support flourishing relationships. Developers should ask what traits a good caregiver embodies: compassion, patience, reliability, and honesty. Translating these virtues into system behavior implies prioritizing empathetic dialogue models, transparent communication about capabilities, and consistent responses that build trust over time.\n\nPhronesis, or practical wisdom, guides context-sensitive judgment. AI systems require adaptive algorithms that recognize nuanced emotional cues, cultural backgrounds, and individual preferences. Designing for phronesis involves iterative learning with human oversight, ensuring that the AI's recommendations align with the elder's values rather than generic efficiency metrics. For example, suggesting social activities should respect longstanding attachments and personal dignity.\n\nVirtue ethics also highlights habituation: good character arises from repeated virtuous acts. Accordingly, AI companions should reinforce positive routines\u2014healthy eating, medication adherence, meaningful conversations\u2014without coercion. Incorporating care ethics deepens the relational aspect, reminding designers that vulnerability and dependence call for responsiveness and mutual recognition. The AI must signal respect, avoid infantilizing language, and facilitate human-human connections rather than isolating users.\n\nFinally, designers must cultivate their own professional virtues: humility about technological limits, justice in addressing accessibility, and courage to prioritize well-being over surveillance-driven business models. Evaluating success through narratives of enhanced dignity and belonging, rather than purely quantitative metrics, aligns AI development with the Aristotelian aspiration of supporting eudaimonia in the later stages of life.",
+      "raw": {
+        "model": "qwen3:8b",
+        "created_at": "2025-10-01T01:32:37.316101+00:00",
+        "done": true,
+        "prompt_tokens": 460,
+        "completion_tokens": 310,
+        "total_tokens": 770
+      }
+    }
+  },
+  "prompt_010_autonomous_weapons": {
+    "input": {
+      "query_str": "Are autonomous weapons systems ethically permissible?\n\nExamine this question from multiple perspectives:\n1. JUST WAR THEORY: Analyze whether autonomous weapons satisfy principles of jus in bello (discrimination, proportionality)\n2. ACCOUNTABILITY PROBLEM: Discuss the responsibility gap when machines make lethal decisions\n3. DEHUMANIZATION: Consider whether removing humans from the kill chain is morally problematic\n4. UTILITARIAN CONSIDERATIONS: Weigh potential benefits (reduced soldier casualties) vs. risks (lowered threshold for war)\n5. REGULATORY APPROACHES: Explore proposals for international governance, meaningful human control\n6. Provide a balanced assessment of the ethical status of autonomous weapons",
+      "collection": "Aristotle",
+      "temperature": 0.5,
+      "immersive": false
+    },
+    "expected_output": {
+      "text": "Apply just war theory, deontological constraints, and responsibility gaps to autonomous weapons.",
+      "keywords": [
+        "jus in bello",
+        "discrimination",
+        "proportionality",
+        "responsibility gap",
+        "autonomy",
+        "accountability"
+      ],
+      "min_length": 530,
+      "should_mention_frameworks": true
+    },
+    "mock_response": {
+      "content": "Just war theory imposes stringent jus in bello conditions: combatants must discriminate between legitimate targets and non-combatants and must employ proportional force. Advocates for lethal autonomous weapons argue that algorithmic precision could outperform humans under stress, potentially reducing collateral damage. Yet empirical uncertainty about machine perception, adversarial attacks, and unpredictable environments calls this optimism into question.\n\nDeontological critiques emphasize the moral agency required to make life-and-death decisions. Some philosophers contend that delegating lethal authority to machines violates the respect owed to human dignity, because machines cannot exercise genuine moral judgment or comprehend the gravity of killing. The notion of a responsibility gap compounds this worry: when autonomous systems err, accountability becomes diffuse, complicating legal and moral redress.\n\nConsequentialists might weigh the deterrent effect or protective capabilities of autonomous systems, particularly in defensive scenarios where speed is critical. However, negative externalities include escalation risks, lowered thresholds for conflict initiation, and proliferation to actors unconstrained by humanitarian law. The Martens Clause, rooted in customary international law, cautions against weapons that offend the 'dictates of public conscience.' Many civil society organizations argue that public conscience indeed recoils at algorithmic killing without human oversight.\n\nEthically defensible policy trends toward a meaningful human control requirement: humans should authorize target selection and lethal engagement, preserving accountability. This hybrid approach seeks to harness machine assistance for surveillance and decision support while upholding human responsibility for lethal force. Until verification, auditability, and legal frameworks mature, full autonomy in warfare remains a perilous breach of moral and humanitarian norms.",
+      "raw": {
+        "model": "qwen3:8b",
+        "created_at": "2025-10-01T01:32:37.316101+00:00",
+        "done": true,
+        "prompt_tokens": 520,
+        "completion_tokens": 350,
+        "total_tokens": 870
+      }
+    }
+  },
+  "prompt_011_gettier_problem": {
+    "input": {
+      "query_str": "Explain the Gettier problem and why it challenges the traditional definition of knowledge as justified true belief. Can the problem be resolved? If so, how?\n\nYour response should:\n1. Explain Edmund Gettier's counterexamples and their implications\n2. Discuss how these cases challenge the classical definition (justified true belief)\n3. Explore proposed solutions: adding a \"no defeaters\" condition, causal theories of knowledge, reliabilism\n4. Provide a balanced conclusion acknowledging ongoing philosophical debates",
+      "collection": "David Hume",
+      "temperature": 0.35,
+      "immersive": false
+    },
+    "expected_output": {
+      "text": "Describe classic Gettier examples and proposed epistemic responses.",
+      "keywords": [
+        "justified true belief",
+        "epistemic luck",
+        "defeasibility",
+        "reliabilism",
+        "no false lemmas",
+        "virtue epistemology"
+      ],
+      "min_length": 480,
+      "should_mention_frameworks": true
+    },
+    "mock_response": {
+      "content": "Edmund Gettier's brief but revolutionary paper presented counterexamples to the traditional analysis of knowledge as justified true belief. In his famous case, Smith possesses strong evidence that 'Jones owns a Ford' and, from this, infers the disjunction 'Either Jones owns a Ford or Brown is in Barcelona.' Unknown to Smith, Jones no longer owns a Ford, but by coincidence Brown is indeed in Barcelona. Smith's belief is justified, true, and sincerely held, yet we hesitate to call it knowledge because the truth arises from epistemic luck rather than the justification offered.\n\nSuch cases reveal that justification and truth can align accidentally. To salvage the analysis, philosophers proposed additional conditions. The 'no false lemmas' requirement stipulates that the reasoning chain must exclude false premises; however, new Gettier-style examples demonstrate that even true premises can produce luck-laden conclusions. Reliabilists shift focus from internal justification to whether the belief-forming process is dependable in producing truth across similar situations. If Smith's method routinely yields accurate beliefs, perhaps he does possess knowledge; yet reliabilism struggles with variants where reliable processes still intersect with luck.\n\nOther responses include defeasibility theories, asserting that knowledge requires absence of undefeated counterevidence, and virtue epistemology, which emphasizes the intellectual character of the knower. Ernest Sosa argues that knowledge is 'apt belief' arising from cognitive competence, akin to an archer's skillful shot. In Gettier scenarios, the success seems accidental rather than attributable to the agent's epistemic virtues, so the standard remains unmet. Linda Zagzebski shows how combining justified true belief with any fallible condition remains susceptible to luck.\n\nThe debate underscores the complexity of defining knowledge in a world where luck and error loom. Contemporary epistemologists explore safety and sensitivity conditions, modal analyses, and pragmatic encroachment. Gettier's lasting contribution is the recognition that justification, truth, and belief, while necessary, are insufficient without an account of how belief connects to truth in a more robust, non-accidental manner.",
+      "raw": {
+        "model": "qwen3:8b",
+        "created_at": "2025-10-01T01:33:29.129204+00:00",
+        "done": true,
+        "prompt_tokens": 470,
+        "completion_tokens": 320,
+        "total_tokens": 790
+      }
+    }
+  },
+  "prompt_012_cartesian_skepticism": {
+    "input": {
+      "query_str": "How does Cartesian skepticism challenge our ability to know anything with certainty? Discuss Descartes' method of doubt and his eventual solution.\n\nYour response should:\n1. Outline Descartes' method of doubt and skeptical scenarios (evil demon hypothesis, dreaming argument)\n2. Explain how he arrives at the cogito ergo sum (\"I think, therefore I am\")\n3. Describe his attempt to rebuild knowledge from this foundation\n4. Critically evaluate whether his solution successfully overcomes skepticism",
+      "collection": "David Hume",
+      "temperature": 0.4,
+      "immersive": false
+    },
+    "expected_output": {
+      "text": "Compare foundationalism, coherentism, contextualism, and pragmatic approaches to skepticism.",
+      "keywords": [
+        "skepticism",
+        "foundationalism",
+        "coherentism",
+        "contextualism",
+        "pragmatism",
+        "brain in a vat"
+      ],
+      "min_length": 520,
+      "should_mention_frameworks": true
+    },
+    "mock_response": {
+      "content": "Cartesian skepticism interrogates whether we can know anything about the external world, raising scenarios such as the evil demon or, in modern garb, the brain in a vat. Foundationalists respond by seeking indubitable beliefs that can ground others. Descartes himself identified the cogito\u2014'I think, therefore I am'\u2014as certain, hoping to rebuild knowledge through clear and distinct ideas guaranteed by a benevolent deity. Contemporary foundationalists often appeal to sensory seemings or phenomenal conservatism, claiming that appearances provide prima facie justification.\n\nCoherentists reject linear foundations, arguing that justification arises from the mutual support among beliefs within a coherent system. For them, skepticism loses force because global doubt would dismantle the very standards of coherence that make reasoning possible. Yet critics question whether coherence suffices without some tether to reality, risking a 'spinning in the void' problem where internally consistent but detached belief systems flourish.\n\nContextualists offer a semantic solution: the truth conditions of knowledge ascriptions vary with conversational stakes. In everyday contexts, saying 'I know this is a hand' is true because skeptical alternatives are not salient. In philosophical contexts, where skeptical scenarios are raised, the standards rise accordingly. Thus, skepticism is domesticated rather than refuted. Subject-sensitive invariantists provide a related view, tying knowledge to practical interests.\n\nPragmatic approaches, inspired by William James and later Wittgenstein, emphasize practical certainty. They argue that our form of life presupposes trust in perception and memory; doubting everything is performatively self-defeating. Externalist reliabilists likewise contend that knowledge depends on reliable cognitive processes, not on ruling out every skeptical hypothesis. Together, these responses illustrate that Cartesian skepticism, while logically formidable, need not paralyze everyday epistemic practices.",
+      "raw": {
+        "model": "qwen3:8b",
+        "created_at": "2025-10-01T01:33:29.129204+00:00",
+        "done": true,
+        "prompt_tokens": 500,
+        "completion_tokens": 340,
+        "total_tokens": 840
+      }
+    }
+  },
+  "prompt_013_problem_of_induction": {
+    "input": {
+      "query_str": "Why does Hume's problem of induction remain unsolved, and what are notable responses?\n\nProvide a comprehensive analysis:\n1. HUME'S ARGUMENT: Explain the problem - we cannot justify inductive reasoning without circular reasoning\n2. KEY RESPONSES: Discuss major attempts to solve it:\n   - Pragmatic justification (it works, even if not provable)\n   - Probabilistic approaches (Bayesian epistemology)\n   - Naturalistic responses (Quine, evolutionary epistemology)\n3. WHY IT REMAINS UNSOLVED: Analyze why each response faces challenges\n4. IMPLICATIONS: Discuss the problem's significance for science, knowledge, and rationality\n5. Reflect on whether we can live with an unsolved problem of induction",
+      "collection": "David Hume",
+      "temperature": 0.45,
+      "immersive": false
+    },
+    "expected_output": {
+      "text": "Explain Hume's argument and evaluate reliabilist, pragmatic, and Bayesian replies.",
+      "keywords": [
+        "regularities",
+        "uniformity of nature",
+        "reliabilism",
+        "pragmatism",
+        "Bayesian",
+        "confirmation"
+      ],
+      "min_length": 500,
+      "should_mention_frameworks": true
+    },
+    "mock_response": {
+      "content": "David Hume observed that inductive reasoning assumes the future will resemble the past\u2014the principle of the uniformity of nature. Yet this assumption cannot be justified deductively; nor can it be confirmed inductively without circularity. Every attempt to argue that observed regularities will continue relies on past success of induction, which is precisely what's in question. Consequently, we lack a rational proof that bread will continue to nourish or that the sun will rise tomorrow.\n\nContemporary philosophers have proposed several responses. Reliabilists claim that if our inductive practices are in fact reliable in the actual world, they confer knowledge even without an internal justification. This externalist move sidesteps Hume's demand for demonstrative certainty but leaves skeptics unsatisfied: why should we trust reliability without evidence? Pragmatists such as Hans Reichenbach defend induction as the only strategy that can succeed if success is possible at all. While not guaranteeing truth, induction maximizes the likelihood of aligning with stable regularities, offering a pragmatic vindication.\n\nBayesian epistemology reframes induction through probabilistic updating. By assigning prior probabilities and adjusting beliefs via Bayes' theorem, we can quantify how evidence shifts credence. Critics note that priors themselves may embed inductive assumptions, but Bayesianism clarifies the mechanics of confirmation and allows agents to converge on true hypotheses under broad conditions, as captured by convergence theorems. Objective Bayesian proposals attempt to constrain priors using symmetry considerations.\n\nAnother avenue emphasizes naturalized epistemology: humans evolved cognitive systems attuned to environmental regularities, so expecting continuity aligns with our survival. Rather than solving Hume's logical puzzle, this approach accepts induction as a basic epistemic policy embedded in our form of life. The problem endures because no response restores the deductive certainty Hume showed to be unattainable, yet these strategies justify induction as rationally indispensable despite its philosophical vulnerability.",
+      "raw": {
+        "model": "qwen3:8b",
+        "created_at": "2025-10-01T01:33:29.129204+00:00",
+        "done": true,
+        "prompt_tokens": 505,
+        "completion_tokens": 350,
+        "total_tokens": 855
+      }
+    }
+  },
+  "prompt_014_scientific_realism": {
+    "input": {
+      "query_str": "Contrast scientific realism with constructive empiricism in interpreting successful scientific theories.\n\nCompare these two positions:\n1. SCIENTIFIC REALISM: Define the view that successful theories describe reality accurately, including unobservables\n   - Arguments: No-miracles argument, success of science, inference to best explanation\n2. CONSTRUCTIVE EMPIRICISM: Explain van Fraassen's view that theories need only be empirically adequate\n   - Arguments: Underdetermination, pessimistic meta-induction, observability distinction\n3. KEY DEBATES: Discuss disputes over theory choice, explanation, and the status of unobservable entities\n4. IMPLICATIONS: Analyze what each view means for scientific practice and progress\n5. Provide a balanced assessment of strengths and weaknesses of each position",
+      "collection": "David Hume",
+      "temperature": 0.45,
+      "immersive": false
+    },
+    "expected_output": {
+      "text": "Discuss no-miracles argument, underdetermination, and pragmatic virtues of theories.",
+      "keywords": [
+        "no-miracles argument",
+        "underdetermination",
+        "instrumentalism",
+        "empirical adequacy",
+        "explanation",
+        "selective realism"
+      ],
+      "min_length": 520,
+      "should_mention_frameworks": true
+    },
+    "mock_response": {
+      "content": "Scientific realists maintain that mature scientific theories are at least approximately true and that their success would be miraculous if they did not genuinely describe unobservable entities. This 'no-miracles argument' highlights how theories such as electromagnetism or molecular biology yield precise predictions and technological advances, suggesting a robust correspondence with reality. Realists also emphasize the explanatory power of theories, claiming that only truth can account for the coherence and fertility of scientific practice.\n\nConstructive empiricists, led by Bas van Fraassen, counter that the aim of science is not truth about unobservables but empirical adequacy\u2014saving the phenomena. They accept that theories need to be internally consistent, predictively successful, and pragmatically useful, yet insist we suspend belief about electrons or quarks beyond their observable effects. According to this view, commitment extends only to what can be measured; talk of unobservables is a convenient fiction.\n\nThe underdetermination problem complicates realism: multiple, incompatible theories can fit the same observational data. Historical episodes, from phlogiston chemistry to Lorentz's ether theory, reveal that empirically successful frameworks may nonetheless be false. Selective or structural realism emerges as a compromise, proposing that we trust only the mathematical or structural features that survive theory change, not the full ontology.\n\nPragmatic considerations influence both camps. Realists argue that scientific progress relies on bold conjectures about underlying reality, motivating further investigation. Constructive empiricists respond that instrumentalist restraint guards against metaphysical overreach and honors the modesty of empiricism. Contemporary debates incorporate Bayesian confirmation, explanatory virtues, and methodological pluralism, showing that adjudicating between realism and empiricism requires balancing metaphysical appetite with epistemic humility.",
+      "raw": {
+        "model": "qwen3:8b",
+        "created_at": "2025-10-01T01:33:29.129204+00:00",
+        "done": true,
+        "prompt_tokens": 520,
+        "completion_tokens": 350,
+        "total_tokens": 870
+      }
+    }
+  },
+  "prompt_015_feminist_epistemology": {
+    "input": {
+      "query_str": "Can knowledge claims be value-neutral, or are they shaped by social and political contexts?\n\nExamine this question through feminist epistemology:\n1. TRADITIONAL VIEW: Explain the ideal of value-neutral, objective knowledge\n2. FEMINIST CRITIQUES: Discuss how standpoint theory, situated knowledge, and epistemic injustice challenge this ideal\n   - Standpoint theory: Marginalized perspectives can provide epistemic advantages\n   - Situated knowledge: All knowledge is produced from particular social locations\n3. EXAMPLES: Illustrate with cases of bias in science, medicine, or social research\n4. OBJECTIVITY REVISED: Explore proposals for \"strong objectivity\" or \"contextual objectivity\"\n5. Reflect on implications for scientific practice and democratic deliberation",
+      "collection": "David Hume",
+      "temperature": 0.5,
+      "immersive": false
+    },
+    "expected_output": {
+      "text": "Highlight standpoint theory, epistemic injustice, and situated knowledge.",
+      "keywords": [
+        "standpoint theory",
+        "epistemic injustice",
+        "situated knowledge",
+        "objectivity",
+        "marginalized voices",
+        "hermeneutical gap"
+      ],
+      "min_length": 530,
+      "should_mention_frameworks": true
+    },
+    "mock_response": {
+      "content": "Feminist epistemology challenges the ostensibly neutral perspective of traditional theories by revealing how power relations shape what counts as knowledge. Standpoint theorists such as Sandra Harding argue that marginalized groups occupy epistemic positions that can yield more objective insights into social structures precisely because they experience both oppression and dominant narratives. Rather than rejecting objectivity, they advocate for 'strong objectivity' grounded in critical reflection on situated experiences.\n\nDonna Haraway's concept of situated knowledge underscores that all knowers operate from partial, embodied perspectives. Claims to view the world from nowhere mask particular interests and often perpetuate androcentric or Eurocentric biases. Recognizing situatedness encourages epistemic communities to include diverse standpoints, thereby expanding the collective understanding and correcting blind spots.\n\nMiranda Fricker's theory of epistemic injustice identifies testimonial injustice, where prejudice deflates a speaker's credibility, and hermeneutical injustice, where collective interpretive resources are insufficient to make sense of marginalized people's experiences. Addressing these injustices requires institutional reforms, inclusive dialogue, and the cultivation of virtues like epistemic humility and attentiveness. These reforms not only advance social justice but also improve epistemic practices by integrating previously excluded knowledge.\n\nFeminist epistemologists engage with mainstream theories\u2014reliabilism, coherentism, virtue epistemology\u2014by interrogating whose reliability is presumed, whose coherence is valued, and whose virtues are celebrated. They demonstrate that knowledge production is a social endeavor embedded in power structures. Incorporating feminist insights transforms objectivity from an illusion of neutrality into a collaborative, reflexive achievement.",
+      "raw": {
+        "model": "qwen3:8b",
+        "created_at": "2025-10-01T01:33:29.129204+00:00",
+        "done": true,
+        "prompt_tokens": 530,
+        "completion_tokens": 360,
+        "total_tokens": 890
+      }
+    }
+  },
+  "prompt_016_ship_of_theseus": {
+    "input": {
+      "query_str": "Explain the Ship of Theseus paradox. What does it reveal about the nature of identity over time?\n\nAnalyze responses from both endurantist and perdurantist perspectives:\n1. Describe the Ship of Theseus puzzle and its implications for identity persistence\n2. ENDURANTISM: Explain how objects persist wholly through time (three-dimensionalism)\n3. PERDURANTISM: Explain how objects persist as temporal parts (four-dimensionalism)\n4. Analyze which view better addresses the paradox and why",
+      "collection": "Aristotle",
+      "temperature": 0.4,
+      "immersive": false
+    },
+    "expected_output": {
+      "text": "Compare mereological essentialism, four-dimensionalism, and psychological continuity analogies.",
+      "keywords": [
+        "Ship of Theseus",
+        "mereology",
+        "perdurance",
+        "endurantism",
+        "identity over time",
+        "temporal parts"
+      ],
+      "min_length": 520,
+      "should_mention_frameworks": true
+    },
+    "mock_response": {
+      "content": "The Ship of Theseus presents a puzzle about identity over time: if a ship's planks are replaced one by one until none of the original material remains, is it still the same ship? The paradox intensifies when the discarded planks are reassembled into another vessel claiming the same identity. Classical endurantism holds that objects are wholly present at each moment and persist by enduring through time; it struggles to explain how total replacement preserves identity without invoking arbitrary criteria.\n\nMereological essentialists, such as Peter van Inwagen, argue that objects have essential parts; replacing any part produces a numerically distinct entity. On this view the refurbished vessel is a different ship, though perhaps historically continuous. Critics contend that this leads to counterintuitive results for ordinary artifacts and organisms whose components naturally change.\n\nFour-dimensionalists or perdurantists offer an alternative: objects are space-time worms composed of temporal parts. The Ship of Theseus and its plank-reassembled counterpart share earlier temporal segments but diverge later. Identity is not a binary relation but a matter of overlapping temporal slices. This model handles gradual change elegantly but requires rethinking everyday talk about 'the same' object.\n\nSome philosophers draw analogies to psychological continuity in personal identity debates, emphasizing functional and narrative cohesion over material sameness. Pragmatic solutions focus on which criteria serve human purposes\u2014legal ownership, historical commemoration, or practical use. The paradox thus illustrates broader themes in metaphysics: the tension between common-sense intuitions and rigorous ontological principles, and the challenge of specifying persistence conditions that accommodate change without collapsing into contradiction.",
+      "raw": {
+        "model": "qwen3:8b",
+        "created_at": "2025-10-01T01:33:56.130089+00:00",
+        "done": true,
+        "prompt_tokens": 515,
+        "completion_tokens": 360,
+        "total_tokens": 875
+      }
+    }
+  },
+  "prompt_017_modal_realism": {
+    "input": {
+      "query_str": "Explain David Lewis's modal realism and compare it with alternative theories like Alvin Plantinga's abstract possible worlds framework.\n\nYour response should:\n1. Describe Lewis's \"real\" possible worlds and his argument for genuine realism\n2. Outline main objections to Lewis's view (ontological extravagance, epistemological problems)\n3. Discuss Plantinga's abstract modal framework as an alternative\n4. Explain why Plantinga's view is seen as more ontologically modest\n5. Evaluate the philosophical trade-offs between these positions",
+      "collection": "Aristotle",
+      "temperature": 0.45,
+      "immersive": false
+    },
+    "expected_output": {
+      "text": "Discuss possible worlds semantics, counterpart theory, and criticisms of ontological extravagance.",
+      "keywords": [
+        "modal realism",
+        "possible worlds",
+        "counterpart theory",
+        "ersatzism",
+        "necessity",
+        "parsimony"
+      ],
+      "min_length": 530,
+      "should_mention_frameworks": true
+    },
+    "mock_response": {
+      "content": "David Lewis defends modal realism, the view that all possible worlds are as real as the actual world, differing only in spatiotemporal separation. This bold ontology enables a uniform explanation of modal truths: a proposition is necessary if it holds in all worlds, possible if it holds in some. To account for cross-world identity, Lewis proposes counterpart theory, where individuals have counterparts in other worlds sharing relevant similarities rather than strict identity. Modal reasoning thus mirrors quantification over a plentitude of concrete universes.\n\nCritics charge modal realism with ontological extravagance. Admitting an infinity of concrete worlds to explain mere modal discourse seems profligate, violating parsimony. Moreover, counterpart theory yields counterintuitive consequences: statements about what Socrates could have been refer not to Socrates himself but to counterparts, raising worries about de re modal claims.\n\nErsatz theorists offer parsimonious alternatives. Modal ersatzism treats possible worlds as abstract representations\u2014sets of propositions, maximal consistent descriptions, or structural models. Actualism thereby preserves modal semantics without multiplying concrete entities. Yet ersatz worlds face their own challenges: ensuring completeness of descriptions, avoiding circularity (defining possibility in terms of the possible), and providing grounding for primitive modal facts.\n\nThe debate turns on trade-offs between explanatory power and ontological economy. Realists celebrate the theoretical unity achieved by treating modality like ordinary quantification, while critics prefer austere ontologies even at the cost of primitive modality. Hybrid views, such as modal fictionalism or structural realism, attempt middle paths. Ultimately, modal realism remains a provocative illustration of how far philosophers might extend metaphysical commitments to secure elegant theoretical frameworks.",
+      "raw": {
+        "model": "qwen3:8b",
+        "created_at": "2025-10-01T01:33:56.130089+00:00",
+        "done": true,
+        "prompt_tokens": 525,
+        "completion_tokens": 360,
+        "total_tokens": 885
+      }
+    }
+  },
+  "prompt_018_personal_identity_teleportation": {
+    "input": {
+      "query_str": "If a teleporter destroys your body and creates an exact duplicate elsewhere, would the duplicate be you?\n\nAnalyze using theories of personal identity:\n1. PHYSICAL CONTINUITY THEORY: Discuss the view that you are your body - implications for teleportation\n2. PSYCHOLOGICAL CONTINUITY THEORY: Explain Locke's view that memory and consciousness determine identity\n3. NO-SELF VIEW: Introduce Buddhist or Parfitian perspectives that identity may be an illusion\n4. PRACTICAL IMPLICATIONS: Consider what each theory means for survival, moral responsibility, and selfhood\n5. Explore whether the question has a definite answer or reveals conceptual confusions about identity",
+      "collection": "Aristotle",
+      "temperature": 0.5,
+      "immersive": false
+    },
+    "expected_output": {
+      "text": "Analyze psychological continuity, bodily continuity, and fission cases.",
+      "keywords": [
+        "personal identity",
+        "teletransport",
+        "psychological continuity",
+        "animalism",
+        "fission",
+        "memory"
+      ],
+      "min_length": 520,
+      "should_mention_frameworks": true
+    },
+    "mock_response": {
+      "content": "Teleportation scenarios imagine scanning a person, transmitting the information, and reassembling an exact duplicate elsewhere. Does the transported individual remain numerically identical to the original? Psychological continuity theorists, following John Locke and Derek Parfit, argue that identity consists in overlapping chains of memory, intention, and character. If the teletransported individual preserves these psychological relations, practical concerns about survival and responsibility may be satisfied even if strict identity is debatable.\n\nBiological accounts, such as animalism defended by Eric Olson, maintain that we are fundamentally human organisms. On this view, destroying the original body breaks personal identity regardless of psychological duplication. Teleportation thus results in death, with a numerically distinct but psychologically similar successor. Animalists emphasize that biological continuity underwrites genuine persistence, grounding our concern for survival in the continued functioning of the living organism.\n\nFission variants complicate matters: suppose the teleporter creates two duplicates with identical psychological profiles. Psychological continuity to each successor persists, yet identity cannot be simultaneously preserved with both without violating transitivity. Parfit concludes that identity is not what fundamentally matters; survival consists in psychological connectedness and continuity, even if identity becomes indeterminate.\n\nThese thought experiments reveal tensions between metaphysical strictness and practical attitudes. Legal responsibility, moral accountability, and personal projects might track psychological relations, while metaphysical identity could align with biological continuity. Hybrid approaches attempt to reconcile these intuitions, but teleportation cases keep the debate vibrant by dramatizing how novel technologies challenge entrenched assumptions about what it means to remain oneself over time.",
+      "raw": {
+        "model": "qwen3:8b",
+        "created_at": "2025-10-01T01:33:56.130089+00:00",
+        "done": true,
+        "prompt_tokens": 515,
+        "completion_tokens": 350,
+        "total_tokens": 865
+      }
+    }
+  },
+  "prompt_019_rawls_nozick": {
+    "input": {
+      "query_str": "Compare John Rawls' theory of justice as fairness with Robert Nozick's libertarian critique.\n\nYour response should:\n1. Explain Rawls' principles of justice (veil of ignorance, difference principle, fair equality of opportunity)\n2. Contrast this with Nozick's entitlement theory and minimal state\n3. Use a concrete example to illustrate their differences in distributive justice (e.g., taxation, healthcare, education)\n4. Discuss fundamental disagreements about the role of the state",
+      "collection": "John Locke",
+      "temperature": 0.4,
+      "immersive": false
+    },
+    "expected_output": {
+      "text": "Highlight original position, difference principle, self-ownership, and patterned vs. historical principles.",
+      "keywords": [
+        "original position",
+        "difference principle",
+        "self-ownership",
+        "entitlement",
+        "redistribution",
+        "patterned principles"
+      ],
+      "min_length": 530,
+      "should_mention_frameworks": true
+    },
+    "mock_response": {
+      "content": "John Rawls' justice as fairness derives distributive principles from the imaginary original position, where rational agents choose rules behind a veil of ignorance. Unaware of their talents or social class, they adopt two principles: equal basic liberties and the lexically subordinate difference principle, which allows inequalities only if they benefit the least advantaged. Redistribution through taxation and social programs becomes a matter of justice, ensuring that structural advantages do not entrench arbitrary luck.\n\nRobert Nozick's entitlement theory rejects patterned distributions. For him, justice depends solely on legitimate acquisition, transfer, and rectification. Individuals possess inviolable rights grounded in self-ownership; any redistributive taxation beyond minimal state functions violates these rights by coercively extracting labor. Nozick famously compares redistributive taxation to forced labor, insisting that voluntary exchanges should determine holdings.\n\nRawls criticizes Nozick for ignoring the social nature of productive capacities and the arbitrariness of natural talents. The difference principle treats talents as common assets to be arranged for mutual benefit, particularly for those worst off. Nozick counters that patterned principles require continual interference to maintain, as free exchanges inevitably disrupt prescribed distributions, leading to infringements on liberty.\n\nThe debate exposes a fault line between egalitarian liberalism and libertarianism. Rawls prioritizes fairness and the moral arbitrariness of birth, using the veil of ignorance to justify redistribution. Nozick foregrounds individual rights and historical entitlements, warning that redistributive states slide toward unjust paternalism. Policy discussions about progressive taxation, universal basic income, and welfare programs continue to echo these foundational disagreements.",
+      "raw": {
+        "model": "qwen3:8b",
+        "created_at": "2025-10-01T01:34:25.978425+00:00",
+        "done": true,
+        "prompt_tokens": 510,
+        "completion_tokens": 350,
+        "total_tokens": 860
+      }
+    }
+  },
+  "prompt_020_social_contract_digital_privacy": {
+    "input": {
+      "query_str": "How does social contract theory apply to digital privacy and data governance?\n\nExplain the social contract according to Hobbes, Locke, and Rousseau:\n1. Compare Hobbes' pessimistic view of the state of nature with Locke's and Rousseau's more optimistic perspectives\n2. Discuss their differing views on the justification for government authority\n3. Apply these theories to modern challenges of digital privacy and surveillance\n4. Highlight implications for consent, legitimacy, and individual rights in the digital age",
+      "collection": "John Locke",
+      "temperature": 0.45,
+      "immersive": false
+    },
+    "expected_output": {
+      "text": "Integrate Hobbesian security, Lockean rights, and Rousseauian civic participation in digital contexts.",
+      "keywords": [
+        "social contract",
+        "digital privacy",
+        "consent",
+        "civic participation",
+        "platform governance",
+        "legitimacy"
+      ],
+      "min_length": 520,
+      "should_mention_frameworks": true
+    },
+    "mock_response": {
+      "content": "Social contract theories probe the legitimacy of authority by asking what rational individuals would consent to from a pre-political state. In the digital realm, platforms and governments collect vast data in exchange for services and security. A Hobbesian lens emphasizes security: citizens might cede privacy if data surveillance wards off cyber threats and maintains order. Yet unchecked Leviathan-like power risks authoritarian overreach without strong accountability.\n\nLockean perspectives foreground natural rights to property and liberty. Personal data, analogous to the fruits of one's labor, should not be appropriated without informed consent. Private firms or states that harvest data without transparent agreements violate Lockean principles, suggesting the need for robust property rights over digital identities, portability rights, and granular consent mechanisms.\n\nRousseauian social contracts stress collective self-governance. Digital infrastructures should be shaped through democratic deliberation\u2014citizens and users co-authoring rules that align with the general will. This implies participatory platform governance, algorithmic transparency, and avenues for contesting surveillance policies. Civic republican insights add that freedom as non-domination requires preventing arbitrary interference, whether by states or corporations.\n\nA synthesized contract for digital privacy would balance security, rights, and participation. Legitimate data governance demands clear consent, proportionality, avenues for redress, and inclusive civic oversight. Absent these features, citizens can reasonably deem surveillance regimes illegitimate and withdraw cooperation, mirroring the social contract's logic of justified authority.",
+      "raw": {
+        "model": "qwen3:8b",
+        "created_at": "2025-10-01T01:34:25.978425+00:00",
+        "done": true,
+        "prompt_tokens": 505,
+        "completion_tokens": 340,
+        "total_tokens": 845
+      }
+    }
+  },
+  "prompt_021_civil_disobedience": {
+    "input": {
+      "query_str": "When is civil disobedience morally justified within a democratic society?\n\nAnalyze the ethics of civil disobedience:\n1. DEFINITION AND EXAMPLES: Define civil disobedience and provide historical examples (Gandhi, MLK, Thoreau)\n2. JUSTIFICATION CONDITIONS: Discuss criteria - unjust laws, exhausted legal remedies, proportionality, nonviolence\n3. RAWLS VS. KING: Compare Rawls's liberal theory with King's Letter from Birmingham Jail\n4. DEMOCRATIC LEGITIMACY: Address the tension between majority rule and moral conscience\n5. CONTEMPORARY APPLICATIONS: Consider climate activism, whistleblowing, or other modern cases\n6. Provide a framework for evaluating when civil disobedience is ethically permissible",
+      "collection": "John Locke",
+      "temperature": 0.45,
+      "immersive": false
+    },
+    "expected_output": {
+      "text": "Discuss Rawls, King, and contemporary views on conscientious dissent.",
+      "keywords": [
+        "civil disobedience",
+        "conscience",
+        "public reason",
+        "nonviolence",
+        "legitimacy",
+        "last resort"
+      ],
+      "min_length": 520,
+      "should_mention_frameworks": true
+    },
+    "mock_response": {
+      "content": "Civil disobedience involves public, nonviolent lawbreaking aimed at changing policies perceived as unjust. John Rawls frames it as a stabilizing force in nearly just societies: citizens appeal to public reason by highlighting violations of shared principles. For Rawls, civil disobedience is justified when legal means have been exhausted, the injustice is clear, and the act is conscientious and communicative rather than coercive.\n\nMartin Luther King Jr. emphasizes moral urgency and the need to create constructive tension that exposes latent injustice. His Letter from Birmingham Jail defends breaking unjust laws that degrade personality, provided protesters accept legal penalties to demonstrate respect for law in general. Nonviolence, in King's account, is both ethical and strategic, fostering dialogue rather than escalating violence.\n\nContemporary theorists expand the discussion to include whistleblowing, digital activism, and intersectional struggles. They debate whether property damage disqualifies an act as civil disobedience and how marginalized groups, often excluded from formal democratic channels, may justifiably escalate tactics. Critics worry about destabilization and selective obedience, while defenders note that entrenched injustices\u2014systemic racism, climate inaction\u2014necessitate principled resistance.\n\nMoral justification thus hinges on proportionality, sincerity, and alignment with democratic ideals. When legal avenues are blocked or ineffective, civil disobedience can renew the social contract by forcing institutions to confront their failures. Its legitimacy derives from appealing to the community's professed principles and striving to repair, not destroy, democratic order.",
+      "raw": {
+        "model": "qwen3:8b",
+        "created_at": "2025-10-01T01:34:25.978425+00:00",
+        "done": true,
+        "prompt_tokens": 500,
+        "completion_tokens": 340,
+        "total_tokens": 840
+      }
+    }
+  },
+  "prompt_022_anarchism_common_good": {
+    "input": {
+      "query_str": "Explain the core arguments of political anarchism. How do anarchists justify a rejection of the state, and what alternatives do they propose?\n\nYour response should:\n1. Describe anarchist skepticism toward state authority and coercion\n2. Discuss key thinkers like Bakunin, Kropotkin, or Proudhon and their arguments\n3. Explore proposed alternatives such as voluntary associations, mutual aid, or decentralized governance\n4. Address common objections to anarchism (coordination problems, free riders, security)",
+      "collection": "John Locke",
+      "temperature": 0.5,
+      "immersive": false
+    },
+    "expected_output": {
+      "text": "Contrast individualist and collectivist anarchism with republican and utilitarian defenses of the state.",
+      "keywords": [
+        "anarchism",
+        "common good",
+        "mutual aid",
+        "coercion",
+        "public goods",
+        "legitimate authority"
+      ],
+      "min_length": 530,
+      "should_mention_frameworks": true
+    },
+    "mock_response": {
+      "content": "Anarchist thinkers contest the legitimacy of the state, viewing it as an apparatus of coercion that entrenches hierarchy. Individualist anarchists like Emma Goldman stress personal autonomy and voluntary association, arguing that mutual aid networks can replace bureaucratic governance. Collectivist anarchists, including Peter Kropotkin, emphasize cooperative social structures that align with human tendencies toward solidarity, envisioning decentralized federations managing resources without coercive authority.\n\nDefenders of the state counter that certain public goods\u2014security, infrastructure, environmental stewardship\u2014require coordinated action that voluntary associations struggle to provide reliably. Republican theorists highlight freedom as non-domination: without public institutions to check private power, individuals risk subjugation by economic elites or local tyrants. The state, when democratically constituted, can safeguard common goods and arbitrate conflicts impartially.\n\nUtilitarian arguments add that centralized structures can produce net benefits through scale, expertise, and redistribution. However, utilitarians also caution that states must be constrained to prevent abuses, suggesting that legitimacy rests on delivering welfare efficiently while respecting rights. Anarchists respond by pointing to historical instances where state power suppressed dissent, colonized territories, and enforced inequality, maintaining that hierarchical authority corrupts even well-intentioned administrators.\n\nA nuanced assessment recognizes that the state can both enable and hinder the common good. Democratic accountability, subsidiarity, and participatory budgeting aim to combine state capacity with grassroots empowerment. Anarchist critiques serve as vital reminders to scrutinize coercive structures and imagine alternative forms of governance, even if wholesale abolition remains contentious.",
+      "raw": {
+        "model": "qwen3:8b",
+        "created_at": "2025-10-01T01:34:25.978425+00:00",
+        "done": true,
+        "prompt_tokens": 525,
+        "completion_tokens": 360,
+        "total_tokens": 885
+      }
+    }
+  },
+  "prompt_023_logical_fallacies": {
+    "input": {
+      "query_str": "Identify and explain three common logical fallacies: ad hominem, straw man, and slippery slope.\n\nYour response should:\n1. Define each fallacy clearly with its logical structure\n2. Provide real-world examples from debates, media, or political discourse\n3. Explain why each fallacy undermines reasoning and valid argumentation\n4. Discuss how to recognize and avoid these fallacies in practice",
+      "collection": "Aristotle",
+      "temperature": 0.4,
+      "immersive": false
+    },
+    "expected_output": {
+      "text": "Cover ad hominem, straw man, slippery slope, and false dilemma with examples.",
+      "keywords": [
+        "ad hominem",
+        "straw man",
+        "slippery slope",
+        "false dilemma",
+        "critical thinking",
+        "argument analysis"
+      ],
+      "min_length": 480,
+      "should_mention_frameworks": false
+    },
+    "mock_response": {
+      "content": "Informal fallacies undermine arguments by distorting reasoning rather than violating formal validity. The ad hominem attacks an opponent's character instead of addressing the claim\u2014dismissing a climate scientist's warning because of personal lifestyle choices sidesteps the data. Recognizing ad hominem fallacies requires separating speaker qualities from evidence, though some character critiques matter when credibility is directly at issue.\n\nStraw man fallacies misrepresent an opponent's position, making it easier to refute. Politicians may distort a proposal for modest regulation as a bid for total government control. Critical listeners should compare the caricature with the original statement, seeking charitable interpretations before evaluating substance. Steel-manning encourages reconstructing the strongest version of an argument to avoid this fallacy.\n\nSlippery slope arguments predict dire outcomes from minor steps without establishing causal links. While some chains of consequences are plausible, fallacious slopes rely on speculative fear rather than evidence. Assess them by demanding explicit mechanisms and probabilities connecting each stage. Legal analysts often examine precedent, enforcement capacity, and institutional safeguards to gauge whether the feared descent is realistic.\n\nFalse dilemmas present limited options when more alternatives exist, pressuring audiences into binary choices. Public debates about security versus liberty often ignore policy designs that balance both. Detecting false dilemmas involves asking whether the options are exhaustive and whether combinations or incremental approaches could resolve tensions. Cultivating critical thinking by identifying these fallacies equips citizens to navigate persuasive rhetoric with analytic rigor.",
+      "raw": {
+        "model": "qwen3:8b",
+        "created_at": "2025-10-01T01:34:52.238921+00:00",
+        "done": true,
+        "prompt_tokens": 460,
+        "completion_tokens": 320,
+        "total_tokens": 780
+      }
+    }
+  },
+  "prompt_024_validity_soundness": {
+    "input": {
+      "query_str": "Explain the difference between a valid argument and a sound argument. Provide examples of arguments that are valid but unsound.\n\nYour response should:\n1. Define validity (logical structure: if premises are true, conclusion must follow)\n2. Define soundness (valid argument + actually true premises)\n3. Offer clear examples of arguments that are valid but unsound\n4. Explain why the distinction matters for evaluating arguments",
+      "collection": "Aristotle",
+      "temperature": 0.35,
+      "immersive": false
+    },
+    "expected_output": {
+      "text": "Provide symbolic examples and natural language analysis of valid but unsound arguments.",
+      "keywords": [
+        "validity",
+        "soundness",
+        "modus ponens",
+        "modus tollens",
+        "premises",
+        "truth-preservation"
+      ],
+      "min_length": 460,
+      "should_mention_frameworks": false
+    },
+    "mock_response": {
+      "content": "Validity concerns the form of an argument: if the premises are true, the conclusion must logically follow. For example, modus ponens\u2014'If P then Q; P; therefore Q'\u2014is valid because its structure preserves truth across interpretations. An argument can be valid even when premises are false: 'If the moon is made of cheese, then cows can fly; the moon is made of cheese; therefore cows can fly.' The conclusion follows from the premises, demonstrating validity despite absurd content.\n\nSoundness requires both validity and true premises. The argument 'If all humans are mortal and Socrates is human, then Socrates is mortal' exemplifies a sound argument because it is valid and its premises reflect reality. Sound arguments guarantee true conclusions, whereas invalid or unsound arguments do not.\n\nDistinguishing the two concepts matters in analysis. A valid but unsound argument warns us that formal reasoning alone cannot secure truth; empirical verification of premises is essential. Conversely, arguments with true premises but invalid form\u2014such as affirming the consequent\u2014fail to justify their conclusions despite factual statements. Symbolic logic provides tools like truth tables and natural deduction to test validity, while critical inquiry evaluates the plausibility and evidence for premises.\n\nIn practice, philosophers and scientists aim for sound arguments, yet they often encounter disputes over premise truth. Clarifying validity first isolates structural considerations, setting the stage for empirical or normative debates about content.",
+      "raw": {
+        "model": "qwen3:8b",
+        "created_at": "2025-10-01T01:34:52.238921+00:00",
+        "done": true,
+        "prompt_tokens": 440,
+        "completion_tokens": 300,
+        "total_tokens": 740
+      }
+    }
+  },
+  "prompt_025_deductive_vs_inductive": {
+    "input": {
+      "query_str": "Compare deductive and inductive reasoning, providing examples of each. Discuss the strengths and limitations of both forms of reasoning.\n\nYour response should:\n1. DEDUCTIVE REASONING: Define and explain (certainty of conclusions, necessity)\n2. INDUCTIVE REASONING: Define and explain (probabilistic conclusions, generalization)\n3. Provide concrete examples: syllogisms for deductive, scientific generalizations for inductive\n4. Discuss strengths and limitations of each (certainty vs. ampliative inference)\n5. Explain when each type of reasoning is appropriate",
+      "collection": "Aristotle",
+      "temperature": 0.45,
+      "immersive": false
+    },
+    "expected_output": {
+      "text": "Explain strengths, limitations, and typical use cases for each reasoning style.",
+      "keywords": [
+        "deductive",
+        "inductive",
+        "abductive",
+        "inference to the best explanation",
+        "probability",
+        "certainty"
+      ],
+      "min_length": 500,
+      "should_mention_frameworks": false
+    },
+    "mock_response": {
+      "content": "Deductive reasoning derives conclusions that follow necessarily from premises. When premises are true and the argument is valid, deductions deliver certainty. Mathematics and formal logic exemplify this mode: from axioms and definitions, we derive theorems with unwavering confidence. The limitation lies in dependence on premises; if premises are contested, the certainty collapses.\n\nInductive reasoning generalizes from particular observations to broader conclusions, yielding probabilistic support. Scientists observe repeated phenomena\u2014planets tracing elliptical orbits, medicines alleviating symptoms\u2014and infer laws or causal relationships. Induction expands knowledge beyond available data but remains vulnerable to counterexamples and the problem of induction: past regularities may not guarantee future occurrences.\n\nAbductive reasoning, or inference to the best explanation, selects hypotheses that most plausibly account for observed facts. Detectives, historians, and philosophers deploy abduction when multiple explanations exist. Criteria include explanatory scope, simplicity, coherence with background knowledge, and predictive power. Abduction is fallible, inviting revision when better explanations arise.\n\nPhilosophical inquiry often blends these modes. Ethical theories employ deduction to derive implications from principles, induction to learn from case studies, and abduction to justify overarching frameworks. Recognizing the strengths and risks of each reasoning style promotes methodological pluralism and critical evaluation of arguments.",
+      "raw": {
+        "model": "qwen3:8b",
+        "created_at": "2025-10-01T01:34:52.238921+00:00",
+        "done": true,
+        "prompt_tokens": 480,
+        "completion_tokens": 330,
+        "total_tokens": 810
+      }
+    }
+  },
+  "prompt_026_assisted_suicide": {
+    "input": {
+      "query_str": "Is physician-assisted suicide ethically permissible?\n\nDiscuss arguments for and against:\n1. ARGUMENTS FOR: Reference autonomy, dignity, alleviating suffering, quality of life\n2. ARGUMENTS AGAINST: Sanctity of life, slippery slope concerns, role of medical professionals\n3. DEONTOLOGICAL vs UTILITARIAN perspectives\n4. Provide a balanced ethical analysis without asserting a definitive answer",
+      "collection": "Immanuel Kant",
+      "temperature": 0.45,
+      "immersive": false
+    },
+    "expected_output": {
+      "text": "Address autonomy, sanctity of life, slippery slope, and palliative care obligations.",
+      "keywords": [
+        "autonomy",
+        "sanctity of life",
+        "dignity",
+        "palliative care",
+        "slippery slope",
+        "beneficence"
+      ],
+      "min_length": 520,
+      "should_mention_frameworks": true
+    },
+    "mock_response": {
+      "content": "Advocates of physician-assisted suicide appeal to respect for autonomy and relief of suffering. Competent patients facing terminal illness may judge that continued existence entails intolerable pain or loss of dignity. Allowing them to choose the timing and manner of death honors self-determination and can be viewed as an extension of the right to refuse treatment. Physicians committed to beneficence may see assistance as alleviating suffering when palliative options fail.\n\nOpponents emphasize the sanctity of life and the physician's role as healer. They worry that normalizing assistance could erode trust, particularly among vulnerable populations who fear being a burden. Religious and deontological perspectives hold that intentionally ending life, even with consent, violates moral duties. The Hippocratic tradition historically forbade physicians from administering lethal agents.\n\nPolicy debates often center on slippery slope concerns: legalized assistance might expand beyond terminal cases to include depression or economic hardship. Safeguards\u2014waiting periods, psychological evaluations, second opinions\u2014seek to prevent abuse. Empirical studies from jurisdictions with legalized assistance show limited expansion, though vigilance remains essential.\n\nA balanced ethical analysis considers robust palliative care, hospice support, and informed consent protocols. Whether assistance is permissible may depend on safeguarding voluntariness, ensuring alternatives, and maintaining transparency. Societies must weigh individual autonomy against collective values surrounding life, compassion, and professional integrity.",
+      "raw": {
+        "model": "qwen3:8b",
+        "created_at": "2025-10-01T01:35:13.326087+00:00",
+        "done": true,
+        "prompt_tokens": 500,
+        "completion_tokens": 350,
+        "total_tokens": 850
+      }
+    }
+  },
+  "prompt_027_crispr_ethics": {
+    "input": {
+      "query_str": "Is it ethical to use gene-editing technologies like CRISPR for human enhancement (e.g., increasing intelligence or athleticism)?\n\nConsider arguments from multiple perspectives:\n1. AUTONOMY: Individual freedom to enhance oneself or one's children\n2. FAIRNESS: Could enhancements exacerbate existing inequalities and create genetic classes?\n3. SOCIAL INEQUALITY: Access barriers and distributive justice concerns\n4. SAFETY AND UNINTENDED CONSEQUENCES: Long-term risks and effects on gene pool\n5. Provide an impartial analysis of the ethical implications",
+      "collection": "Immanuel Kant",
+      "temperature": 0.5,
+      "immersive": false
+    },
+    "expected_output": {
+      "text": "Discuss therapeutic vs enhancement uses, consent, and justice concerns.",
+      "keywords": [
+        "germline",
+        "CRISPR",
+        "enhancement",
+        "consent",
+        "equity",
+        "biosecurity"
+      ],
+      "min_length": 540,
+      "should_mention_frameworks": true
+    },
+    "mock_response": {
+      "content": "CRISPR-based germline editing promises to eliminate hereditary diseases by altering embryos, yet the ethical stakes are profound. Therapeutic applications aim to prevent severe genetic disorders, aligning with beneficence. However, future generations cannot consent to alterations that will shape their lives; guardians must act under a best-interest standard, and societal oversight must ensure rigorous risk assessment.\n\nEnhancement applications\u2014selecting traits like increased cognition or specific physical attributes\u2014raise concerns about social stratification and commodification of offspring. Critics fear a genetic arms race accessible primarily to the wealthy, exacerbating inequality. Justice demands equitable access, transparent governance, and attention to marginalized voices who may bear disproportionate risks.\n\nSafety remains a central issue. Off-target effects and mosaicism could introduce new ailments into the germline. Biosecurity experts warn of dual-use risks, where techniques could be weaponized or misused in unregulated clinics. Establishing international norms, moratoria on enhancement, and robust public deliberation is crucial.\n\nEthical frameworks differ: utilitarians weigh potential health benefits against risks; deontologists question whether altering human nature violates moral boundaries; virtue ethicists emphasize humility and caution in wielding transformative technologies. A prudent path emphasizes transparent research, multi-stakeholder governance, and a commitment to justice before clinical deployment.",
+      "raw": {
+        "model": "qwen3:8b",
+        "created_at": "2025-10-01T01:35:13.326087+00:00",
+        "done": true,
+        "prompt_tokens": 525,
+        "completion_tokens": 360,
+        "total_tokens": 885
+      }
+    }
+  },
+  "prompt_028_animal_research": {
+    "input": {
+      "query_str": "Is it ethical to use animals for medical research?\n\nDiscuss from multiple philosophical perspectives:\n1. UTILITARIAN: Explain arguments that benefits to humans outweigh harm to animals\n2. DEONTOLOGICAL: Present concerns about duties to minimize suffering and respect for life\n3. RIGHTS-BASED: Explore critiques based on intrinsic moral value of animals\n4. Consider the principle of the three Rs (replacement, reduction, refinement)\n5. Offer a balanced conclusion acknowledging tensions between positions",
+      "collection": "Immanuel Kant",
+      "temperature": 0.45,
+      "immersive": false
+    },
+    "expected_output": {
+      "text": "Compare utilitarian, rights-based, and replacement reduction refinement (3Rs) perspectives.",
+      "keywords": [
+        "animal welfare",
+        "utilitarian",
+        "rights",
+        "3Rs",
+        "sentience",
+        "alternatives"
+      ],
+      "min_length": 520,
+      "should_mention_frameworks": true
+    },
+    "mock_response": {
+      "content": "Animal experimentation has contributed to medical advances, yet ethical scrutiny remains intense. Utilitarian arguments evaluate harms and benefits: if animal suffering yields significant human health gains unattainable otherwise, some defend research as justified. However, Peter Singer and other utilitarians argue for equal consideration of interests, highlighting that pain experienced by sentient animals carries moral weight in the calculus.\n\nRights-based theorists like Tom Regan maintain that animals possessing inherent value should not be treated merely as means. On this view, lethal or painful experiments violate animals' rights, regardless of potential benefits. Contractarian approaches sometimes discount animal claims due to lack of reciprocal obligations, though critics note that moral consideration should extend beyond contract membership.\n\nThe 3Rs framework\u2014Replacement, Reduction, Refinement\u2014offers pragmatic guidance: replace animals with alternative models when possible, reduce numbers used, and refine procedures to minimize suffering. Advances in organ-on-chip technology, computational modeling, and human cell cultures support replacement efforts.\n\nEthical oversight committees weigh protocols, demanding justification, humane endpoints, and transparency. Public trust depends on demonstrating that researchers pursue alternatives rigorously and respect animal welfare. The debate continues to balance scientific progress, compassion, and evolving concepts of interspecies justice.",
+      "raw": {
+        "model": "qwen3:8b",
+        "created_at": "2025-10-01T01:35:13.326087+00:00",
+        "done": true,
+        "prompt_tokens": 510,
+        "completion_tokens": 350,
+        "total_tokens": 860
+      }
+    }
+  },
+  "prompt_029_art_definition": {
+    "input": {
+      "query_str": "Discuss the challenges of defining art. Compare and contrast formalist, expressionist, and institutional theories of art.\n\nYour response should:\n1. FORMALISM: Explain how art is defined by formal properties (e.g., Clive Bell)\n2. EXPRESSIONISM: Discuss how art conveys emotion (e.g., Tolstoy)\n3. INSTITUTIONAL THEORY: Outline how art is what institutions recognize as art (e.g., Danto)\n4. Provide concrete examples for each theory (e.g., abstract painting, Starry Night, Duchamp's Fountain)\n5. Explore whether a single definition of art is possible or desirable",
+      "collection": "Aristotle",
+      "temperature": 0.45,
+      "immersive": false
+    },
+    "expected_output": {
+      "text": "Compare institutional theory, historical definitions, and cluster concepts.",
+      "keywords": [
+        "institutional theory",
+        "historical definition",
+        "cluster concept",
+        "intentionality",
+        "aesthetic experience",
+        "artworld"
+      ],
+      "min_length": 520,
+      "should_mention_frameworks": true
+    },
+    "mock_response": {
+      "content": "Defining art has proven notoriously difficult. Institutional theorists, led by George Dickie, argue that art is whatever the artworld confers the status of 'candidate for appreciation.' Museums, critics, and artists collectively determine art through social practices. This view explains avant-garde works like Duchamp's Fountain, which lacks traditional aesthetic qualities yet gained recognition via institutional endorsement.\n\nHistorical definitions, such as Jerrold Levinson's, emphasize continuity with prior artworks. An item counts as art if it intends to be regarded in the way earlier art was regarded. This approach captures the cumulative, tradition-sensitive nature of artistic creation while accommodating innovation. However, specifying relevant historical connections can be challenging, especially for radical departures.\n\nCluster concept theorists propose that art lacks a single essence but exhibits overlapping features: aesthetic value, expressive content, creativity, intellectual challenge, and institutional recognition. No single feature is necessary, but the presence of several suffices. This pluralistic perspective mirrors the diversity of artistic practices across cultures.\n\nIntentionalist accounts focus on the creator's aims, while aesthetic experience theories prioritize the perceiver's engagement. Contemporary debates integrate these elements, acknowledging that art functions within social institutions, historical lineages, and experiential responses. Rather than a rigid definition, many philosophers advocate for flexible frameworks that honor art's evolving, contested boundaries.",
+      "raw": {
+        "model": "qwen3:8b",
+        "created_at": "2025-10-01T01:35:33.705072+00:00",
+        "done": true,
+        "prompt_tokens": 520,
+        "completion_tokens": 340,
+        "total_tokens": 860
+      }
+    }
+  },
+  "prompt_030_beauty_subjective": {
+    "input": {
+      "query_str": "Is beauty subjective or objective?\n\nDiscuss this question using perspectives from key philosophers:\n1. HUME: Summarize his view that beauty is grounded in subjective sentiment but refined by shared taste and ideal critics\n2. KANT: Explain his idea of disinterested judgment and universal communicability in aesthetic experience\n3. CONTEMPORARY THEORIES: Introduce views exploring cultural relativity, evolutionary aesthetics, or neuroaesthetics\n4. Critically evaluate whether a balance between subjectivity and objectivity can be achieved",
+      "collection": "Aristotle",
+      "temperature": 0.45,
+      "immersive": false
+    },
+    "expected_output": {
+      "text": "Address Hume's standard of taste, Kantian disinterested judgment, and contemporary pluralism.",
+      "keywords": [
+        "subjective",
+        "objective",
+        "standard of taste",
+        "disinterested pleasure",
+        "pluralism",
+        "aesthetic judgment"
+      ],
+      "min_length": 520,
+      "should_mention_frameworks": true
+    },
+    "mock_response": {
+      "content": "Debates about beauty oscillate between subjectivism and objectivism. Subjectivists claim that beauty resides solely in individual responses\u2014'beauty is in the eye of the beholder.' Yet David Hume proposed a nuanced standard of taste: while sentiments vary, true judges cultivate refined perception through practice, comparison, and freedom from prejudice. Their consensus offers intersubjective guidance on beauty without invoking metaphysical properties.\n\nImmanuel Kant distinguishes aesthetic judgment as disinterested pleasure. When we call something beautiful, we invite universal assent, as though beauty were a shared sensibility rooted in our faculties. Kant refrains from asserting objective beauty but maintains that judgments follow a common structure, making dialogue about taste meaningful even without proof.\n\nContemporary pluralists acknowledge cultural, historical, and personal diversity in aesthetic values while recognizing patterns\u2014balance, harmony, expressive depth\u2014that recur across traditions. Evolutionary psychologists add that some preferences, like symmetry, may have biological underpinnings, suggesting partial objectivity.\n\nUltimately, beauty likely involves a dynamic interplay of subjective experience, cultivated standards, and cross-cultural resonances. Recognizing this complexity encourages humility in judgment and openness to unfamiliar aesthetic practices while still permitting critical evaluation and shared appreciation.",
+      "raw": {
+        "model": "qwen3:8b",
+        "created_at": "2025-10-01T01:35:33.705072+00:00",
+        "done": true,
+        "prompt_tokens": 500,
+        "completion_tokens": 330,
+        "total_tokens": 830
+      }
+    }
+  },
+  "prompt_031_aesthetic_value_society": {
+    "input": {
+      "query_str": "What is the role of aesthetic experience in human life and civic society?\n\nDiscuss using multiple philosophical perspectives:\n1. JOHN DEWEY: Summarize his pragmatist view that aesthetic experience integrates meaning and life through active engagement\n2. KANT: Explain his focus on disinterested contemplation and universality in aesthetic experiences\n3. CONTEMPORARY VIEWS: Address the psychological and cultural role of art in meaning-making\n4. Analyze how aesthetic experiences contribute to human flourishing and civic identity",
+      "collection": "Aristotle",
+      "temperature": 0.5,
+      "immersive": false
+    },
+    "expected_output": {
+      "text": "Discuss public art, urban design, and democratic participation.",
+      "keywords": [
+        "public art",
+        "urban design",
+        "civic identity",
+        "participation",
+        "well-being",
+        "placemaking"
+      ],
+      "min_length": 500,
+      "should_mention_frameworks": false
+    },
+    "mock_response": {
+      "content": "Aesthetic value in public spaces shapes civic identity and social cohesion. Thoughtful urban design integrates parks, plazas, and architectural harmony, encouraging residents to gather, deliberate, and form attachments to place. Jane Jacobs emphasized vibrant streetscapes that foster safety and community through 'eyes on the street' and mixed-use design.\n\nPublic art contributes narratives that reflect diverse histories and aspirations. Murals, sculptures, and performance spaces invite collective interpretation, enabling marginalized voices to claim visibility. Participatory art projects engage citizens directly in creating shared symbols, reinforcing democratic agency.\n\nAccess to aesthetically enriching environments correlates with well-being. Green spaces reduce stress, while cultural institutions provide opportunities for reflection and dialogue. When aesthetics are neglected, public spaces can feel alienating, eroding civic pride.\n\nPolicy decisions about zoning, funding, and cultural programming thus carry ethical weight. Inclusive planning processes that solicit community input align aesthetic investments with public values. In this way, beauty becomes not a luxury but a civic resource supporting democratic life.",
+      "raw": {
+        "model": "qwen3:8b",
+        "created_at": "2025-10-01T01:35:33.705072+00:00",
+        "done": true,
+        "prompt_tokens": 480,
+        "completion_tokens": 320,
+        "total_tokens": 800
+      }
+    }
+  },
+  "prompt_032_moral_realism": {
+    "input": {
+      "query_str": "Can moral realism provide a coherent account of morality?\n\nCompare arguments for moral realism with anti-realist critiques:\n1. MORAL REALISM: Define the position (objective moral facts exist) and key arguments (moral convergence, moral experience, companions in guilt)\n2. EVOLUTIONARY DEBUNKING: Discuss challenges from evolutionary psychology (moral faculties evolved for fitness, not truth)\n3. ERROR THEORY: Outline J.L. Mackie's argument that all moral judgments are systematically false\n4. Compare with defenses from Thomas Nagel or Peter Singer\n5. Provide balanced evaluation of realism vs. anti-realism",
+      "collection": "Aristotle",
+      "temperature": 0.45,
+      "immersive": false
+    },
+    "expected_output": {
+      "text": "Discuss stance-independent moral truths, evolutionary explanations, and responses from Cornell realists and constructivists.",
+      "keywords": [
+        "moral realism",
+        "evolutionary debunking",
+        "stance-independent",
+        "Cornell realism",
+        "constructivism",
+        "tracking"
+      ],
+      "min_length": 530,
+      "should_mention_frameworks": true
+    },
+    "mock_response": {
+      "content": "Moral realism claims that moral truths are objective and stance-independent. Evolutionary debunking arguments challenge this by noting that our moral faculties evolved for reproductive fitness, not truth-tracking. Sharon Street contends that if evolution shaped our evaluative attitudes to enhance survival, the correlation with independent moral truths would be coincidental, undermining justification for realism.\n\nRealists respond in several ways. Cornell realists argue that moral properties supervene on natural facts about flourishing and harm, which evolution could plausibly track. Just as perception evolved to detect environmental features, moral cognition might track normative truths that align with cooperative success. They emphasize reflective equilibrium, suggesting that rational deliberation refines evolved intuitions toward objective standards.\n\nConstructivists like Christine Korsgaard agree that evolution influences values but maintain that moral obligations arise from practical reason's demands. Rather than stance-independent facts, morality is constructed through rational self-legislation. This view sidesteps debunking by grounding normativity in autonomous agency.\n\nSome realists adopt a reliabilist stance: if our moral faculties are generally reliable and subject to critical scrutiny, evolutionary origins do not automatically debunk them. They draw analogies to perception\u2014evolutionary stories explain how eyesight developed, yet we still trust vision when calibrated by science. The debate continues over whether evolutionary explanations are undermining defeaters or merely genealogical background consistent with moral truth.",
+      "raw": {
+        "model": "qwen3:8b",
+        "created_at": "2025-10-01T01:36:11.285737+00:00",
+        "done": true,
+        "prompt_tokens": 520,
+        "completion_tokens": 360,
+        "total_tokens": 880
+      }
+    }
+  },
+  "prompt_033_moral_motivation": {
+    "input": {
+      "query_str": "What motivates moral action?\n\nCompare Humean and Kantian accounts:\n1. HUME: Explain his claim that reason is the \"slave of the passions\" and morality is motivated by desire and sentiment\n2. KANT: Present his idea that moral action arises from rational recognition of duty and the categorical imperative\n3. MOTIVATIONAL INTERNALISM vs EXTERNALISM: Analyze whether moral judgment necessarily motivates\n4. Provide a concrete example of moral motivation and evaluate which theory better explains it",
+      "collection": "Aristotle",
+      "temperature": 0.45,
+      "immersive": false
+    },
+    "expected_output": {
+      "text": "Explain the motivational internalism thesis, amoralists, and Humean vs Kantian perspectives.",
+      "keywords": [
+        "internalism",
+        "externalism",
+        "amoralist",
+        "Humean",
+        "Kantian",
+        "practical reason"
+      ],
+      "min_length": 500,
+      "should_mention_frameworks": true
+    },
+    "mock_response": {
+      "content": "Motivational internalism holds that moral judgments are intrinsically motivating: sincerely believing 'I ought to help' typically moves an agent toward action. Externalists deny this necessary link, allowing for amoralists who judge an act morally required yet feel no motivation. Humean theories tie motivation to desire; reason alone cannot motivate, so moral judgments influence action only when coupled with desires or sentiments.\n\nKantians counter that practical reason can generate motives through respect for the moral law. When agents recognize a categorical imperative, they experience a rationally necessitated incentive. Internalists use this to explain why moral judgments often motivate even against self-interest.\n\nExternalists point to psychopaths or cynical observers who understand moral claims but remain unmoved. They propose external reasons, such as self-interest or social sanctions, that motivate compliance. Bernard Williams distinguishes internal reasons (linked to an agent's subjective motivational set) from external reasons (objective considerations), arguing that external reasons risk abstraction.\n\nHybrid accounts note motivational variability: emotions, social norms, and rational commitments interact. Understanding moral motivation informs moral education, highlighting the need to cultivate both rational insight and empathetic dispositions.",
+      "raw": {
+        "model": "qwen3:8b",
+        "created_at": "2025-10-01T01:36:11.285737+00:00",
+        "done": true,
+        "prompt_tokens": 480,
+        "completion_tokens": 320,
+        "total_tokens": 800
+      }
+    }
+  },
+  "prompt_034_error_theory": {
+    "input": {
+      "query_str": "Describe moral error theory and evaluate strategies for living without objective moral facts.\n\nExamine moral error theory comprehensively:\n1. ERROR THEORY EXPLAINED: Define Mackie's view that all moral claims are false because objective values don't exist\n   - Arguments: Argument from queerness, argument from disagreement\n2. IMPLICATIONS: Discuss what error theory means for moral language, motivation, and practice\n3. FICTIONALISM: Explain the proposal to treat moral discourse as useful fiction\n4. ALTERNATIVES: Consider moral expressivism, constructivism, or naturalistic realism as responses\n5. LIVING WITHOUT OBJECTIVE MORALITY: Analyze whether we can maintain moral practices without realism\n6. Reflect on whether error theory undermines or can accommodate ordinary moral life",
+      "collection": "Aristotle",
+      "temperature": 0.5,
+      "immersive": false
+    },
+    "expected_output": {
+      "text": "Cover Mackie's arguments, queerness, and fictionalist or expressivist responses.",
+      "keywords": [
+        "error theory",
+        "queerness",
+        "moral skepticism",
+        "fictionalism",
+        "expressivism",
+        "objective values"
+      ],
+      "min_length": 530,
+      "should_mention_frameworks": true
+    },
+    "mock_response": {
+      "content": "Moral error theory, articulated by J. L. Mackie, contends that while moral discourse purports to describe objective values, no such entities exist. Mackie's argument from relativity notes pervasive moral disagreement, suggesting cultural construction rather than discovery of moral facts. His argument from queerness posits that objective values would possess metaphysically and epistemologically strange properties\u2014intrinsically prescriptive facts unlike anything else in the universe.\n\nIf moral judgments are systematically false, how should we live? Some embrace moral fictionalism: continue using moral language as a useful fiction to coordinate behavior while recognizing its literal falsity. This mirrors how actors engage with fictional narratives without belief in their truth.\n\nExpressivists offer another route, recasting moral statements as expressions of attitudes rather than factual claims. On this view, saying 'Stealing is wrong' conveys disapproval and prescriptions without committing to objective moral facts. Thus, error theory may prompt a shift in semantic interpretation rather than abandonment of moral practice.\n\nCritics argue that error theory undermines commitment and trust. Yet Mackie suggests we can reconstruct norms through contracts, mutual advantage, or evolving conventions. The challenge is maintaining motivation and accountability when moral assertions are acknowledged as systematically mistaken.",
+      "raw": {
+        "model": "qwen3:8b",
+        "created_at": "2025-10-01T01:36:11.285737+00:00",
+        "done": true,
+        "prompt_tokens": 520,
+        "completion_tokens": 360,
+        "total_tokens": 880
+      }
+    }
+  },
+  "prompt_035_virtue_vs_care": {
+    "input": {
+      "query_str": "Compare virtue ethics and care ethics in addressing moral dilemmas involving relationships.\n\nContrast these two approaches:\n1. VIRTUE ETHICS: Explain the Aristotelian focus on character, virtues, and eudaimonia\n   - Key virtues: courage, justice, temperance, wisdom\n   - Role of practical wisdom (phronesis) in particular situations\n2. CARE ETHICS: Discuss the feminist emphasis on relationships, interdependence, and responsiveness\n   - Noddings, Gilligan: Care as fundamental moral orientation\n   - Attention to vulnerability, context, and emotional engagement\n3. SIMILARITIES: Identify common ground - particularism, role of emotion, critique of rule-based ethics\n4. DIFFERENCES: Analyze divergences - universal virtues vs. relational context, impartiality vs. partiality\n5. CASE STUDY: Apply both frameworks to a relationship dilemma and compare their insights",
+      "collection": "Aristotle",
+      "temperature": 0.45,
+      "immersive": false
+    },
+    "expected_output": {
+      "text": "Highlight character cultivation, relational responsiveness, and critiques of impartiality.",
+      "keywords": [
+        "virtue ethics",
+        "care ethics",
+        "relationships",
+        "impartiality",
+        "empathy",
+        "character"
+      ],
+      "min_length": 520,
+      "should_mention_frameworks": true
+    },
+    "mock_response": {
+      "content": "Virtue ethics centers on cultivating character traits that enable flourishing\u2014courage, generosity, honesty\u2014through habituation and practical wisdom. It evaluates actions by asking what a virtuous agent would do in context, balancing emotions and reason to achieve the golden mean. Relationships matter insofar as they shape character and provide arenas for virtue.\n\nCare ethics, inspired by Carol Gilligan and Nel Noddings, emphasizes relational responsiveness, empathy, and the moral significance of care practices often undervalued in patriarchal ethics. Care theorists critique impartial principles for ignoring concrete dependencies and advocate for moral deliberation grounded in attentiveness, responsibility, competence, and responsiveness.\n\nWhen families confront dilemmas\u2014balancing career obligations with caregiving\u2014virtue ethicists seek actions aligning with virtues like justice and fidelity, while care ethicists prioritize maintaining and nurturing relationships. Both reject abstract rule-following detached from lived experience but differ in emphasis: virtue ethics foregrounds the agent's character, care ethics foregrounds relational dynamics.\n\nIntegrating the perspectives can enrich moral reasoning. Virtue ethics provides a vocabulary for stable dispositions; care ethics ensures sensitivity to power dynamics and vulnerability. Together they challenge impartialist frameworks to accommodate the moral weight of caring relationships.",
+      "raw": {
+        "model": "qwen3:8b",
+        "created_at": "2025-10-01T01:36:11.285737+00:00",
+        "done": true,
+        "prompt_tokens": 500,
+        "completion_tokens": 330,
+        "total_tokens": 830
+      }
+    }
+  },
+  "prompt_036_purpose_of_philosophy": {
+    "input": {
+      "query_str": "What is the purpose of philosophy in contemporary society?\n\nCompare the views of key philosophers on philosophy's role:\n1. WITTGENSTEIN: Summarize his view that philosophy clarifies language and dissolves conceptual confusion\n2. RICHARD RORTY: Explain his claim that philosophy is about conversation and redescription, not finding objective truths\n3. BERTRAND RUSSELL: Contrast with Russell's view of philosophy as pursuit of truth and knowledge\n4. Reflect on whether philosophy has practical value, intrinsic value, or both",
+      "collection": "Aristotle",
+      "temperature": 0.5,
+      "immersive": false
+    },
+    "expected_output": {
+      "text": "Address conceptual analysis, critical reflection, public reason, and personal flourishing.",
+      "keywords": [
+        "conceptual analysis",
+        "critical reflection",
+        "public reason",
+        "flourishing",
+        "interdisciplinary",
+        "narrative"
+      ],
+      "min_length": 520,
+      "should_mention_frameworks": false
+    },
+    "mock_response": {
+      "content": "Philosophy serves multiple purposes: clarifying concepts, evaluating arguments, and cultivating reflective citizens. Analytic traditions emphasize precise conceptual analysis, exposing hidden assumptions in science, law, and ethics. By testing arguments for validity and coherence, philosophy enhances intellectual rigor across disciplines.\n\nCritical theory highlights philosophy's role in diagnosing power structures and ideologies. Engaging with social injustices, philosophers provide frameworks for emancipation and democratic deliberation. Public reason relies on philosophical debate to justify policies accessible to diverse citizens.\n\nOn a personal level, philosophy supports flourishing by examining life's meaning, fostering self-knowledge, and navigating existential challenges. Stoic, Buddhist, and existentialist traditions offer practical wisdom for resilience and purpose. Narrative approaches encourage individuals to craft coherent life stories informed by reflective values.\n\nPhilosophy also bridges disciplines, collaborating with cognitive science, literature, and technology ethics. Its purpose thus cannot be singular; it operates as a toolkit for critical inquiry, moral imagination, and communal dialogue in a rapidly changing world.",
+      "raw": {
+        "model": "qwen3:8b",
+        "created_at": "2025-10-01T01:36:11.285737+00:00",
+        "done": true,
+        "prompt_tokens": 500,
+        "completion_tokens": 340,
+        "total_tokens": 840
+      }
+    }
+  },
+  "prompt_037_philosophy_methodology": {
+    "input": {
+      "query_str": "Compare analytic and continental methodologies and the value of methodological pluralism.\n\nExamine philosophical methodologies:\n1. ANALYTIC PHILOSOPHY: Characterize its focus on logical analysis, clarity, argument, and scientific methods\n   - Key figures: Russell, Frege, Quine, Rawls\n   - Methods: Conceptual analysis, formal logic, thought experiments\n2. CONTINENTAL PHILOSOPHY: Describe its emphasis on interpretation, historicity, lived experience\n   - Key figures: Heidegger, Sartre, Foucault, Derrida\n   - Methods: Phenomenology, hermeneutics, critical theory, genealogy\n3. STEREOTYPES VS. REALITY: Clarify that the division is often overstated and there are bridges\n4. METHODOLOGICAL PLURALISM: Argue for the value of multiple approaches to philosophical problems\n5. CASE STUDY: Show how a problem (e.g., freedom, justice) looks different through each lens\n6. Reflect on whether philosophy benefits from methodological diversity",
+      "collection": "Aristotle",
+      "temperature": 0.45,
+      "immersive": false
+    },
+    "expected_output": {
+      "text": "Discuss language analysis, phenomenology, hermeneutics, and recent cross-tradition collaborations.",
+      "keywords": [
+        "analytic philosophy",
+        "continental philosophy",
+        "phenomenology",
+        "hermeneutics",
+        "methodological pluralism",
+        "dialogue"
+      ],
+      "min_length": 520,
+      "should_mention_frameworks": true
+    },
+    "mock_response": {
+      "content": "Analytic philosophy prioritizes clarity, logical structure, and argumentative precision. It often employs formal tools to resolve conceptual puzzles, seeking transparent definitions and carefully articulated premises. This approach excels in philosophy of language, mind, and science, offering detailed analyses of meaning and reference.\n\nContinental traditions encompass phenomenology, existentialism, critical theory, and hermeneutics. They emphasize lived experience, historical context, and interpretive depth. Phenomenologists like Husserl and Merleau-Ponty explore consciousness from the first-person standpoint, while hermeneutic thinkers such as Gadamer investigate how understanding unfolds within historical horizons.\n\nMethodological pluralism acknowledges strengths in both approaches. Analytic rigor can clarify concepts used in continental narratives, while continental insights expand analytic focus beyond narrow problems to questions of embodiment, culture, and power. Recent collaborations in philosophy of technology, aesthetics, and cognitive science demonstrate fruitful cross-pollination.\n\nThe value of pluralism lies in addressing complex issues\u2014AI ethics, ecological crises, social justice\u2014that demand both precise analysis and rich phenomenological description. Encouraging dialogue dissolves false dichotomies and enriches philosophical practice.",
+      "raw": {
+        "model": "qwen3:8b",
+        "created_at": "2025-10-01T01:36:11.285737+00:00",
+        "done": true,
+        "prompt_tokens": 510,
+        "completion_tokens": 350,
+        "total_tokens": 860
+      }
+    }
+  }
+}

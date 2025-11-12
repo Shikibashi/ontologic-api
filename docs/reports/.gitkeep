@@ -1,0 +1,20 @@
+# Reports Directory
+
+This directory contains project reports and summaries generated during development and testing phases.
+
+## Current Status
+
+**Directory cleaned** - All outdated reports removed (20+ files deleted).
+
+## Future Reports
+
+This directory is reserved for:
+- Security analysis reports (bandit, safety)
+- API testing reports and summaries  
+- Performance and load testing results
+- Code quality analysis reports
+- Dependency audit reports
+
+## Note
+
+Security reports should be regenerated regularly and not committed to version control for current results.

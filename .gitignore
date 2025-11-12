@@ -1,0 +1,63 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.so
+.venv/
+venv/
+ontologic-venv/
+
+# IDE and Editor
+.openspec/
+.kiro/
+.cursor/
+.claude/
+.opencode/
+.code/
+.vscode/
+
+# Runtime artifacts
+*.db
+*.sqlite
+*.sqlite3
+logs/
+temp/
+.benchmarks/
+.pytest_cache/
+.jscpd-report-final/
+.ruff_cache/
+.uv-cache/
+
+# OS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Dependencies
+node_modules/
+llama.cpp/
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Log files
+*.log
+*.log.*
+*.log.prev
+server_payment_test*.log
+
+# Generated documentation
+docs/openapi_schema.json
+
+# AI assistant and development notes
+AGENTS.md
+CLAUDE.md
+WARP.md

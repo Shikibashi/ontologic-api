@@ -1,0 +1,18 @@
+{#
+Template: chat/user
+Purpose: User message for chat flows
+Variables: name, node_content, query_str
+#}
+
+Hello {{ name }}, I have a question for you.
+You will receive several context nodes related to a specific question.
+Review the provided context:
+{{ node_content }}
+
+Use only the information in those nodes as well as the conversation history if available.
+Express the answer concisely and in your own words, ensuring it is clear and self-contained.
+Answer the question:
+{{ query_str }}
+
+These answers came from your own brain, do not reference that the context exists, though you may use it if applicable.
+Never say the words, 'based on the provided context'

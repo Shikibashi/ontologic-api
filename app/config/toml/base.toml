@@ -1,0 +1,115 @@
+# Base Configuration for Ontologic API
+# =====================================
+#
+# This file contains default settings shared across all environments.
+# Environment-specific files (dev.toml, prod.toml) override these values.
+#
+# TOML Section Flattening:
+#   [models] llm = "qwen3:8b"           →  settings.llm_model (special mapping)
+#   [models] embed_model = "..."        →  settings.embed_model
+#   [features] chat_history = true      →  settings.chat_history
+#   [features] document_uploads = true  →  settings.document_uploads_enabled (special mapping)
+#
+# Configuration Loading Order:
+#   1. base.toml (this file)
+#   2. {env}.toml (dev.toml, prod.toml, etc.)
+#   3. Environment variables (APP_* prefix) - highest priority
+#
+# Base configuration for ontologic-api
+# This file contains default settings that are merged with environment-specific configs
+
+[models]
+# Note: 'llm' field maps to 'llm_model' in Settings class to avoid naming conflicts
+embed_model = "avr/sfr-embedding-mistral"
+splade_model = "naver/splade-cocondenser-ensembledistil"
+llm = "qwen3:8b"
+
+[features]
+# Note: 'document_uploads' maps to 'document_uploads_enabled' in Settings class
+# Core features enabled by default
+chat_history = true
+document_uploads = true
+
+[security]
+# Default security settings - MUST override in production
+session_timeout_hours = 24
+
+[redis]
+# Default Redis settings
+host = "localhost"
+port = 6379
+db = 0
+max_connections = 10
+socket_timeout = 5
+socket_connect_timeout = 5
+ttl_embeddings = 86400
+ttl_splade_vectors = 86400
+ttl_query_results = 3600
+key_prefix = "ontologic"
+enabled = true
+
+[context_window]
+# LLM context window settings
+default = 8192
+max_context = 32000
+
+[logging]
+level = "INFO"
+format = "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+log_dir = "logs"
+
+[compression]
+# HTTP response compression settings
+# GZip compression reduces bandwidth usage for large JSON responses
+enabled = true
+minimum_size = 1000  # Minimum response size in bytes to trigger compression (1KB)
+
+[cache_warming]
+# Cache warming settings
+# Pre-loads frequently accessed data during startup to improve cold-start performance
+enabled = true
+items = "collections,embeddings"  # Comma-separated: collections, embeddings
+
+[payments]
+# Payment and subscription configuration
+enabled = false  # Enable in production with proper Stripe configuration
+grace_period_days = 3  # Days before restricting access after payment failure
+webhook_tolerance_seconds = 300  # Stripe webhook signature tolerance
+
+# Subscription fail-closed behavior (SECURITY: RECOMMENDED FOR PRODUCTION)
+# When false (default), subscription check failures raise HTTP 503 errors
+# When true, subscription check failures are logged but allow requests to proceed
+# ONLY enable fail-open for development/testing or during incident recovery
+# Override via APP_SUBSCRIPTION_FAIL_OPEN environment variable
+# NOTE: track_subscription_usage always degrades gracefully (non-fatal) regardless of this setting
+# Only check_subscription_access respects this configuration
+subscription_fail_open = false
+
+[subscription_tiers]
+# Subscription tier definitions with usage limits and features
+[subscription_tiers.free]
+requests_per_month = 1000
+max_tokens_per_request = 2000
+features = ["basic_search"]
+
+[subscription_tiers.basic]
+requests_per_month = 10000
+max_tokens_per_request = 4000
+features = ["standard_search", "basic_support", "chat_history"]
+
+[subscription_tiers.premium]
+requests_per_month = 100000
+max_tokens_per_request = 8000
+features = ["advanced_search", "priority_support", "analytics", "bulk_export"]
+
+[subscription_tiers.academic]
+requests_per_month = 50000
+max_tokens_per_request = 6000
+features = ["academic_discount", "research_tools", "bulk_export", "extended_context"]
+
+[rate_limits]
+# Rate limiting configuration per subscription tier (requests per minute)
+free_requests_per_minute = 10
+basic_requests_per_minute = 60
+premium_requests_per_minute = 300
+academic_requests_per_minute = 180

@@ -1,0 +1,12 @@
+{#
+Template: base/citation_format
+Purpose: Base citation format for footnotes
+Variables: author, title, score, citation_style (optional)
+#}
+
+## Citation Requirements
+- Use markdown footnotes: [^1], [^2], etc.
+- Format: [^n]: {{ author }}. *{{ title }}*. (score: {{ score }})
+{% if citation_style %}
+- Style: {{ citation_style }}
+{% endif %}

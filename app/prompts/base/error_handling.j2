@@ -1,0 +1,13 @@
+{#
+Template: base/error_handling
+Purpose: Macros for handling missing/optional data
+Variables: (macro params)
+#}
+
+{% macro handle_missing_data(data_value, fallback_message) -%}
+{%- if not data_value -%}
+{{ fallback_message }}
+{%- else -%}
+{{ data_value }}
+{%- endif -%}
+{%- endmacro %}

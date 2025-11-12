@@ -1,0 +1,17 @@
+{#
+Template: workflows/expansion/adaptive_query
+Purpose: Adaptive query template for expansion workflows
+Variables: query, query_complexity (simple|complex), num_queries, complexity_aspects (list)
+#}
+
+{% if query_complexity == "simple" %}
+Generate {{ num_queries }} alternative ways to ask: "{{ query }}"
+{% elif query_complexity == "complex" %}
+Break down this complex query and generate {{ num_queries }} focused sub-questions:
+"{{ query }}"
+
+Consider these aspects:
+{% for aspect in complexity_aspects or [] %}
+- {{ aspect }}
+{% endfor %}
+{% endif %}

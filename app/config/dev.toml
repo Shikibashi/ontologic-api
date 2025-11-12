@@ -1,0 +1,130 @@
+[models]
+embed_model = "avr/sfr-embedding-mistral"
+splade_model = "naver/splade-cocondenser-ensembledistil"
+#llm = "Granite3.3_CtxAdjust:latest"
+#llm = "Qwen7b_CtxAdjust:latest"
+llm = "qwen3:8b"
+
+[context_window]
+default=8192
+max_context=32768
+
+[llm]
+request_timeout_seconds = 120
+generation_timeout_seconds = 120
+chat_timeout_seconds = 120
+vet_timeout_seconds = 90
+
+[qdrant]
+url = "http://127.0.0.1:6333"
+api_key_env = "QDRANT_API_KEY"
+require_api_key = false
+timeout = 60
+retry_attempts = 3
+collections_cache_ttl = 300
+
+# Local Qdrant for development and backup operations
+[qdrant.local]
+url = "http://127.0.0.1:6333"
+api_key_env = "LOCAL_QDRANT_API_KEY"  # Usually not needed for local
+timeout = 10
+retry_attempts = 2
+
+# OAuth Configuration (optional)
+# All endpoints remain publicly accessible regardless of OAuth settings
+[oauth]
+enabled = true  # Set to true to enable OAuth features
+
+[oauth.providers.google]
+enabled = true
+client_id = "test-client-id"  # Or set via GOOGLE_CLIENT_ID environment variable
+client_secret = "test-client-secret"  # Or set via GOOGLE_CLIENT_SECRET environment variable
+
+[oauth.providers.discord]
+enabled = false
+client_id = ""  # Or set via DISCORD_CLIENT_ID environment variable
+client_secret = ""  # Or set via DISCORD_CLIENT_SECRET environment variable
+
+[oauth.providers.apple]
+enabled = false
+client_id = ""  # Or set via APPLE_CLIENT_ID environment variable
+client_secret = ""  # Or set via APPLE_CLIENT_SECRET environment variable
+
+# Optional Features
+# These features work with or without OAuth authentication
+[features]
+chat_history = true       # Enable chat history storage
+document_uploads = true   # Enable document upload functionality
+chat_use_pdf_context = true  # Enable PDF context integration
+
+# Chat History Configuration
+[chat_history]
+retention_days = 30              # Keep chat history for 30 days in development
+cleanup_batch_size = 100         # Process 100 records at a time for cleanup
+vector_upload_batch_size = 25    # Upload 25 vectors at a time to Qdrant
+enable_vector_search = true      # Enable semantic search for chat history
+max_message_length = 10000       # Maximum message length (10KB)
+pagination_default_limit = 50    # Default messages per page
+pagination_max_limit = 200       # Maximum messages per page
+
+# Security Configuration
+# ⚠️  PRODUCTION WARNING: Do NOT use example secrets in production!
+# Set SESSION_SECRET via environment variable with a cryptographically secure value.
+# Generate: python -c "import secrets; print(secrets.token_urlsafe(32))"
+#
+# In production (APP_ENV=prod), SESSION_SECRET MUST be set or startup will fail.
+[security]
+session_secret = ""  # MUST be set via SESSION_SECRET environment variable
+session_timeout_hours = 24
+
+# Middleware Configuration
+# Development environment allows localhost and local ports for testing
+[middleware.trusted_hosts]
+hosts = ["api.ontologicai.com", "localhost", "www.ontologicai.com", "127.0.0.1"]
+# Trusted hosts for TrustedHostMiddleware - prevents host header attacks
+
+[middleware.cors]
+origins = ["http://localhost:5173", "http://localhost:5174", "https://www.ontologicai.com", "https://ontologicai.com"]
+# CORS origins - development includes local dev servers
+methods = ["GET", "POST", "PUT", "DELETE"]
+# Allowed HTTP methods
+headers = ["Content-Type", "Authorization"]
+# Allowed request headers
+credentials = true
+# Allow credentials (cookies, authorization headers)
+
+# Logging Configuration
+# Development environment logs to local "logs" directory
+[logging]
+log_dir = "logs"  # Local directory for development logs
+
+# Workflow Configuration
+# Configuration for paper generation and review workflows
+[workflows]
+section_order = ["abstract", "introduction", "argument", "counterarguments", "conclusion"]
+# Default section order for philosophical papers
+# Can be overridden via SECTION_ORDER environment variable (comma-separated)
+
+# Payment Configuration (Development)
+# ⚠️  DEVELOPMENT ONLY: Uses Stripe test mode
+# Set Stripe keys via environment variables:
+#   APP_STRIPE_PUBLISHABLE_KEY=pk_test_...
+#   APP_STRIPE_SECRET_KEY=sk_test_...
+#   APP_STRIPE_WEBHOOK_SECRET=whsec_...
+[payments]
+enabled = true  # Set to true to test payment features in development
+grace_period_days = 7  # Longer grace period for development testing
+
+# Development-specific subscription tier overrides
+[subscription_tiers.free]
+requests_per_month = 2000  # Higher limit for development testing
+
+[subscription_tiers.basic]
+requests_per_month = 20000  # Higher limit for development testing
+
+# Development rate limits (more permissive)
+[rate_limits]
+free_requests_per_minute = 30
+basic_requests_per_minute = 120
+premium_requests_per_minute = 600
+academic_requests_per_minute = 360

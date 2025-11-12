@@ -1,0 +1,17 @@
+# Development environment configuration
+# Extends base.toml with dev-specific overrides
+
+[oauth]
+enabled = false
+
+[oauth.providers]
+google = { enabled = false, client_id = "", client_secret = "" }
+discord = { enabled = false, client_id = "", client_secret = "" }
+apple = { enabled = false, client_id = "", client_secret = "" }
+
+[security]
+# WARNING: Change in production via environment variable
+session_secret = "EXAMPLE-ONLY-change-this-in-production"
+
+[logging]
+level = "DEBUG"

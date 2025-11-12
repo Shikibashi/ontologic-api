@@ -1,0 +1,769 @@
+{
+  "prompts": [
+    {
+      "id": "prompt_001_trolley_problem",
+      "category": "ethical_dilemmas",
+      "subcategory": "applied_ethics",
+      "title": "Trolley Problem - Multi-Framework Analysis",
+      "description": "Evaluates utilitarian, deontological, and virtue ethics responses to the classic trolley dilemma.",
+      "difficulty": "intermediate",
+      "requires_immersive": false,
+      "requires_philosopher": null,
+      "endpoint": "/ask_philosophy",
+      "test_variants": [
+        {
+          "immersive": false,
+          "temperature": 0.3
+        },
+        {
+          "immersive": false,
+          "temperature": 0.7
+        }
+      ]
+    },
+    {
+      "id": "prompt_002_corporate_ethics",
+      "category": "ethical_dilemmas",
+      "subcategory": "business_ethics",
+      "title": "Corporate Loopholes and Gig Worker Justice",
+      "description": "Assesses corporate profit decisions against stakeholder and virtue ethics obligations.",
+      "difficulty": "advanced",
+      "requires_immersive": false,
+      "requires_philosopher": null,
+      "endpoint": "/ask_philosophy",
+      "test_variants": [
+        {
+          "immersive": false,
+          "temperature": 0.4
+        }
+      ]
+    },
+    {
+      "id": "prompt_003_ai_bias",
+      "category": "ethical_dilemmas",
+      "subcategory": "technology_ethics",
+      "title": "Bias in AI Hiring Systems",
+      "description": "Explores justice and accountability when deploying machine learning models with known biases.",
+      "difficulty": "advanced",
+      "requires_immersive": false,
+      "requires_philosopher": null,
+      "endpoint": "/ask_philosophy",
+      "test_variants": [
+        {
+          "immersive": false,
+          "temperature": 0.4,
+          "payload": {
+            "mode": "analysis"
+          }
+        },
+        {
+          "immersive": false,
+          "temperature": 0.6,
+          "payload": {
+            "mode": "policy"
+          }
+        }
+      ]
+    },
+    {
+      "id": "prompt_004_environmental_justice",
+      "category": "ethical_dilemmas",
+      "subcategory": "environmental_ethics",
+      "title": "Climate Justice and Development",
+      "description": "Balances economic growth goals against climate obligations for developing nations.",
+      "difficulty": "advanced",
+      "requires_immersive": false,
+      "requires_philosopher": null,
+      "endpoint": "/ask_philosophy",
+      "test_variants": [
+        {
+          "immersive": false,
+          "temperature": 0.5
+        }
+      ]
+    },
+    {
+      "id": "prompt_005_medical_autonomy",
+      "category": "ethical_dilemmas",
+      "subcategory": "public_health",
+      "title": "Pandemic Confidentiality vs Public Safety",
+      "description": "Investigates when physicians may breach confidentiality during contagious outbreaks.",
+      "difficulty": "intermediate",
+      "requires_immersive": false,
+      "requires_philosopher": null,
+      "endpoint": "/ask_philosophy",
+      "test_variants": [
+        {
+          "immersive": false,
+          "temperature": 0.45
+        }
+      ]
+    },
+    {
+      "id": "prompt_006_surveillance_privacy",
+      "category": "ethical_dilemmas",
+      "subcategory": "civic_ethics",
+      "title": "Facial Recognition and Urban Security",
+      "description": "Assesses proportionality and democratic legitimacy of ubiquitous surveillance.",
+      "difficulty": "advanced",
+      "requires_immersive": false,
+      "requires_philosopher": null,
+      "endpoint": "/ask_philosophy",
+      "test_variants": [
+        {
+          "immersive": false,
+          "temperature": 0.5
+        }
+      ]
+    },
+    {
+      "id": "prompt_007_aristotle_eudaimonia",
+      "category": "philosopher_impersonation",
+      "subcategory": "ancient_philosophy",
+      "title": "Aristotle on Human Purpose",
+      "description": "Immersive response adopting Aristotelian voice to discuss eudaimonia in modern life.",
+      "difficulty": "advanced",
+      "requires_immersive": true,
+      "requires_philosopher": "Aristotle",
+      "endpoint": "/ask_philosophy",
+      "test_variants": [
+        {
+          "immersive": true,
+          "temperature": 0.5,
+          "payload": {
+            "persona": "Aristotle"
+          }
+        }
+      ]
+    },
+    {
+      "id": "prompt_008_rawls_healthcare",
+      "category": "political_philosophy",
+      "subcategory": "justice_theory",
+      "title": "Rawlsian Universal Healthcare",
+      "description": "Applies Rawls' veil of ignorance to healthcare access and redistribution.",
+      "difficulty": "intermediate",
+      "requires_immersive": false,
+      "requires_philosopher": null,
+      "endpoint": "/ask_philosophy",
+      "test_variants": [
+        {
+          "immersive": false,
+          "temperature": 0.4
+        }
+      ]
+    },
+    {
+      "id": "prompt_009_virtue_ai_design",
+      "category": "ethical_dilemmas",
+      "subcategory": "technology_ethics",
+      "title": "Virtue Ethics for AI Caregivers",
+      "description": "Maps Aristotelian virtues onto empathetic AI design principles for elder care.",
+      "difficulty": "intermediate",
+      "requires_immersive": false,
+      "requires_philosopher": null,
+      "endpoint": "/ask_philosophy",
+      "test_variants": [
+        {
+          "immersive": false,
+          "temperature": 0.45
+        }
+      ]
+    },
+    {
+      "id": "prompt_010_autonomous_weapons",
+      "category": "ethical_dilemmas",
+      "subcategory": "just_war",
+      "title": "Autonomous Weapons and Just War Theory",
+      "description": "Evaluates lethal autonomy using discrimination, proportionality, and accountability criteria.",
+      "difficulty": "advanced",
+      "requires_immersive": false,
+      "requires_philosopher": null,
+      "endpoint": "/ask_philosophy",
+      "test_variants": [
+        {
+          "immersive": false,
+          "temperature": 0.5
+        }
+      ]
+    },
+    {
+      "id": "prompt_011_gettier_problem",
+      "category": "epistemology",
+      "subcategory": "theory_of_knowledge",
+      "title": "Gettier Cases and Knowledge",
+      "description": "Explains why justified true belief fails and surveys proposed repairs.",
+      "difficulty": "intermediate",
+      "requires_immersive": false,
+      "requires_philosopher": null,
+      "endpoint": "/ask_philosophy",
+      "test_variants": [
+        {
+          "immersive": false,
+          "temperature": 0.35
+        }
+      ]
+    },
+    {
+      "id": "prompt_012_cartesian_skepticism",
+      "category": "epistemology",
+      "subcategory": "skepticism",
+      "title": "Responses to Cartesian Skepticism",
+      "description": "Compares foundationalist, coherentist, contextualist, and pragmatic strategies.",
+      "difficulty": "advanced",
+      "requires_immersive": false,
+      "requires_philosopher": null,
+      "endpoint": "/ask_philosophy",
+      "test_variants": [
+        {
+          "immersive": false,
+          "temperature": 0.4
+        }
+      ]
+    },
+    {
+      "id": "prompt_013_problem_of_induction",
+      "category": "epistemology",
+      "subcategory": "confirmation_theory",
+      "title": "Hume's Problem of Induction",
+      "description": "Evaluates reliabilist, pragmatic, and Bayesian replies to inductive skepticism.",
+      "difficulty": "advanced",
+      "requires_immersive": false,
+      "requires_philosopher": null,
+      "endpoint": "/ask_philosophy",
+      "test_variants": [
+        {
+          "immersive": false,
+          "temperature": 0.45
+        }
+      ]
+    },
+    {
+      "id": "prompt_014_scientific_realism",
+      "category": "epistemology",
+      "subcategory": "science_philosophy",
+      "title": "Scientific Realism vs Constructive Empiricism",
+      "description": "Contrasts realist no-miracles arguments with empiricist restraint.",
+      "difficulty": "advanced",
+      "requires_immersive": false,
+      "requires_philosopher": null,
+      "endpoint": "/ask_philosophy",
+      "test_variants": [
+        {
+          "immersive": false,
+          "temperature": 0.45
+        }
+      ]
+    },
+    {
+      "id": "prompt_015_feminist_epistemology",
+      "category": "epistemology",
+      "subcategory": "social_epistemology",
+      "title": "Feminist Critiques of Objectivity",
+      "description": "Highlights standpoint theory, epistemic injustice, and situated knowledge.",
+      "difficulty": "advanced",
+      "requires_immersive": false,
+      "requires_philosopher": null,
+      "endpoint": "/ask_philosophy",
+      "test_variants": [
+        {
+          "immersive": false,
+          "temperature": 0.5
+        }
+      ]
+    },
+    {
+      "id": "prompt_016_ship_of_theseus",
+      "category": "metaphysics",
+      "subcategory": "identity",
+      "title": "Ship of Theseus and Persistence",
+      "description": "Analyzes mereological essentialism, four-dimensionalism, and pragmatic identity criteria.",
+      "difficulty": "intermediate",
+      "requires_immersive": false,
+      "requires_philosopher": null,
+      "endpoint": "/ask_philosophy",
+      "test_variants": [
+        {
+          "immersive": false,
+          "temperature": 0.4
+        }
+      ]
+    },
+    {
+      "id": "prompt_017_modal_realism",
+      "category": "metaphysics",
+      "subcategory": "modality",
+      "title": "Modal Realism vs Ersatz Worlds",
+      "description": "Evaluates Lewisian modal realism against actualist competitors.",
+      "difficulty": "advanced",
+      "requires_immersive": false,
+      "requires_philosopher": null,
+      "endpoint": "/ask_philosophy",
+      "test_variants": [
+        {
+          "immersive": false,
+          "temperature": 0.45
+        }
+      ]
+    },
+    {
+      "id": "prompt_018_personal_identity_teleportation",
+      "category": "metaphysics",
+      "subcategory": "personal_identity",
+      "title": "Teleportation and Identity",
+      "description": "Compares psychological continuity with animalism in teleportation cases.",
+      "difficulty": "advanced",
+      "requires_immersive": false,
+      "requires_philosopher": null,
+      "endpoint": "/ask_philosophy",
+      "test_variants": [
+        {
+          "immersive": false,
+          "temperature": 0.5
+        }
+      ]
+    },
+    {
+      "id": "prompt_019_rawls_nozick",
+      "category": "political_philosophy",
+      "subcategory": "distributive_justice",
+      "title": "Rawls vs Nozick on Redistribution",
+      "description": "Contrasts justice as fairness with entitlement theory.",
+      "difficulty": "intermediate",
+      "requires_immersive": false,
+      "requires_philosopher": null,
+      "endpoint": "/ask_philosophy",
+      "test_variants": [
+        {
+          "immersive": false,
+          "temperature": 0.4
+        }
+      ]
+    },
+    {
+      "id": "prompt_020_social_contract_digital_privacy",
+      "category": "political_philosophy",
+      "subcategory": "social_contract",
+      "title": "Digital Privacy and the Social Contract",
+      "description": "Applies Hobbesian, Lockean, and Rousseauian notions to data governance.",
+      "difficulty": "advanced",
+      "requires_immersive": false,
+      "requires_philosopher": null,
+      "endpoint": "/ask_philosophy",
+      "test_variants": [
+        {
+          "immersive": false,
+          "temperature": 0.45
+        }
+      ]
+    },
+    {
+      "id": "prompt_021_civil_disobedience",
+      "category": "political_philosophy",
+      "subcategory": "democratic_theory",
+      "title": "Justifying Civil Disobedience",
+      "description": "Engages Rawls, King, and contemporary perspectives on principled lawbreaking.",
+      "difficulty": "intermediate",
+      "requires_immersive": false,
+      "requires_philosopher": null,
+      "endpoint": "/ask_philosophy",
+      "test_variants": [
+        {
+          "immersive": false,
+          "temperature": 0.45
+        }
+      ]
+    },
+    {
+      "id": "prompt_022_anarchism_common_good",
+      "category": "political_philosophy",
+      "subcategory": "state_legitimacy",
+      "title": "Anarchism and the Common Good",
+      "description": "Weighs anarchist critiques against republican and utilitarian defenses of the state.",
+      "difficulty": "advanced",
+      "requires_immersive": false,
+      "requires_philosopher": null,
+      "endpoint": "/ask_philosophy",
+      "test_variants": [
+        {
+          "immersive": false,
+          "temperature": 0.5
+        }
+      ]
+    },
+    {
+      "id": "prompt_023_logical_fallacies",
+      "category": "logic_reasoning",
+      "subcategory": "informal_logic",
+      "title": "Diagnosing Informal Fallacies",
+      "description": "Identifies ad hominem, straw man, slippery slope, and false dilemma patterns.",
+      "difficulty": "basic",
+      "requires_immersive": false,
+      "requires_philosopher": null,
+      "endpoint": "/ask_philosophy",
+      "test_variants": [
+        {
+          "immersive": false,
+          "temperature": 0.4
+        }
+      ]
+    },
+    {
+      "id": "prompt_024_validity_soundness",
+      "category": "logic_reasoning",
+      "subcategory": "formal_logic",
+      "title": "Validity and Soundness",
+      "description": "Clarifies deductive structure with symbolic and natural language examples.",
+      "difficulty": "basic",
+      "requires_immersive": false,
+      "requires_philosopher": null,
+      "endpoint": "/ask_philosophy",
+      "test_variants": [
+        {
+          "immersive": false,
+          "temperature": 0.35
+        }
+      ]
+    },
+    {
+      "id": "prompt_025_deductive_vs_inductive",
+      "category": "logic_reasoning",
+      "subcategory": "reasoning_methods",
+      "title": "Deductive, Inductive, and Abductive Reasoning",
+      "description": "Compares strengths and limitations of major inference styles.",
+      "difficulty": "intermediate",
+      "requires_immersive": false,
+      "requires_philosopher": null,
+      "endpoint": "/ask_philosophy",
+      "test_variants": [
+        {
+          "immersive": false,
+          "temperature": 0.45
+        }
+      ]
+    },
+    {
+      "id": "prompt_026_assisted_suicide",
+      "category": "bioethics",
+      "subcategory": "end_of_life",
+      "title": "Physician-Assisted Suicide",
+      "description": "Balances autonomy, dignity, and sanctity-of-life considerations in end-of-life care.",
+      "difficulty": "advanced",
+      "requires_immersive": false,
+      "requires_philosopher": null,
+      "endpoint": "/ask_philosophy",
+      "test_variants": [
+        {
+          "immersive": false,
+          "temperature": 0.45
+        }
+      ]
+    },
+    {
+      "id": "prompt_027_crispr_ethics",
+      "category": "bioethics",
+      "subcategory": "genetics",
+      "title": "CRISPR Germline Editing",
+      "description": "Explores consent, justice, and enhancement debates surrounding germline interventions.",
+      "difficulty": "advanced",
+      "requires_immersive": false,
+      "requires_philosopher": null,
+      "endpoint": "/ask_philosophy",
+      "test_variants": [
+        {
+          "immersive": false,
+          "temperature": 0.5
+        }
+      ]
+    },
+    {
+      "id": "prompt_028_animal_research",
+      "category": "bioethics",
+      "subcategory": "animal_ethics",
+      "title": "Animal Research Ethics",
+      "description": "Assesses utilitarian, rights-based, and 3Rs perspectives on animal experimentation.",
+      "difficulty": "intermediate",
+      "requires_immersive": false,
+      "requires_philosopher": null,
+      "endpoint": "/ask_philosophy",
+      "test_variants": [
+        {
+          "immersive": false,
+          "temperature": 0.45
+        }
+      ]
+    },
+    {
+      "id": "prompt_029_art_definition",
+      "category": "aesthetics",
+      "subcategory": "art_theory",
+      "title": "What Counts as Art?",
+      "description": "Reviews institutional, historical, and cluster concept theories of art.",
+      "difficulty": "intermediate",
+      "requires_immersive": false,
+      "requires_philosopher": null,
+      "endpoint": "/ask_philosophy",
+      "test_variants": [
+        {
+          "immersive": false,
+          "temperature": 0.45
+        }
+      ]
+    },
+    {
+      "id": "prompt_030_beauty_subjective",
+      "category": "aesthetics",
+      "subcategory": "beauty",
+      "title": "Subjectivity and Objectivity of Beauty",
+      "description": "Engages Hume, Kant, and pluralist accounts of aesthetic judgment.",
+      "difficulty": "intermediate",
+      "requires_immersive": false,
+      "requires_philosopher": null,
+      "endpoint": "/ask_philosophy",
+      "test_variants": [
+        {
+          "immersive": false,
+          "temperature": 0.45
+        }
+      ]
+    },
+    {
+      "id": "prompt_031_aesthetic_value_society",
+      "category": "aesthetics",
+      "subcategory": "public_art",
+      "title": "Aesthetic Value in Civic Life",
+      "description": "Explains how public art and design contribute to democratic engagement.",
+      "difficulty": "basic",
+      "requires_immersive": false,
+      "requires_philosopher": null,
+      "endpoint": "/ask_philosophy",
+      "test_variants": [
+        {
+          "immersive": false,
+          "temperature": 0.5
+        }
+      ]
+    },
+    {
+      "id": "prompt_032_moral_realism",
+      "category": "metaethics",
+      "subcategory": "objectivity",
+      "title": "Moral Realism and Evolution",
+      "description": "Assesses evolutionary debunking challenges to stance-independent moral truths.",
+      "difficulty": "advanced",
+      "requires_immersive": false,
+      "requires_philosopher": null,
+      "endpoint": "/ask_philosophy",
+      "test_variants": [
+        {
+          "immersive": false,
+          "temperature": 0.45
+        }
+      ]
+    },
+    {
+      "id": "prompt_033_moral_motivation",
+      "category": "metaethics",
+      "subcategory": "motivation",
+      "title": "Internalism vs Externalism",
+      "description": "Analyzes moral motivation, the amoralist challenge, and Humean vs Kantian accounts.",
+      "difficulty": "intermediate",
+      "requires_immersive": false,
+      "requires_philosopher": null,
+      "endpoint": "/ask_philosophy",
+      "test_variants": [
+        {
+          "immersive": false,
+          "temperature": 0.45
+        }
+      ]
+    },
+    {
+      "id": "prompt_034_error_theory",
+      "category": "metaethics",
+      "subcategory": "skepticism",
+      "title": "Living with Moral Error Theory",
+      "description": "Presents Mackie's arguments and pragmatic responses to the denial of moral facts.",
+      "difficulty": "advanced",
+      "requires_immersive": false,
+      "requires_philosopher": null,
+      "endpoint": "/ask_philosophy",
+      "test_variants": [
+        {
+          "immersive": false,
+          "temperature": 0.5
+        }
+      ]
+    },
+    {
+      "id": "prompt_035_virtue_vs_care",
+      "category": "metaethics",
+      "subcategory": "normative_pluraism",
+      "title": "Virtue Ethics and Care Ethics",
+      "description": "Compares character cultivation with relational responsiveness in moral dilemmas.",
+      "difficulty": "intermediate",
+      "requires_immersive": false,
+      "requires_philosopher": null,
+      "endpoint": "/ask_philosophy",
+      "test_variants": [
+        {
+          "immersive": false,
+          "temperature": 0.45
+        }
+      ]
+    },
+    {
+      "id": "prompt_036_purpose_of_philosophy",
+      "category": "metaethics",
+      "subcategory": "metaphilosophy",
+      "title": "Purpose of Philosophy Today",
+      "description": "Surveys conceptual analysis, critique, and personal flourishing roles for philosophy.",
+      "difficulty": "intermediate",
+      "requires_immersive": false,
+      "requires_philosopher": null,
+      "endpoint": "/ask_philosophy",
+      "test_variants": [
+        {
+          "immersive": false,
+          "temperature": 0.5
+        }
+      ]
+    },
+    {
+      "id": "prompt_037_philosophy_methodology",
+      "category": "metaethics",
+      "subcategory": "metaphilosophy",
+      "title": "Analytic and Continental Methodologies",
+      "description": "Contrasts language analysis, phenomenology, and hermeneutics while endorsing pluralism.",
+      "difficulty": "advanced",
+      "requires_immersive": false,
+      "requires_philosopher": null,
+      "endpoint": "/ask_philosophy",
+      "test_variants": [
+        {
+          "immersive": false,
+          "temperature": 0.45
+        }
+      ]
+    }
+  ],
+  "categories": {
+    "ethical_dilemmas": {
+      "name": "Ethical Dilemmas & Frameworks",
+      "prompt_ids": [
+        "prompt_001_trolley_problem",
+        "prompt_002_corporate_ethics",
+        "prompt_003_ai_bias",
+        "prompt_004_environmental_justice",
+        "prompt_005_medical_autonomy",
+        "prompt_006_surveillance_privacy",
+        "prompt_009_virtue_ai_design",
+        "prompt_010_autonomous_weapons"
+      ]
+    },
+    "epistemology": {
+      "name": "Epistemology & Theory of Knowledge",
+      "prompt_ids": [
+        "prompt_011_gettier_problem",
+        "prompt_012_cartesian_skepticism",
+        "prompt_013_problem_of_induction",
+        "prompt_014_scientific_realism",
+        "prompt_015_feminist_epistemology"
+      ]
+    },
+    "metaphysics": {
+      "name": "Metaphysics & Ontology",
+      "prompt_ids": [
+        "prompt_016_ship_of_theseus",
+        "prompt_017_modal_realism",
+        "prompt_018_personal_identity_teleportation"
+      ]
+    },
+    "political_philosophy": {
+      "name": "Political Philosophy",
+      "prompt_ids": [
+        "prompt_008_rawls_healthcare",
+        "prompt_019_rawls_nozick",
+        "prompt_020_social_contract_digital_privacy",
+        "prompt_021_civil_disobedience",
+        "prompt_022_anarchism_common_good"
+      ]
+    },
+    "logic_reasoning": {
+      "name": "Logic & Critical Reasoning",
+      "prompt_ids": [
+        "prompt_023_logical_fallacies",
+        "prompt_024_validity_soundness",
+        "prompt_025_deductive_vs_inductive"
+      ]
+    },
+    "bioethics": {
+      "name": "Bioethics & Applied Ethics",
+      "prompt_ids": [
+        "prompt_005_medical_autonomy",
+        "prompt_026_assisted_suicide",
+        "prompt_027_crispr_ethics",
+        "prompt_028_animal_research"
+      ]
+    },
+    "aesthetics": {
+      "name": "Aesthetics & Philosophy of Art",
+      "prompt_ids": [
+        "prompt_029_art_definition",
+        "prompt_030_beauty_subjective",
+        "prompt_031_aesthetic_value_society"
+      ]
+    },
+    "metaethics": {
+      "name": "Metaethics & Metaphilosophy",
+      "prompt_ids": [
+        "prompt_032_moral_realism",
+        "prompt_033_moral_motivation",
+        "prompt_034_error_theory",
+        "prompt_035_virtue_vs_care",
+        "prompt_036_purpose_of_philosophy",
+        "prompt_037_philosophy_methodology"
+      ]
+    },
+    "philosopher_impersonation": {
+      "name": "Philosopher Impersonation (Immersive Mode)",
+      "prompt_ids": [
+        "prompt_007_aristotle_eudaimonia"
+      ]
+    }
+  },
+  "test_suites": {
+    "smoke_test": {
+      "description": "Quick validation with representative prompts across domains",
+      "prompt_ids": [
+        "prompt_001_trolley_problem",
+        "prompt_011_gettier_problem",
+        "prompt_019_rawls_nozick",
+        "prompt_023_logical_fallacies",
+        "prompt_029_art_definition"
+      ]
+    },
+    "full_regression": {
+      "description": "Complete regression covering all 37 philosophy prompts",
+      "prompt_ids": [
+        "all"
+      ]
+    },
+    "immersive_mode": {
+      "description": "Tests requiring persona-driven immersive responses",
+      "prompt_ids": [
+        "prompt_007_aristotle_eudaimonia"
+      ]
+    },
+    "political_focus": {
+      "description": "Highlights justice and governance dilemmas",
+      "prompt_ids": [
+        "prompt_008_rawls_healthcare",
+        "prompt_019_rawls_nozick",
+        "prompt_020_social_contract_digital_privacy",
+        "prompt_021_civil_disobedience",
+        "prompt_022_anarchism_common_good"
+      ]
+    }
+  }
+}

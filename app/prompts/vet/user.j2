@@ -1,0 +1,14 @@
+{#
+Template: vet/user
+Purpose: User message containing nodes and query for vetting
+Variables: node_texts, query_str
+#}
+
+Here are the context nodes:
+{% for line in node_texts %}{{ line }}
+{% endfor %}
+
+Question:
+{{ query_str }}
+
+List the node_id(s), along with the collection to which they belong, of the most relevant node(s) that answer the question. If multiple nodes are relevant, list all their node_id(s) along with the collection to which they belong. Optionally, provide a brief justification for your choice.

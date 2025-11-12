@@ -1,0 +1,144 @@
+# Development Environment Configuration
+# =====================================
+# 
+# This file uses nested sections for organization, but values are automatically
+# flattened when loaded into the Settings class. For example:
+#   [chat] chat_use_pdf_context = true  →  settings.chat_use_pdf_context
+#   [qdrant] qdrant_url = "..."         →  settings.qdrant_url
+#   [models] llm = "qwen3:8b"           →  settings.llm_model (special mapping)
+#
+# Configuration Priority (highest to lowest):
+#   1. Environment variables (APP_* prefix)
+#   2. This file (dev.toml)
+#   3. Base configuration (base.toml)
+#   4. Settings class defaults
+#
+# To verify configuration is loaded correctly:
+#   PYTHONPATH=. python app/main.py --env dev
+#   Check startup logs for "Configuration Loaded Successfully"
+#
+# Development environment configuration
+# Extends base.toml with dev-specific overrides
+#
+# Loading order: base.toml -> dev.toml -> environment variables (APP_*)
+# To verify settings are loaded: check startup logs for "Configuration Loaded Successfully"
+
+# Chat feature flags for local development
+[chat]
+# These fields map directly to Settings class fields with the same names
+# Enable PDF context integration in /ask_philosophy endpoint
+# When true, user documents are searched and merged with philosopher context
+# Requires: document_uploads_enabled=true, user authentication, and uploaded documents
+chat_use_pdf_context = true
+
+# Maximum number of document chunks to include in context
+# Higher values provide more context but may exceed token limits
+# Valid range: 1-20, recommended: 3-5 for most use cases
+pdf_context_limit = 5
+
+# Qdrant configuration for local development
+[qdrant]
+# qdrant_url maps to settings.qdrant_url (flattened from qdrant.url)
+# Local Qdrant HTTP endpoint (use 127.0.0.1, not localhost, for better compatibility)
+# Verify Qdrant is running: curl http://127.0.0.1:6333/collections
+qdrant_url = "http://127.0.0.1:6333"
+
+# Local instance does not enforce API keys
+# Set to true in production with qdrant_api_key configured
+require_api_key = false
+
+# Leave blank for local development (no authentication)
+# In production: set via APP_QDRANT_API_KEY environment variable
+qdrant_api_key = ""
+
+# Document upload configuration for local development
+[documents]
+# document_uploads_enabled maps to settings.document_uploads_enabled
+# Allow PDF uploads in dev environment
+# Users can upload documents via POST /documents/upload with JWT authentication
+# Documents are stored in Qdrant collections named after the username
+document_uploads_enabled = true
+
+# Maximum file size per upload (in megabytes)
+# Larger files take longer to process and may exceed memory limits
+max_upload_size_mb = 50
+
+# JWT configuration overrides for development
+[jwt]
+# Token lifetime in seconds (3600 = 1 hour)
+# Shorter lifetimes are more secure but require more frequent re-authentication
+# For development: 1 hour is convenient for testing
+# For production: consider 15-30 minutes with refresh tokens
+jwt_lifetime_seconds = 3600
+
+[oauth]
+enabled = false
+
+[oauth.providers]
+google = { enabled = false, client_id = "", client_secret = "" }
+discord = { enabled = false, client_id = "", client_secret = "" }
+apple = { enabled = false, client_id = "", client_secret = "" }
+
+[security]
+# WARNING: Change in production via environment variable
+session_secret = "EXAMPLE-ONLY-change-this-in-production"
+
+[logging]
+level = "DEBUG"
+
+# Response Compression Configuration - Development
+# Lower threshold for testing compression behavior with smaller responses
+[compression]
+enabled = true
+minimum_size = 500  # Lower threshold for dev testing (500 bytes vs 1KB in base)
+
+# ============================================================
+# VERIFICATION CHECKLIST
+# ============================================================
+#
+# To verify this configuration is loaded correctly:
+#
+# 1. Start server: PYTHONPATH=. python app/main.py --env dev
+# 2. Check logs for "Configuration Loaded Successfully"
+# 3. Verify: chat_use_pdf_context: True
+# 4. Verify: document_uploads_enabled: True
+# 5. Check Qdrant: curl http://127.0.0.1:6333/collections
+#
+# To test PDF context integration:
+#
+# 1. Register user: POST /auth/register
+# 2. Login: POST /auth/jwt/login (get token)
+# 3. Upload PDF: POST /documents/upload (with Bearer token)
+# 4. Query with context: POST /ask_philosophy?include_pdf_context=true
+#
+# See docs/CONFIGURATION_VERIFICATION_GUIDE.md for detailed instructions
+
+# Payment Configuration (Development)
+# ⚠️  DEVELOPMENT ONLY: Uses Stripe test mode
+#
+# To test payments in development:
+# 1. Create a Stripe account at https://stripe.com
+# 2. Get test API keys from https://dashboard.stripe.com/test/apikeys
+# 3. Set environment variables:
+#    export APP_STRIPE_PUBLISHABLE_KEY=pk_test_...
+#    export APP_STRIPE_SECRET_KEY=sk_test_...
+#    export APP_STRIPE_WEBHOOK_SECRET=whsec_...
+# 4. Start server: uv run app/main.py --env dev
+[payments]
+enabled = true  # Enable to test payment features in development with Stripe test mode
+grace_period_days = 7  # Longer grace period for development testing
+
+# Development-specific subscription tier overrides
+[subscription_tiers]
+[subscription_tiers.free]
+requests_per_month = 2000  # Higher limit for development testing
+
+[subscription_tiers.basic]
+requests_per_month = 20000  # Higher limit for development testing
+
+# Development rate limits (more permissive)
+[rate_limits]
+free_requests_per_minute = 30
+basic_requests_per_minute = 120
+premium_requests_per_minute = 600
+academic_requests_per_minute = 360

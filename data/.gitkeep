@@ -1,0 +1,9 @@
+# Data Directory
+
+This directory contains database files and data assets for the ontologic-api project.
+
+## Contents
+
+- SQLite database files
+- Data exports and backups
+- Test data fixtures

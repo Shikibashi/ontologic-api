@@ -1,0 +1,89 @@
+# Test configuration
+# This configuration is used during automated testing and should use mock/stub values
+
+[models]
+embed_model = "test-embed-model"
+splade_model = "test-splade-model"
+llm = "test-llm-model"
+
+[context_window]
+default = 8192
+max_context = 32000
+
+[llm]
+request_timeout_seconds = 10  # Shorter timeouts for tests
+generation_timeout_seconds = 10
+chat_timeout_seconds = 10
+vet_timeout_seconds = 10
+
+[qdrant]
+url = "http://localhost:6333"  # Local test instance
+api_key_env = "QDRANT_API_KEY"
+timeout = 5
+retry_attempts = 1
+collections_cache_ttl = 60
+
+# Local Qdrant for tests (same as main for testing)
+[qdrant.local]
+url = "http://localhost:6333"
+api_key_env = "LOCAL_QDRANT_API_KEY"
+timeout = 5
+retry_attempts = 1
+
+# OAuth disabled for tests
+[oauth]
+enabled = false
+
+[oauth.providers.google]
+enabled = false
+client_id = "test-google-client-id"
+client_secret = "test-google-client-secret"
+
+[oauth.providers.discord]
+enabled = false
+client_id = "test-discord-client-id"
+client_secret = "test-discord-client-secret"
+
+[oauth.providers.apple]
+enabled = false
+client_id = "test-apple-client-id"
+client_secret = "test-apple-client-secret"
+
+# Compression settings for tests
+[compression]
+enabled = true
+minimum_size = 500
+
+# Features enabled for comprehensive test coverage
+[features]
+chat_history = true
+document_uploads = true
+
+# Chat History Configuration - Testing
+[chat_history]
+retention_days = 1               # Keep chat history for 1 day in tests
+cleanup_batch_size = 10          # Process 10 records at a time for cleanup
+vector_upload_batch_size = 5     # Upload 5 vectors at a time to Qdrant
+enable_vector_search = true      # Enable semantic search for chat history
+max_message_length = 5000        # Maximum message length (5KB for tests)
+pagination_default_limit = 20    # Default messages per page
+pagination_max_limit = 50        # Maximum messages per page
+
+# Test security configuration
+[security]
+session_secret = "test-session-secret-not-for-production-use-only"
+session_timeout_hours = 1
+
+# Test middleware configuration
+[middleware.trusted_hosts]
+hosts = ["testserver", "localhost", "127.0.0.1"]
+
+[middleware.cors]
+origins = ["http://testserver", "http://localhost:5173"]
+methods = ["GET", "POST", "PUT", "DELETE", "OPTIONS"]
+headers = ["Content-Type", "Authorization"]
+credentials = true
+
+# Test workflow configuration
+[workflows]
+section_order = ["abstract", "introduction", "argument", "conclusion"]

@@ -1,0 +1,13 @@
+{#
+Template: base/input_validation
+Purpose: Macros for simple input validation
+Variables: (macro params)
+#}
+
+{% macro validate_input(input_text, max_length=1000) -%}
+{%- if input_text|length > max_length -%}
+⚠️ Input too long ({{ input_text|length }} chars, max {{ max_length }})
+{%- elif not input_text|trim -%}
+⚠️ Empty input provided
+{%- endif -%}
+{%- endmacro %}

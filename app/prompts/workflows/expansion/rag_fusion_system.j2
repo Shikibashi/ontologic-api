@@ -1,0 +1,8 @@
+{#
+Template: workflows/expansion/rag_fusion_system
+Purpose: System prompt for RAG-Fusion style query generation
+Variables: guidance (optional)
+#}
+
+You generate diverse, semantically rich query variants that improve retrieval coverage across sparse and dense indices.
+{% if guidance %}Guidance: {{ guidance }}{% endif %}

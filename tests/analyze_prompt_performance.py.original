@@ -1,0 +1,223 @@
+#!/usr/bin/env python
+"""Analyze prompt performance to identify improvement opportunities."""
+
+from __future__ import annotations
+
+import json
+from pathlib import Path
+from typing import Any
+
+from rich.console import Console
+from rich.table import Table
+
+console = Console()
+
+
+def load_json(path: Path) -> dict[str, Any]:
+    """Load JSON file."""
+    with open(path) as f:
+        return json.load(f)
+
+
+def analyze_performance(
+    comparison_data: dict[str, Any],
+    live_data: dict[str, Any],
+) -> None:
+    """Analyze prompt performance and identify issues."""
+
+    comparisons = comparison_data["comparisons"]
+
+    # Analyze by metric thresholds
+    short_responses = []  # < 0.5 length ratio
+    low_keyword_match = []  # < 0.1 similarity
+    slow_responses = []  # > 30s
+
+    for comp in comparisons:
+        prompt_id = comp["prompt_id"]
+
+        if comp["lengths"]["ratio"] < 0.5:
+            short_responses.append({
+                "id": prompt_id,
+                "ratio": comp["lengths"]["ratio"],
+                "keyword_sim": comp["keyword_similarity"],
+            })
+
+        if comp["keyword_similarity"] < 0.1:
+            low_keyword_match.append({
+                "id": prompt_id,
+                "ratio": comp["lengths"]["ratio"],
+                "keyword_sim": comp["keyword_similarity"],
+            })
+
+        if comp["response_time_seconds"] > 30:
+            slow_responses.append({
+                "id": prompt_id,
+                "time": comp["response_time_seconds"],
+                "tokens": comp["tokens"]["actual"],
+            })
+
+    # Print findings
+    console.print("\n[bold cyan]═══ PROMPT PERFORMANCE ANALYSIS ═══[/bold cyan]\n")
+
+    # Short responses table
+    if short_responses:
+        console.print(f"[bold red]⚠ SHORT RESPONSES (< 50% expected length)[/bold red]")
+        console.print(f"Found {len(short_responses)} prompts producing significantly shorter responses:\n")
+
+        table = Table()
+        table.add_column("Prompt ID", style="cyan")
+        table.add_column("Length Ratio", justify="right", style="red")
+        table.add_column("Keyword Sim", justify="right", style="yellow")
+
+        for item in sorted(short_responses, key=lambda x: x["ratio"])[:10]:
+            table.add_row(
+                item["id"][:45],
+                f"{item['ratio']:.2f}",
+                f"{item['keyword_sim']:.3f}",
+            )
+
+        console.print(table)
+        console.print()
+
+    # Low keyword match table
+    if low_keyword_match:
+        console.print(f"[bold yellow]⚠ LOW KEYWORD OVERLAP (< 10%)[/bold yellow]")
+        console.print(f"Found {len(low_keyword_match)} prompts with low topical similarity:\n")
+
+        table = Table()
+        table.add_column("Prompt ID", style="cyan")
+        table.add_column("Keyword Sim", justify="right", style="yellow")
+        table.add_column("Length Ratio", justify="right", style="magenta")
+
+        for item in sorted(low_keyword_match, key=lambda x: x["keyword_sim"])[:10]:
+            table.add_row(
+                item["id"][:45],
+                f"{item['keyword_sim']:.3f}",
+                f"{item['ratio']:.2f}",
+            )
+
+        console.print(table)
+        console.print()
+
+    # Slow responses
+    if slow_responses:
+        console.print(f"[bold blue]🐌 SLOW RESPONSES (> 30s)[/bold blue]")
+        console.print(f"Found {len(slow_responses)} prompts with long response times:\n")
+
+        table = Table()
+        table.add_column("Prompt ID", style="cyan")
+        table.add_column("Time (s)", justify="right", style="blue")
+        table.add_column("Tokens", justify="right", style="green")
+
+        for item in sorted(slow_responses, key=lambda x: x["time"], reverse=True)[:10]:
+            table.add_row(
+                item["id"][:45],
+                f"{item['time']:.1f}",
+                f"{item['tokens']:,}",
+            )
+
+        console.print(table)
+        console.print()
+
+    # Overall statistics
+    console.print("[bold green]📊 OVERALL STATISTICS[/bold green]\n")
+
+    avg_length_ratio = sum(c["lengths"]["ratio"] for c in comparisons) / len(comparisons)
+    avg_keyword_sim = sum(c["keyword_similarity"] for c in comparisons) / len(comparisons)
+    avg_time = sum(c["response_time_seconds"] for c in comparisons) / len(comparisons)
+
+    console.print(f"• Average length ratio: [bold]{avg_length_ratio:.2f}[/bold] (target: 1.0)")
+    console.print(f"• Average keyword similarity: [bold]{avg_keyword_sim:.3f}[/bold] (target: > 0.15)")
+    console.print(f"• Average response time: [bold]{avg_time:.1f}s[/bold]")
+    console.print()
+
+    # Recommendations
+    console.print("[bold magenta]💡 RECOMMENDATIONS[/bold magenta]\n")
+
+    if avg_length_ratio < 0.7:
+        console.print("❶ [yellow]Responses are significantly shorter than expected[/yellow]")
+        console.print("  → Add explicit length guidance in system prompt")
+        console.print("  → Use phrases like 'provide a comprehensive analysis of at least 3-4 paragraphs'")
+        console.print("  → Consider adding 'Be thorough and detailed in your response'\n")
+
+    if avg_keyword_sim < 0.15:
+        console.print("❷ [yellow]Low keyword overlap suggests responses are missing expected content[/yellow]")
+        console.print("  → Make expectations more explicit in prompts")
+        console.print("  → Add specific philosophical frameworks to discuss (e.g., 'Compare utilitarian and deontological perspectives')")
+        console.print("  → Include required concepts in the prompt itself\n")
+
+    if len(short_responses) > 10:
+        console.print("❸ [yellow]Many prompts producing short responses[/yellow]")
+        console.print("  → Review system prompt for any brevity instructions")
+        console.print("  → Add 'min_tokens' or similar constraints if API supports it")
+        console.print("  → Test with higher temperature (0.7-0.8) for more expansive responses\n")
+
+    # Category analysis
+    console.print("\n[bold cyan]📚 CATEGORY ANALYSIS[/bold cyan]\n")
+
+    # Extract categories from live data
+    category_performance = {}
+
+    for prompt_id, prompt_data in live_data.get("results", {}).items():
+        category = prompt_data.get("category", "unknown")
+
+        for variant in prompt_data.get("variants", []):
+            variant_id = f"{prompt_id}::variant{variant['variant_index']}"
+
+            # Find matching comparison
+            comp = next((c for c in comparisons if c["prompt_id"] == variant_id), None)
+            if comp:
+                if category not in category_performance:
+                    category_performance[category] = {
+                        "count": 0,
+                        "avg_ratio": 0,
+                        "avg_keyword_sim": 0,
+                    }
+
+                cat = category_performance[category]
+                cat["count"] += 1
+                cat["avg_ratio"] += comp["lengths"]["ratio"]
+                cat["avg_keyword_sim"] += comp["keyword_similarity"]
+
+    # Calculate averages
+    for cat_data in category_performance.values():
+        if cat_data["count"] > 0:
+            cat_data["avg_ratio"] /= cat_data["count"]
+            cat_data["avg_keyword_sim"] /= cat_data["count"]
+
+    # Display category table
+    if category_performance:
+        table = Table()
+        table.add_column("Category", style="cyan")
+        table.add_column("Count", justify="right", style="blue")
+        table.add_column("Avg Length Ratio", justify="right", style="magenta")
+        table.add_column("Avg Keyword Sim", justify="right", style="yellow")
+
+        for category, data in sorted(category_performance.items(), key=lambda x: x[1]["avg_ratio"]):
+            table.add_row(
+                category,
+                str(data["count"]),
+                f"{data['avg_ratio']:.2f}",
+                f"{data['avg_keyword_sim']:.3f}",
+            )
+
+        console.print(table)
+
+
+def main():
+    comparison_path = Path("tests/comparison_report.json")
+    live_path = Path("tests/live_responses.json")
+
+    console.print("[cyan]Loading comparison data...[/cyan]")
+    comparison_data = load_json(comparison_path)
+
+    console.print("[cyan]Loading live responses...[/cyan]")
+    live_data = load_json(live_path)
+
+    analyze_performance(comparison_data, live_data)
+
+    console.print("\n[green]✓ Analysis complete![/green]")
+
+
+if __name__ == "__main__":
+    main()

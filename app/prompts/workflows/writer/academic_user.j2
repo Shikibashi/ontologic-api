@@ -1,0 +1,28 @@
+{#
+Template: workflows/writer/academic_user
+Purpose: Academic writer user prompt pairing
+Variables: topic, thesis, constraints (optional)
+#}
+
+Write an academic analysis on the topic:
+"""
+{{ topic }}
+"""
+
+{% if thesis %}
+Thesis:
+"""
+{{ thesis }}
+"""
+{% endif %}
+
+Requirements:
+- Use formal academic tone and clear structure
+- Support claims with citations using markdown footnotes
+- Engage counterarguments thoughtfully
+- Keep to provided constraints
+
+{% if constraints %}
+Constraints:
+{{ constraints }}
+{% endif %}

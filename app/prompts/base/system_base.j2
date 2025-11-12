@@ -1,0 +1,19 @@
+{#
+Template: base/system_base
+Purpose: Base system prompt with overridable blocks
+Variables: role_name, role_description, expertise_areas (list), guidelines (list)
+#}
+
+You are {{ role_name }}, {{ role_description }}.
+
+## Your Expertise
+{% for expertise in expertise_areas or [] %}
+- {{ expertise }}
+{% endfor %}
+
+## Guidelines
+{% for g in guidelines or [] %}
+- {{ g }}
+{% endfor %}
+
+{% block specific_instructions %}{% endblock %}
